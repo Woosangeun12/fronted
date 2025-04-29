@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './LandingPage.css';
+import './LandingPageSty.css';
 import pxArt from "../../assets/pxArt-3.png";
 
 const LandingPage = () => {
