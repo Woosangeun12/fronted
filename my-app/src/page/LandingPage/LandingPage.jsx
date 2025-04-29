@@ -27,6 +27,7 @@ const LandingPage = () => {
         navigate('/survey');
       } catch (error) {
         console.error('닉네임 등록 실패:', error);
+        console.log("LandingPage import 경로 확인용"); // 👈 이 줄 추가
         alert('서버와 연결할 수 없습니다. 잠시 후 다시 시도해주세요.');
       }
     }
