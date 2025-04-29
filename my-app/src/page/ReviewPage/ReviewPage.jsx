@@ -1,23 +1,20 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom"; 
+import api from "../../utils/api"; 
 import "./ReviewPage.css";
 
 export default function ReviewPage() {
   const navigate = useNavigate();
   const location = useLocation();
-  const movie = location.state?.movie;
+  const movieId = location.state?.movieId;
 
-  if (!movie) {
-    // 영화 정보 없이 들어오면 에러 방지
-    return (
-      <div className="review-container">
-        <h2>영화 정보를 불러올 수 없습니다. 다시 추천받아주세요.</h2>
-        <button onClick={() => navigate("/recommend")} className="submit-btn">
-          추천 페이지로 돌아가기
-        </button>
-      </div>
-    );
-  }
+  useEffect(() => {
+    if (!movieId) return;
+  
+    api.get(`/api/movie/${movieId}`)
+      .then((res) => setMovie(res.data))
+      .catch((err) => console.error("영화 정보 로딩 실패", err));
+  }, [movieId]);
 
   return (
     <div className="review-container">

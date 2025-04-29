@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // 추가
-import axios from "axios";
+import api from '../../utils/api';
 import "./RecommendPage.css";
 
 const recommendedMovies = [
@@ -75,7 +75,7 @@ export default function RecommendPage() {
   // 상세 정보 조회 + 모달 열기
   const handleSelectMovie = async (movieId) => {
     try {
-      const res = await axios.get(`/api/recommend/info/${movieId}`);
+      const res = await api.get(`/api/recommend/info/${movieId}`);
       setSelectedMovie(res.data);
     } catch (err) {
       console.error("영화 상세 정보 불러오기 실패:", err);
@@ -87,7 +87,7 @@ export default function RecommendPage() {
     const confirm = window.confirm("정말 이 영화를 선택하시겠습니까?");
     if (confirm) {
       sessionStorage.setItem("selectedMovie", JSON.stringify(selectedMovie));
-      navigate("/review");
+      navigate("/review", { state: { movieId: selectedMovie.id } });
     }
   };
 

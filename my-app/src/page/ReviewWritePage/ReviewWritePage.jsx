@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from '../../utils/api';
 import "./ReviewWritePage.css";
 
 export default function ReviewWritePage() {
@@ -27,7 +27,7 @@ export default function ReviewWritePage() {
     }
 
     try {
-      await axios.post(`/api/review/submit/${visitorId}`, {
+      await api.post(`/api/review/submit/${visitorId}`, {
         score: rating,
         review: review.trim(),
       });

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../../utils/api';
 import './SurveyPage.css';
 
 const SurveyPage = () => {
@@ -49,7 +49,7 @@ const SurveyPage = () => {
     };
 
     try {
-      await axios.post(`/api/survey/submit/${visitorId}`, surveyResult);
+      await api.post(`/api/survey/submit/${visitorId}`, surveyResult);
       alert(`${nickname}님의 설문이 완료되었습니다! 🎉\n\n👉 추천 결과를 준비할게요!`);
       navigate('/recommend');
     } catch (error) {
