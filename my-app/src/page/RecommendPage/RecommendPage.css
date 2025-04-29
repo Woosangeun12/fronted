@@ -1,0 +1,198 @@
+/* 전체 배경과 정렬 */
+.recommend-container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #fffbe6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+/* 타이틀 */
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* 영화 리스트 – 세로 정렬 */
+.movie-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* 감성 카드 스타일 */
+.movie-card {
+  background-color: #fffaf0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  background-color: #ffe5e5;
+}
+
+.movie-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+}
+
+.movie-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 0.25rem;
+}
+
+.movie-info {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* 영화 상세 모달 */
+.fullscreen-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  z-index: 999;
+}
+
+.fullscreen-content {
+  background-color: #fffaf0;
+  border-radius: 16px;
+  width: 95vw;              /* ✅ 기존보다 넓게 */
+  max-width: 700px;         /* ✅ 기존 500px보다 넓힘 */
+  overflow-y: auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-image-wrapper {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+}
+
+.modal-movie-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.modal-overlay-text {
+  color: white;
+}
+
+.modal-overlay-text h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.modal-overlay-text p {
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+
+/* 텍스트 영역 */
+.modal-movie-info {
+  padding: 2rem;
+  color: #333;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-subinfo {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* 줄거리 박스 */
+.modal-summary-box {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border: 1px solid #eee;
+  max-height: 180px;
+}
+
+/* 선택 버튼 */
+.select-button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1rem;
+  background-color: #ff99aa;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.select-button:hover {
+  background-color: #ff6f91;
+}
+
+.fullscreen-info {
+  text-align: left;
+  width: 100%;
+  color: #333;
+}
+
+.fullscreen-info h2 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+.fullscreen-info p {
+  margin: 0.4rem 0;
+  line-height: 1.5;
+}
+
+.select-button:hover {
+  background-color: #ff6f91;
+}
