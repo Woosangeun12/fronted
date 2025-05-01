@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Logs
 logs
 *.log
@@ -23,6 +23,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-=======
->>>>>>> ee0389a5065f2402a774b637acb28672d56c196f
+
 .vercel
