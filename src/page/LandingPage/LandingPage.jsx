@@ -16,6 +16,7 @@ const LandingPage = () => {
       console.log("🧾 입력한 닉네임:", trimmed);
       console.log("🌐 Axios baseURL:", api.defaults.baseURL);
       console.log("✅ 요청 보냄: /api/visitor", { nickname: trimmed });
+      console.log("📨 visitor post 요청 보냄:", trimmed);
       try {
         const response = await api.post('/api/visitor', { nickname: trimmed });
         console.log("✅ 응답 데이터:", response.data);
