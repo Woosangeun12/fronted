@@ -25,3 +25,4 @@ dist-ssr
 *.sw?
 
 .vercel
+node_modules/ # 혹시 빠졌으면 다시 추가
