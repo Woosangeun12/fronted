@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "my-app",
   "private": true,
   "version": "0.0.0",
@@ -27,35 +26,5 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
     "vite": "^6.2.0"
-=======
-  "name": "front-mongle-project",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview",
-  "test": "echo \"Error: no test specified\" && exit 1"
-},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router-dom": "^7.4.0"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.23.0",
-    "@types/react": "^19.0.12",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.23.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
-    "vite": "^6.2.3"
->>>>>>> ee0389a5065f2402a774b637acb28672d56c196f
   }
 }
