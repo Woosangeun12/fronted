@@ -4,6 +4,7 @@ import api from "../../utils/api";
 import './LandingPageSty.css';
 import pxArt from "../../assets/pxArt-3.png";
 
+//fdfdfdfd
 const LandingPage = () => {
   const [nickname, setNickname] = useState('');
   const navigate = useNavigate();
