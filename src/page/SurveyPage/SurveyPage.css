@@ -1,0 +1,72 @@
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #fffbe6;
+}
+
+/* 전체 배경 + 중앙 정렬 */
+.survey-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* 가운데 박스 */
+.survey-box {
+  background-color: #fffaf0;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+/* 텍스트 */
+.survey-box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.survey-box h3 {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* 버튼 묶음 */
+.feeling-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* 버튼 스타일 */
+.feeling-buttons button {
+  padding: 0.9rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  background-color: #ff99aa;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.feeling-buttons button:hover {
+  background-color: #ff6f91;
+}
+
+.feeling-buttons button small {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 0.3rem;
+}

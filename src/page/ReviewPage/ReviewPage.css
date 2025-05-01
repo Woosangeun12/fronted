@@ -1,0 +1,163 @@
+.review-container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #fffbe6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.review-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.review-card {
+  background-color: #fffaf0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.review-image {
+  width: 160px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.review-info {
+  font-size: 14px;
+  color: #444;
+  text-align: left;
+}
+
+.summary {
+  font-style: italic;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.review-form {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.review-textarea-label textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  margin-top: 0.25rem;
+  box-sizing: border-box;
+
+  background-color: #fff;     /* 배경은 밝게 */
+  color: #333;                /* 글자색은 어둡게 */
+}
+
+.review-textarea-label textarea::placeholder {
+  color: #888;                /* placeholder는 회색 계열 */
+}
+
+
+.char-count {
+  font-size: 12px;
+  text-align: right;
+  color: #999;
+  margin-top: 0.25rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.submit-btn,
+.skip-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit-btn {
+  background-color: #ffcd63;
+  color: #333;
+}
+
+.skip-btn {
+  background-color: #eee;
+  color: #666;
+}
+
+/* 기존 별점 스타일 유지 */
+.star-rating {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  font-size: 32px;
+  display: inline-block;
+  position: relative;
+}
+
+.star-rating input[type="radio"] {
+  display: none;
+}
+
+.star-rating label {
+  cursor: pointer;
+  width: 1em;
+  display: inline-block;
+  position: relative;
+  color: #ddd;
+}
+
+.star-rating label::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+}
+
+.star-rating input:checked ~ label::before,
+.star-rating label:hover ~ label::before,
+.star-rating label:hover::before {
+  color: gold;
+}
+
+@media (prefers-color-scheme: dark) {
+  .review-textarea-label textarea {
+    color: #f0f0f0;
+  }
+
+  .review-textarea-label textarea::placeholder {
+    color: #aaa;
+  }
+
+  .submit-btn,
+  .skip-btn {
+    color: #222; /* 버튼 배경이 밝으니 글자는 진하게 */
+  }
+
+  .review-title,
+  .review-info p,
+  .summary {
+    color: #222;
+  }
+
+  .char-count {
+    color: #666;
+  }
+}
