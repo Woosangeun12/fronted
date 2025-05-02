@@ -39,6 +39,8 @@ const SurveyPage = () => {
   const handleOriginSelect = async (selectedOrigin) => {
     setOrigin(selectedOrigin);
     const visitorId = sessionStorage.getItem('visitorId');
+    console.log('visitorId:', visitorId);  // 이거 찍어봐
+
 
     const surveyResult = {
       emotion: feeling,
