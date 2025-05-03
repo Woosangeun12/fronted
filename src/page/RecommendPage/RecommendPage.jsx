@@ -13,20 +13,28 @@ export default function RecommendPage() {
     const stored = sessionStorage.getItem("recommendedMovies");
     if (stored) {
       setMovieList(JSON.parse(stored));
+      console.log("✅ 로드된 추천 영화 목록:", parsed);  
+      setMovieList(parsed);
     } else {
       alert("추천 데이터가 없습니다. 설문을 먼저 완료해 주세요.");
       navigate("/survey");
     }
   }, []);
 
-  const handleSelectMovie = async (movieId) => {
+  const handleSelectMovie = async (movie) => {
+    if (!visitorId) {
+      setSelectedMovie(movie); // 백엔드 없이 바로 모달 띄우기
+      return;
+    }
+  
     try {
-      const res = await api.post(`/api/recommend/info/${movieId}`);
-      setSelectedMovie(res.data); // ✅ 이거 추가해야 모달이 뜸
+      const res = await api.post(`/api/recommend/info/${movie.movieId}`);
+      setSelectedMovie(res.data); // 백엔드 데이터로 모달 구성
     } catch (err) {
       console.error("영화 상세 정보 불러오기 실패:", err);
     }
   };
+  
 
   const handleConfirmSelect = () => {
     if (!selectedMovie) return;
@@ -38,25 +46,25 @@ export default function RecommendPage() {
   };
 
   return (
-    <div className="recommend-container">
-      <h1 className="title">🎬 당신을 위한 영화 추천</h1>
-
-      <div className="movie-grid">
-        {movieList.map((movie, index) => (
-          <div
-          key={movie.movieId}
-          className="movie-card"
-          onClick={() =>
-            visitorId ? handleSelectMovie(movie.movieId) : setSelectedMovie(movie)
-          }
-          >
-            <img src={movie.image} alt={movie.title} className="movie-image" />
-            <h2 className="movie-title">{movie.title}</h2>
-            <p className="movie-info">{movie.year} · {movie.hour}</p>
-          </div>
-        ))}
+    <>
+      <div className="recommend-container">
+        <h1 className="title">🎬 당신을 위한 영화 추천</h1>
+  
+        <div className="movie-grid">
+          {movieList.map((movie, index) => (
+            <div
+              key={movie.movieId}
+              className="movie-card"
+              onClick={() => handleSelectMovie(movie)}
+            >
+              <img src={movie.image} alt={movie.title} className="movie-image" />
+              <h2 className="movie-title">{movie.title}</h2>
+              <p className="movie-info">{movie.year} · {movie.hour}</p>
+            </div>
+          ))}
+        </div>
       </div>
-
+  
       {/* 모달 */}
       {selectedMovie && (
         <div className="fullscreen-overlay" onClick={() => setSelectedMovie(null)}>
@@ -74,22 +82,22 @@ export default function RecommendPage() {
                 </div>
               </div>
             </div>
-
+  
             <div className="modal-movie-info">
               <p><strong>감독:</strong> {selectedMovie.director}</p>
               <p><strong>주연배우:</strong> {selectedMovie.actor1}, {selectedMovie.actor2}</p>
               <p><strong>국가:</strong> {selectedMovie.origin}</p>
               <p><strong>평점:</strong> {selectedMovie.score}</p>
-
+  
               <div className="modal-summary-box">
                 <p>{selectedMovie.summary}</p>
               </div>
-
+  
               <button className="select-button" onClick={handleConfirmSelect}>선택하기 ✅</button>
             </div>
           </div>
         </div>
       )}
-    </div>
+    </>
   );
-}
+}  

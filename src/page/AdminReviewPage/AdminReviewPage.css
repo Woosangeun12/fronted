@@ -1,0 +1,54 @@
+/* adminReviewPage.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fafafa;
+  }
+  
+  .admin-review-container {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    margin-top: 4rem;
+  }
+  
+  .admin-review-container h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .review-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .review-table thead {
+    background-color: #ff6699;
+    color: white;
+  }
+  
+  .review-table th,
+  .review-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+  }
+  
+  .review-table tbody tr:hover {
+    background-color: #fff0f5;
+  }
+  
+  .review-table td {
+    color: #333;
+  }
+  
