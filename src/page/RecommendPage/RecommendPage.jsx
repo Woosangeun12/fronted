@@ -29,8 +29,7 @@ export default function RecommendPage() {
 
   const handleSelectMovie = async (movie) => {
     try {
-      const { movieId } = movie;
-      const res = await api.post(`/api/recommend/info/${movieId}`, {});
+      const res = await api.post(`/api/recommend/info/${movie.movieId}`, {});
       setSelectedMovie(res.data);
     } catch (err) {
       console.error("영화 상세 정보 불러오기 실패:", err);
