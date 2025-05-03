@@ -36,6 +36,12 @@ const SurveyPage = () => {
     setStep(5);
   };
 
+  const handleMindSelect = (tone) => {
+    console.log(`피하고 싶은 장르: ${tone}`);
+    setHate(tone);
+    setStep(6);
+  };
+
   const handleOriginSelect = async (selectedOrigin) => {
     const visitorId = sessionStorage.getItem('visitorId');
     
@@ -45,9 +51,10 @@ const SurveyPage = () => {
       genre: preferredGenre,
       origin: selectedOrigin,  // 이걸 사용
       hate: hate,
+      tone: tone,
     };
   
-    if (!visitorId || !feeling || !style || !preferredGenre || !selectedOrigin || !hate) {
+    if (!visitorId || !feeling || !style || !preferredGenre || !selectedOrigin || !hate || !tone) {
       alert("모든 항목을 선택해 주세요.");
       return;
     }
@@ -172,6 +179,18 @@ const SurveyPage = () => {
             </div>
           </>
         )}
+
+        {step === 6 && (
+          <>
+            <h3>지금 가장 듣고 싶은 말은 어떤 거야?</h3>
+            <div className="feeling-buttons">
+              <button onClick={() => handleOriginSelect("위로")}>💬위로</button>
+              <button onClick={() => handleOriginSelect("동기부여")}>🔥 동기부여</button>
+              <button onClick={() => handleOriginSelect("조언")}>💡 조언</button>
+              <button onClick={() => handleOriginSelect("응원")}> 🙌 응원</button>
+            </div>
+          </>
+        )}  
       </div>
     </div>
   );
