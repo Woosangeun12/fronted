@@ -13,7 +13,9 @@ export default function RecommendPage() {
     const stored = sessionStorage.getItem("recommendedMovies");
     if (stored) {
       const parsed = JSON.parse(stored);
-      console.log("✅ 로드된 추천 영화 목록:", parsed);  
+      setTimeout(() => {
+        console.log("✅ 추천 영화 목록:", parsed);
+      }, 100); 
       setMovieList(parsed);
     } else {
       alert("추천 데이터가 없습니다. 설문을 먼저 완료해 주세요.");
