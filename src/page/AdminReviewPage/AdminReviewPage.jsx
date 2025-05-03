@@ -15,9 +15,10 @@ const AdminReviewPage = () => {
           api.get('/api/review/list?page=0&size=10'),
           api.get('/api/admin/visitors/count')
         ]);
-        setReviews(response.data.reviews);              // ✅ 리뷰 배열
-        setTotalCount(response.data.totalCount);        // ✅ 총 리뷰 수
-        setAverageScore(response.data.averageScore);    // ✅ 평균 평점
+        setReviews(reviewRes.data.reviews);              // ✅
+        setTotalCount(reviewRes.data.totalCount);        // ✅
+        setAverageScore(reviewRes.data.averageScore);    // ✅
+
         setVisitorStats({
           totalCount: visitorRes.data.totalCount,
           todayCount: visitorRes.data.todayCount,
