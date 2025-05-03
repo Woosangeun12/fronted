@@ -38,26 +38,26 @@ const SurveyPage = () => {
   };
 
   const handleOriginSelect = (selectedOrigin) => {
-    console.log(`지금 듣고 싶은 말: ${selectedTone}`);
+    console.log(`국가: ${selectedOrigin}`);
     setOrigin(selectedOrigin);
     setStep(6);
-  };
+  };  
   
 
   const handleMindSelect = async (selectedTone) => {
     setTone(selectedTone);
     sessionStorage.setItem("tone", selectedTone);
-    
+
     const visitorId = sessionStorage.getItem('visitorId');
     const surveyResult = {
       emotion: feeling,
       style: style,
       genre: preferredGenre,
-      origin: selectedOrigin,  // 이걸 사용
+      origin: origin,
       hate: hate,
     };
   
-    if (!visitorId || !feeling || !style || !preferredGenre || !selectedOrigin || !hate || !tone) {
+    if (!visitorId || !feeling || !style || !preferredGenre || !origin || !hate || !tone) {
       alert("모든 항목을 선택해 주세요.");
       return;
     }
@@ -188,18 +188,17 @@ const SurveyPage = () => {
             </div>
           </>
         )}
-
         {step === 6 && (
           <>
             <h3>지금 가장 듣고 싶은 말은 어떤 거야?</h3>
             <div className="feeling-buttons">
-              <button onClick={() => handleOriginSelect("위로")}>💬위로</button>
-              <button onClick={() => handleOriginSelect("동기부여")}>🔥 동기부여</button>
-              <button onClick={() => handleOriginSelect("조언")}>💡 조언</button>
-              <button onClick={() => handleOriginSelect("응원")}> 🙌 응원</button>
+              <button onClick={() => handleMindSelect("위로")}>💬 위로</button>
+              <button onClick={() => handleMindSelect("동기부여")}>🔥 동기부여</button>
+              <button onClick={() => handleMindSelect("조언")}>💡 조언</button>
+              <button onClick={() => handleMindSelect("응원")}>🙌 응원</button>
             </div>
           </>
-        )}  
+        )}
       </div>
     </div>
   );
