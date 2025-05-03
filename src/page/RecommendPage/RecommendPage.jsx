@@ -8,7 +8,6 @@ export default function RecommendPage() {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const navigate = useNavigate();
   const visitorId = sessionStorage.getItem("visitorId");
-  const { movieId } = movie;
 
   useEffect(() => {
     if (!visitorId) {
@@ -30,6 +29,7 @@ export default function RecommendPage() {
 
   const handleSelectMovie = async (movie) => {
     try {
+      const { movieId } = movie;
       const res = await api.post(`/api/recommend/info/${movieId}`, {});
       setSelectedMovie(res.data);
     } catch (err) {
