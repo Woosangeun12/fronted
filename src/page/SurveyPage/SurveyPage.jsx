@@ -65,7 +65,6 @@ const SurveyPage = () => {
     console.log("visitorId:", visitorId);
     console.log("보내는 데이터:", surveyResult);
 
-    sessionStorage.setItem("tone", selectedTone);
     sessionStorage.setItem("emotion", feeling);
     sessionStorage.setItem("style", style);
 

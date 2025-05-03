@@ -6,10 +6,6 @@ export default function QuotePage() {
   const [quote, setQuote] = useState("");
   const [loading, setLoading] = useState(true);
   const [movie, setMovie] = useState(null);
-  const tone = sessionStorage.getItem("tone");
-  const emotion = sessionStorage.getItem("emotion"); // feeling
-  const style = sessionStorage.getItem("style");
-
 
 
   useEffect(() => {
