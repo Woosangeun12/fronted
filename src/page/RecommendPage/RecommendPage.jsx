@@ -60,15 +60,7 @@ export default function RecommendPage() {
               className="movie-card"
               onClick={() => handleSelectMovie(movie)}
             >
-              <img
-                src={
-                  movie.image?.startsWith("http")
-                    ? movie.image
-                    : `https://mallang.info/images/${encodeURIComponent(movie.image)}`
-                }
-                alt={movie.title}
-                className="movie-image"
-              />
+              <img src={movie.image} alt={movie.title} className="movie-image" />
               <h2 className="movie-title">{movie.title}</h2>
               <p className="movie-info">{movie.year} · {movie.hour}</p>
             </div>
@@ -82,11 +74,7 @@ export default function RecommendPage() {
           <div className="fullscreen-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-image-wrapper">
             <img
-              src={
-                selectedMovie.image?.startsWith("http")
-                  ? selectedMovie.image
-                  : `https://mallang.info/images/${encodeURIComponent(selectedMovie.image)}`
-              }
+              src={selectedMovie.image}
               alt={selectedMovie.title}
               className="modal-movie-image"
             />
