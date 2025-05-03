@@ -44,9 +44,7 @@ const SurveyPage = () => {
   };  
   
 
-  const handleMindSelect = async (selectedTone) => {
-    setTone(selectedTone);
-    sessionStorage.setItem("tone", selectedTone); 
+  const handleMindSelect = async (selectedTone) => { 
 
     const visitorId = sessionStorage.getItem('visitorId');
     const surveyResult = {
@@ -64,8 +62,11 @@ const SurveyPage = () => {
   
     console.log("visitorId:", visitorId);
     console.log("보내는 데이터:", surveyResult);
+    console.log("origin:", origin); 
     console.log("보내는 tone:", selectedTone);
-
+    
+    setTone(selectedTone);
+    sessionStorage.setItem("tone", selectedTone);
     sessionStorage.setItem("emotion", feeling);
     sessionStorage.setItem("style", style);
 
