@@ -63,9 +63,6 @@ export default function RecommendPage() {
                 src={movie.image}
                 alt={movie.title}
                 className="movie-image"
-                onError={(e) => {
-                  e.target.src = "https://via.placeholder.com/300x400?text=No+Image";
-                }}
               />
               <h2 className="movie-title">{movie.title}</h2>
               <p className="movie-info">{movie.year} · {movie.hour}</p>
@@ -83,9 +80,6 @@ export default function RecommendPage() {
               src={selectedMovie.image}
               alt={selectedMovie.title}
               className="modal-movie-image"
-              onError={(e) => {
-                e.target.src = "https://via.placeholder.com/300x400?text=No+Image";
-              }}
             />
               <div className="modal-image-overlay">
                 <div className="modal-overlay-text">
