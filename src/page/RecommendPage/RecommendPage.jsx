@@ -9,6 +9,7 @@ export default function RecommendPage() {
   const navigate = useNavigate();
   const visitorId = sessionStorage.getItem("visitorId");
 
+
   useEffect(() => {
     const stored = sessionStorage.getItem("recommendedMovies");
     if (stored) {
@@ -60,7 +61,11 @@ export default function RecommendPage() {
               onClick={() => handleSelectMovie(movie)}
             >
               <img
-                src={movie.image}
+                src={
+                  movie.image?.startsWith("http")
+                    ? movie.image
+                    : `https://mallang.info/images/${encodeURIComponent(movie.image)}`
+                }
                 alt={movie.title}
                 className="movie-image"
               />
@@ -77,7 +82,11 @@ export default function RecommendPage() {
           <div className="fullscreen-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-image-wrapper">
             <img
-              src={selectedMovie.image}
+              src={
+                selectedMovie.image?.startsWith("http")
+                  ? selectedMovie.image
+                  : `https://mallang.info/images/${encodeURIComponent(selectedMovie.image)}`
+              }
               alt={selectedMovie.title}
               className="modal-movie-image"
             />
