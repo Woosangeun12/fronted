@@ -37,28 +37,34 @@ const SurveyPage = () => {
   };
 
   const handleOriginSelect = async (selectedOrigin) => {
-    setOrigin(selectedOrigin);
     const visitorId = sessionStorage.getItem('visitorId');
-    console.log('visitorId:', visitorId);  // 이거 찍어봐
-
-
+    
     const surveyResult = {
       emotion: feeling,
       style: style,
       genre: preferredGenre,
-      origin: selectedOrigin,
+      origin: selectedOrigin,  // 이걸 사용
       hate: hate,
     };
-
+  
+    if (!visitorId || !feeling || !style || !preferredGenre || !selectedOrigin || !hate) {
+      alert("모든 항목을 선택해 주세요.");
+      return;
+    }
+  
+    console.log("visitorId:", visitorId);
+    console.log("보내는 데이터:", surveyResult);
+  
     try {
       await api.post(`/api/recommend/${visitorId}`, surveyResult);
-      alert(`${nickname}님의 설문/이 완료되었습니다! 🎉\n\n👉 추천 결과를 준비할게요!`);
+      alert(`${nickname}님의 설문이 완료되었습니다! 🎉\n\n👉 추천 결과를 준비할게요!`);
       navigate('/recommend');
     } catch (error) {
-      console.error('설문 저장 실패:', error);
+      console.error('설문 저장 실패:', error.response?.data || error.message);
       alert('설문 저장 중 오류가 발생했어요.');
     }
   };
+  
 
 
   return (
