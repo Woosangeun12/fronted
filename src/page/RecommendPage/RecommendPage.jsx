@@ -11,12 +11,10 @@ export default function RecommendPage() {
 
   // 추천 영화 목록 불러오기
   useEffect(() => {
-    if (!visitorId) {
-      setMovieList(recommendedMovies); // 백엔드 미연결 시 예시 사용
+    if (!visitorId)
       return;
-    }
   
-    api.get(`/api/recommend/${visitorId}`)
+    api.post(`/api/recommend/${visitorId}`)
       .then(res => setMovieList(res.data))
       .catch(err => {
         console.error("추천 영화 불러오기 실패:", err);
@@ -27,7 +25,7 @@ export default function RecommendPage() {
   // 상세 정보 조회 + 모달 열기
   const handleSelectMovie = async (movieId) => {
     try {
-      const res = await api.get(`/api/recommend/info/${movieId}`);
+      const res = await api.post(`/api/recommend/info/${movieId}`);
       setSelectedMovie(res.data);
     } catch (err) {
       console.error("영화 상세 정보 불러오기 실패:", err);
@@ -37,7 +35,7 @@ export default function RecommendPage() {
   // 영화 선택 확정 → 리뷰 페이지 이동
   const handleConfirmSelect = () => {
     const confirm = window.confirm("정말 이 영화를 선택하시겠습니까?");
-    if (confirm) {
+    if (confirm && selectedMovie ) {
       sessionStorage.setItem("selectedMovie", JSON.stringify(selectedMovie));
       navigate("/review", { state: { movieId: selectedMovie.id } });
     }
