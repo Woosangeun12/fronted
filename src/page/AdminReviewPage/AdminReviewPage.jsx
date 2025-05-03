@@ -1,18 +1,16 @@
+// 1. import 추가
+import api from '../../utils/api';
 import React, { useEffect, useState } from 'react';
-
 
 const AdminReviewPage = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // 비동기 함수 정의
     const fetchReviews = async () => {
       try {
-        const response = await fetch('/api/reviews'); // 실제 API 경로로 수정 필요
-        if (!response.ok) throw new Error('데이터 불러오기 실패');
-        const data = await response.json();
-        setReviews(data);
+        const response = await api.get('/reviews'); // baseURL + /reviews
+        setReviews(response.data);
       } catch (error) {
         console.error('리뷰 불러오기 에러:', error);
       } finally {

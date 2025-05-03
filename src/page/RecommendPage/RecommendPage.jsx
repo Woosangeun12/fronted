@@ -23,17 +23,20 @@ export default function RecommendPage() {
     }
   }, []);
 
-  const handleSelectMovie = async (movie) => {
+  const handleSelectMovie = async (movie,index) => {
+    const fallbackId = index + 1;
+    const movieId = movie.movieId ?? fallbackId;
     if (!visitorId) {
-      setSelectedMovie(movie); // 백엔드 없이 바로 모달 띄우기
+      setSelectedMovie({ ...movie, movieId }); // 백엔드 없이 바로 모달 띄우기
       return;
     }
   
     try {
-      const res = await api.post(`/api/recommend/info/${movie.movieId}`);
+      const res = await api.post(`/api/recommend/info/${movieId}`);
       setSelectedMovie(res.data); // 백엔드 데이터로 모달 구성
     } catch (err) {
       console.error("영화 상세 정보 불러오기 실패:", err);
+      setSelectedMovie({ ...movie, movieId });
     }
   };
   
@@ -55,11 +58,18 @@ export default function RecommendPage() {
         <div className="movie-grid">
           {movieList.map((movie, index) => (
             <div
-              key={movie.movieId}
+              key={index}
               className="movie-card"
-              onClick={() => handleSelectMovie(movie)}
+              onClick={() => handleSelectMovie(movie, index)}
             >
-              <img src={movie.image} alt={movie.title} className="movie-image" />
+              <img
+                src={`https://mallang.info/images/${encodeURIComponent(movie.image)}`}
+                alt={movie.title}
+                className="movie-image"
+                onError={(e) => {
+                  e.target.src = "https://via.placeholder.com/300x400?text=No+Image";
+                }}
+              />
               <h2 className="movie-title">{movie.title}</h2>
               <p className="movie-info">{movie.year} · {movie.hour}</p>
             </div>
