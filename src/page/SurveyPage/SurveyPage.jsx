@@ -45,7 +45,6 @@ const SurveyPage = () => {
   
 
   const handleMindSelect = async (selectedTone) => { 
-
     const visitorId = sessionStorage.getItem('visitorId');
     const surveyResult = {
       emotion: feeling,
@@ -64,17 +63,16 @@ const SurveyPage = () => {
     console.log("보내는 데이터:", surveyResult);
     console.log("origin:", origin); 
     console.log("보내는 tone:", selectedTone);
-    
+
     setTone(selectedTone);
-    sessionStorage.setItem("tone", selectedTone);
     sessionStorage.setItem("emotion", feeling);
     sessionStorage.setItem("style", style);
+    sessionStorage.setItem("tone", selectedTone);
 
   
     try {
       const res = await api.post(`/api/recommend/${visitorId}`, surveyResult);
       sessionStorage.setItem("recommendedMovies", JSON.stringify(res.data));
-      sessionStorage.setItem("tone", handleMindSelect);
       alert(`${nickname}님의 설문이 완료되었습니다! 🎉\n\n👉 추천 결과를 준비할게요!`);
       navigate('/recommend');
     } catch (error) {
