@@ -59,14 +59,7 @@ export default function RecommendPage() {
               className="movie-card"
               onClick={() => handleSelectMovie(movie)}
             >
-              <img
-                src={`https://mallang.info/images/${encodeURIComponent(movie.image)}`}
-                alt={movie.title}
-                className="movie-image"
-                onError={(e) => {
-                  e.target.src = "https://via.placeholder.com/300x400?text=No+Image";
-                }}
-              />
+              <img src={movie.image} alt={movie.title} className="movie-image" />
               <h2 className="movie-title">{movie.title}</h2>
               <p className="movie-info">{movie.year} · {movie.hour}</p>
             </div>
