@@ -8,7 +8,7 @@ export default function RecommendPage() {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const navigate = useNavigate();
   const visitorId = sessionStorage.getItem("visitorId");
-
+  const { movieId } = movie;
 
   useEffect(() => {
     if (!visitorId) {
