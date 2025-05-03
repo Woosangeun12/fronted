@@ -12,6 +12,7 @@ const SurveyPage = () => {
   const [style, setStyle] = useState('');
   const [hate, setHate] = useState('');
   const navigate = useNavigate();
+  const [tone,setTone] =  useState('');
 
   const handleFeeling = (selectedFeeling) => {
     setFeeling(selectedFeeling);
@@ -36,17 +37,18 @@ const SurveyPage = () => {
     setStep(5);
   };
 
-  const handleMindSelect = (selectedTone) => {
+  const handleOriginSelect = (selectedOrigin) => {
     console.log(`지금 듣고 싶은 말: ${selectedTone}`);
-    setTone(selectedTone);
-    sessionStorage.setItem("tone", selectedTone);
+    setOrigin(selectedOrigin);
     setStep(6);
   };
   
 
-  const handleOriginSelect = async (selectedOrigin) => {
-    const visitorId = sessionStorage.getItem('visitorId');
+  const handleMindSelect = async (selectedTone) => {
+    setTone(selectedTone);
+    sessionStorage.setItem("tone", selectedTone);
     
+    const visitorId = sessionStorage.getItem('visitorId');
     const surveyResult = {
       emotion: feeling,
       style: style,
@@ -62,7 +64,8 @@ const SurveyPage = () => {
   
     console.log("visitorId:", visitorId);
     console.log("보내는 데이터:", surveyResult);
-    
+
+    sessionStorage.setItem("tone", selectedTone);
     sessionStorage.setItem("emotion", feeling);
     sessionStorage.setItem("style", style);
 
