@@ -36,7 +36,13 @@ export default function RecommendPage() {
   
 
   const handleConfirmSelect = () => {
-    if (!selectedMovie) return;
+    console.log("🧪 handleConfirmSelect 호출됨", selectedMovie); // 무조건 찍힘
+  
+    if (!selectedMovie) {
+      console.warn("❗ selectedMovie가 비어있음");
+      return;
+    }
+  
     const confirm = window.confirm("정말 이 영화를 선택하시겠습니까?");
     if (confirm) {
       sessionStorage.setItem("selectedMovie", JSON.stringify(selectedMovie));
@@ -45,6 +51,7 @@ export default function RecommendPage() {
       navigate("/review", { state: { movieId: selectedMovie.movieId } });
     }
   };
+  
 
   return (
     <>
