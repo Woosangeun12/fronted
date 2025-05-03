@@ -39,7 +39,7 @@ export default function ReviewPage() {
         <button
           type="button"
           className="submit-btn"
-          onClick={() => navigate("/reviewwrite")}
+          onClick={() => navigate("/reviewwrite", { state: { movieId } })}
         >
           리뷰 작성하기
         </button>

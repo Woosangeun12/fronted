@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import api from '../../utils/api';
 import "./ReviewWritePage.css";
 
 export default function ReviewWritePage() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const movieId = location.state?.movieId; // ✅ movieId 받기
+
   const [review, setReview] = useState("");
   const [rating, setRating] = useState(5);
-
   const visitorId = sessionStorage.getItem("visitorId");
 
-  // ✅ 비정상 접근 방지
   useEffect(() => {
-    if (!visitorId) {
+    if (!visitorId || !movieId) {
       alert("비정상 접근입니다. 처음부터 다시 시작해주세요.");
       navigate("/");
     }
-  }, [visitorId, navigate]);
+  }, [visitorId, movieId, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,6 +29,7 @@ export default function ReviewWritePage() {
 
     try {
       await api.post(`/api/review/submit/${visitorId}`, {
+        movieId, // ✅ 추가
         score: rating,
         review: review.trim(),
       });
