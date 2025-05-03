@@ -9,33 +9,30 @@ export default function RecommendPage() {
   const navigate = useNavigate();
   const visitorId = sessionStorage.getItem("visitorId");
 
-  // 추천 영화 목록 불러오기
   useEffect(() => {
-    if (!visitorId)
-      return;
-  
-    api.post(`/api/recommend/${visitorId}`)
-      .then(res => setMovieList(res.data))
-      .catch(err => {
-        console.error("추천 영화 불러오기 실패:", err);
-        setMovieList(recommendedMovies); // 실패 시도 예시 사용
-      });
-  }, [visitorId]);
+    const stored = sessionStorage.getItem("recommendedMovies");
+    if (stored) {
+      setMovieList(JSON.parse(stored));
+    } else {
+      alert("추천 데이터가 없습니다. 설문을 먼저 완료해 주세요.");
+      navigate("/survey");
+    }
+  }, []);
 
   // 상세 정보 조회 + 모달 열기
   const handleSelectMovie = async (movieId) => {
     try {
-      const res = await api.post(`/api/recommend/info/${movieId}`);
-      setSelectedMovie(res.data);
+      const res = await api.post(`/api/recommend/info/${movieId}`, {
+        movieId: movieId});
     } catch (err) {
       console.error("영화 상세 정보 불러오기 실패:", err);
     }
   };
 
-  // 영화 선택 확정 → 리뷰 페이지 이동
   const handleConfirmSelect = () => {
+    if (!selectedMovie) return;
     const confirm = window.confirm("정말 이 영화를 선택하시겠습니까?");
-    if (confirm && selectedMovie ) {
+    if (confirm) {
       sessionStorage.setItem("selectedMovie", JSON.stringify(selectedMovie));
       navigate("/review", { state: { movieId: selectedMovie.id } });
     }
