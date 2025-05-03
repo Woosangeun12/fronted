@@ -85,7 +85,7 @@ const SurveyPage = () => {
           </>
         )}
 
-        {step === 2 && feeling === '우울해' && (
+        {step === 2 && feeling === '슬픔' && (
           <>
             <h3>우울하거나 슬플 때, 당신은 그 감정을 어떻게 달래나요?</h3>
             <div className="feeling-buttons">
@@ -97,7 +97,7 @@ const SurveyPage = () => {
           </>
         )}
 
-        {step === 2 && feeling === '기분 좋아' && (
+        {step === 2 && feeling === '행복' && (
           <>
             <h3>행복하거나 기쁠 때, 그 긍정적인 감정을 어떻게 유지하거나 증폭시키시나요?</h3>
             <div className="feeling-buttons">
@@ -109,7 +109,7 @@ const SurveyPage = () => {
           </>
         )}
 
-        {step === 2 && feeling === '스트레스 받아' && (
+        {step === 2 && feeling === '스트레스' && (
           <>
             <h3>스트레스나 불안을 느낄 때, 당신은 그 감정을 어떻게 해소하나요?</h3>
             <div className="feeling-buttons">
@@ -121,7 +121,7 @@ const SurveyPage = () => {
           </>
         )}
 
-        {step === 2 && feeling === '지루해' && (
+        {step === 2 && feeling === '지루함' && (
           <>
             <h3>지루하거나 무기력할 때, 당신은 그 상태를 어떻게 극복하시나요?</h3>
             <div className="feeling-buttons">
