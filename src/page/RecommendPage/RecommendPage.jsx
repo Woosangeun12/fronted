@@ -12,7 +12,7 @@ export default function RecommendPage() {
   useEffect(() => {
     const stored = sessionStorage.getItem("recommendedMovies");
     if (stored) {
-      setMovieList(JSON.parse(stored));
+      const parsed = JSON.parse(stored);
       console.log("✅ 로드된 추천 영화 목록:", parsed);  
       setMovieList(parsed);
     } else {
