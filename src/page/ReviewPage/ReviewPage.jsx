@@ -11,11 +11,12 @@ export default function ReviewPage() {
 
   useEffect(() => {
     if (!movieId) return;
-
-    api.get(`/api/movie/${movieId}`)
+  
+    api.post(`/api/recommend/info/${movieId}`, {})
       .then((res) => setMovie(res.data))
       .catch((err) => console.error("영화 정보 로딩 실패", err));
   }, [movieId]);
+  
 
   if (!movie) return <div className="review-container">로딩 중...</div>; // ✅ null 체크
 
