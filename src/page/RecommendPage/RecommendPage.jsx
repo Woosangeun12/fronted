@@ -11,32 +11,32 @@ export default function RecommendPage() {
 
 
   useEffect(() => {
-    const stored = sessionStorage.getItem("recommendedMovies");
-    if (stored) {
-      const parsed = JSON.parse(stored);
-      setTimeout(() => {
-        console.log("✅ 추천 영화 목록:", parsed);
-      }, 100); 
-      setMovieList(parsed);
-    } else {
-      alert("추천 데이터가 없습니다. 설문을 먼저 완료해 주세요.");
-      navigate("/survey");
-    }
-  }, []);
-
-  const handleSelectMovie = async (movie) => {
     if (!visitorId) {
-      setSelectedMovie(movie); // 백엔드 없이 바로 모달 띄우기
+      alert("방문자 ID가 없습니다. 설문을 먼저 완료해 주세요.");
+      navigate("/survey");
       return;
     }
   
+    api.post(`/api/recommend/${visitorId}`)
+      .then((res) => {
+        console.log("🎯 추천 결과:", res.data);
+        setMovieList(res.data);
+      })
+      .catch((err) => {
+        console.error("추천 영화 로딩 실패:", err);
+      });
+  }, []);
+  
+
+  const handleSelectMovie = async (movie) => {
     try {
-      await api.post(`/api/recommend/info/${movie.movieId}`, {}); // 최소한 빈 body     
-      setSelectedMovie(res.data); // 백엔드 데이터로 모달 구성
+      const res = await api.post(`/api/recommend/info/${movieId}`, {});
+      setSelectedMovie(res.data);
     } catch (err) {
       console.error("영화 상세 정보 불러오기 실패:", err);
     }
   };
+  
   
 
   const handleConfirmSelect = () => {
