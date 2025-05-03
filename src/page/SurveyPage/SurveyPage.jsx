@@ -46,7 +46,7 @@ const SurveyPage = () => {
 
   const handleMindSelect = async (selectedTone) => {
     setTone(selectedTone);
-    sessionStorage.setItem("tone", selectedTone);
+    sessionStorage.setItem("tone", selectedTone); 
 
     const visitorId = sessionStorage.getItem('visitorId');
     const surveyResult = {
