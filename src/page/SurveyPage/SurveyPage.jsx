@@ -57,13 +57,14 @@ const SurveyPage = () => {
       hate: hate,
     };
   
-    if (!visitorId || !feeling || !style || !preferredGenre || !origin || !hate || !tone) {
+    if (!visitorId || !feeling || !style || !preferredGenre || !origin || !hate || !selectedTone) {
       alert("모든 항목을 선택해 주세요.");
       return;
     }
   
     console.log("visitorId:", visitorId);
     console.log("보내는 데이터:", surveyResult);
+    console.log("보내는 tone:", selectedTone);
 
     sessionStorage.setItem("emotion", feeling);
     sessionStorage.setItem("style", style);
