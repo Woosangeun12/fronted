@@ -59,7 +59,14 @@ export default function RecommendPage() {
               className="movie-card"
               onClick={() => handleSelectMovie(movie)}
             >
-              <img src={movie.image} alt={movie.title} className="movie-image" />
+              <img
+                src={`https://mallang.info/images/${encodeURIComponent(movie.image)}`}
+                alt={movie.title}
+                className="movie-image"
+                onError={(e) => {
+                  e.target.src = "https://via.placeholder.com/300x400?text=No+Image";
+                }}
+              />
               <h2 className="movie-title">{movie.title}</h2>
               <p className="movie-info">{movie.year} · {movie.hour}</p>
             </div>
@@ -72,11 +79,14 @@ export default function RecommendPage() {
         <div className="fullscreen-overlay" onClick={() => setSelectedMovie(null)}>
           <div className="fullscreen-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-image-wrapper">
-              <img
-                src={selectedMovie.image}
-                alt={selectedMovie.title}
-                className="modal-movie-image"
-              />
+            <img
+              src={`https://mallang.info/images/${encodeURIComponent(selectedMovie.image)}`}
+              alt={selectedMovie.title}
+              className="modal-movie-image"
+              onError={(e) => {
+                e.target.src = "https://via.placeholder.com/300x400?text=No+Image";
+              }}
+            />
               <div className="modal-image-overlay">
                 <div className="modal-overlay-text">
                   <h2>{selectedMovie.title}</h2>
