@@ -22,14 +22,13 @@ body, html {
     text-align: center;
   }
   
-  /* ✅ 통계 정보 박스 */
   .review-stats {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
     background-color: #fef1f6;
     border: 1px solid #f8c0d9;
-    padding: 1rem 1.5rem;
+    padding: 1.2rem 1.5rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
     font-size: 1rem;
@@ -38,7 +37,14 @@ body, html {
   
   .review-stats div {
     font-weight: 500;
+    background-color: #fff;
+    border: 1px solid #ffe2ec;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    text-align: center;
   }
+  
   
   /* 리뷰 테이블 */
   .review-table {
