@@ -60,7 +60,7 @@ export default function RecommendPage() {
               onClick={() => handleSelectMovie(movie)}
             >
               <img
-                src={`https://mallang.info/images/${encodeURIComponent(movie.image)}`}
+                src={movie.image}
                 alt={movie.title}
                 className="movie-image"
                 onError={(e) => {
@@ -80,7 +80,7 @@ export default function RecommendPage() {
           <div className="fullscreen-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-image-wrapper">
             <img
-              src={`https://mallang.info/images/${encodeURIComponent(selectedMovie.image)}`}
+              src={selectedMovie.image}
               alt={selectedMovie.title}
               className="modal-movie-image"
               onError={(e) => {
