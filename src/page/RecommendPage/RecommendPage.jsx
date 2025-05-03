@@ -33,7 +33,7 @@ export default function RecommendPage() {
     const confirm = window.confirm("정말 이 영화를 선택하시겠습니까?");
     if (confirm) {
       sessionStorage.setItem("selectedMovie", JSON.stringify(selectedMovie));
-      navigate("/review", { state: { movieId: selectedMovie.id } });
+      navigate("/review", { state: { movieId: selectedMovie.movieId } });
     }
   };
 
@@ -44,10 +44,10 @@ export default function RecommendPage() {
       <div className="movie-grid">
         {movieList.map((movie, index) => (
           <div
-          key={index}
+          key={movie.movieId}
           className="movie-card"
           onClick={() =>
-            visitorId ? handleSelectMovie(movie.id) : setSelectedMovie(movie)
+            visitorId ? handleSelectMovie(movie.movieId) : setSelectedMovie(movie)
           }
           >
             <img src={movie.image} alt={movie.title} className="movie-image" />

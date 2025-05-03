@@ -1,20 +1,23 @@
-import React from "react";
-import { useLocation, useNavigate } from "react-router-dom"; 
-import api from "../../utils/api"; 
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import api from "../../utils/api";
 import "./ReviewPage.css";
 
 export default function ReviewPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const movieId = location.state?.movieId;
+  const [movie, setMovie] = useState(null); // ✅ 상태 선언
 
   useEffect(() => {
     if (!movieId) return;
-  
+
     api.get(`/api/movie/${movieId}`)
       .then((res) => setMovie(res.data))
       .catch((err) => console.error("영화 정보 로딩 실패", err));
   }, [movieId]);
+
+  if (!movie) return <div className="review-container">로딩 중...</div>; // ✅ null 체크
 
   return (
     <div className="review-container">
@@ -51,4 +54,3 @@ export default function ReviewPage() {
     </div>
   );
 }
-
