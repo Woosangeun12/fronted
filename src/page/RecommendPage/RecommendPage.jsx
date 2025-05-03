@@ -10,20 +10,17 @@ export default function RecommendPage() {
   const visitorId = sessionStorage.getItem("visitorId");
 
   useEffect(() => {
-    if (!visitorId) {
-      alert("방문자 ID가 없습니다. 설문을 먼저 완료해 주세요.");
+    const stored = sessionStorage.getItem("recommendedMovies");
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      setTimeout(() => {
+        console.log("✅ 추천 영화 목록:", parsed);
+      }, 100); 
+      setMovieList(parsed);
+    } else {
+      alert("추천 데이터가 없습니다. 설문을 먼저 완료해 주세요.");
       navigate("/survey");
-      return;
     }
-  
-    api.post(`/api/recommend/${visitorId}`)
-      .then((res) => {
-        console.log("🎯 추천 결과:", res.data);
-        setMovieList(res.data);
-      })
-      .catch((err) => {
-        console.error("추천 영화 로딩 실패:", err);
-      });
   }, []);
   
 
