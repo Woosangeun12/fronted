@@ -9,7 +9,7 @@ const AdminReviewPage = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await api.get('/reviews'); // baseURL + /reviews
+        const response = await api.get('/api/review/list?page=0&size=10');
         setReviews(response.data);
       } catch (error) {
         console.error('리뷰 불러오기 에러:', error);
