@@ -22,6 +22,8 @@ export default function QuotePage() {
       const emotion = sessionStorage.getItem("emotion");
       const style = sessionStorage.getItem("style");
       const tone = sessionStorage.getItem("tone");
+
+      console.log("보내는 요청:", { emotion, style, tone });
   
       if (!emotion || !style || !tone) {
         setQuote("필요한 감정 정보가 부족해요.");
