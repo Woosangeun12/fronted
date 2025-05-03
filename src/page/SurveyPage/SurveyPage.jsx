@@ -56,7 +56,7 @@ const SurveyPage = () => {
     console.log("보내는 데이터:", surveyResult);
   
     try {
-      await api.post(`/api/recommend/${visitorId}`, surveyResult);
+      const res = await api.post(`/api/recommend/${visitorId}`, surveyResult);
       sessionStorage.setItem("recommendedMovies", JSON.stringify(res.data));
       alert(`${nickname}님의 설문이 완료되었습니다! 🎉\n\n👉 추천 결과를 준비할게요!`);
       navigate('/recommend');
