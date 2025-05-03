@@ -6,14 +6,22 @@ const AdminReviewPage = () => {
   const [loading, setLoading] = useState(true);
   const [totalCount, setTotalCount] = useState(0);
   const [averageScore, setAverageScore] = useState(0);
+  const [visitorStats, setVisitorStats] = useState({ totalCount: 0, todayCount: 0 });
 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await api.get('/api/review/list?page=0&size=10');
+        const [reviewRes, visitorRes] = await Promise.all([
+          api.get('/api/review/list?page=0&size=10'),
+          api.get('/api/admin/visitors/count')
+        ]);
         setReviews(response.data.reviews);              // ✅ 리뷰 배열
         setTotalCount(response.data.totalCount);        // ✅ 총 리뷰 수
         setAverageScore(response.data.averageScore);    // ✅ 평균 평점
+        setVisitorStats({
+          totalCount: visitorRes.data.totalCount,
+          todayCount: visitorRes.data.todayCount,
+        });
       } catch (error) {
         console.error('리뷰 불러오기 에러:', error);
       } finally {
@@ -30,20 +38,15 @@ const AdminReviewPage = () => {
     <div className="admin-review-container" style={{ padding: '2rem' }}>
       <h2 style={{ marginBottom: '1rem' }}>리뷰 목록</h2>
 
-      {/* ✅ 통계 UI */}
-      <div style={{
-        marginBottom: '1.5rem',
-        padding: '1rem',
-        backgroundColor: '#f8f9fa',
-        border: '1px solid #ccc',
-        borderRadius: '8px',
-        display: 'flex',
-        justifyContent: 'space-between',
-        maxWidth: '500px'
-      }}>
-        <div><strong>총 리뷰 수:</strong> {totalCount}개</div>
+      <div className="review-stats">
+        <div><strong>총 사용자 수:</strong> 👥 {visitorStats.totalCount}명</div>
+        <div><strong>오늘 방문:</strong> 🚶 {visitorStats.todayCount}명</div>
+      </div>
+      <div className="review-stats">
+        <div><strong>총 리뷰 수:</strong> 📝 {totalCount}개</div>
         <div><strong>평균 평점:</strong> ⭐ {averageScore.toFixed(1)}</div>
       </div>
+
 
       {/* ✅ 리뷰 테이블 */}
       {reviews.length === 0 ? (
