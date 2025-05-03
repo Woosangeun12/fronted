@@ -31,7 +31,9 @@ export default function RecommendPage() {
     }
   
     try {
-      const res = await api.post(`/api/recommend/info/${movie.movieId}`);
+      const res = await api.post(`/api/recommend/info`, {
+        movieId: movie.movieId
+      });      
       setSelectedMovie(res.data); // 백엔드 데이터로 모달 구성
     } catch (err) {
       console.error("영화 상세 정보 불러오기 실패:", err);
