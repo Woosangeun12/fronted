@@ -6,17 +6,36 @@ export default function QuotePage() {
   const [quote, setQuote] = useState("");
   const [loading, setLoading] = useState(true);
   const [movie, setMovie] = useState(null);
+  const tone = sessionStorage.getItem("tone");
+  const emotion = sessionStorage.getItem("emotion"); // feeling
+  const style = sessionStorage.getItem("style");
+
+
 
   useEffect(() => {
     const stored = sessionStorage.getItem("selectedMovie");
     if (stored) {
       setMovie(JSON.parse(stored));
     }
-
+  
     const fetchQuote = async () => {
+      const emotion = sessionStorage.getItem("emotion");
+      const style = sessionStorage.getItem("style");
+      const tone = sessionStorage.getItem("tone");
+  
+      if (!emotion || !style || !tone) {
+        setQuote("필요한 감정 정보가 부족해요.");
+        setLoading(false);
+        return;
+      }
+  
       try {
-        const res = await api.post("/api/mental/message"); // ✅ body 없이 요청
-
+        const res = await api.post("/api/mental/message", {
+          emotion,
+          style,
+          tone,
+        });
+  
         if (res.data && res.data.message) {
           setQuote(res.data.message);
         } else {
@@ -29,9 +48,10 @@ export default function QuotePage() {
         setLoading(false);
       }
     };
-
+  
     fetchQuote();
   }, []);
+  
 
   return (
     <div className="quote-container">

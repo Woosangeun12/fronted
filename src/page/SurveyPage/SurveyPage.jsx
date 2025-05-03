@@ -36,11 +36,13 @@ const SurveyPage = () => {
     setStep(5);
   };
 
-  const handleMindSelect = (tone) => {
-    console.log(`피하고 싶은 장르: ${tone}`);
-    setHate(tone);
+  const handleMindSelect = (selectedTone) => {
+    console.log(`지금 듣고 싶은 말: ${selectedTone}`);
+    setTone(selectedTone);
+    sessionStorage.setItem("tone", selectedTone);
     setStep(6);
   };
+  
 
   const handleOriginSelect = async (selectedOrigin) => {
     const visitorId = sessionStorage.getItem('visitorId');
@@ -51,7 +53,6 @@ const SurveyPage = () => {
       genre: preferredGenre,
       origin: selectedOrigin,  // 이걸 사용
       hate: hate,
-      tone: tone,
     };
   
     if (!visitorId || !feeling || !style || !preferredGenre || !selectedOrigin || !hate || !tone) {
@@ -61,10 +62,15 @@ const SurveyPage = () => {
   
     console.log("visitorId:", visitorId);
     console.log("보내는 데이터:", surveyResult);
+    
+    sessionStorage.setItem("emotion", feeling);
+    sessionStorage.setItem("style", style);
+
   
     try {
       const res = await api.post(`/api/recommend/${visitorId}`, surveyResult);
       sessionStorage.setItem("recommendedMovies", JSON.stringify(res.data));
+      sessionStorage.setItem("tone", handleMindSelect);
       alert(`${nickname}님의 설문이 완료되었습니다! 🎉\n\n👉 추천 결과를 준비할게요!`);
       navigate('/recommend');
     } catch (error) {
