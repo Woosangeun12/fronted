@@ -3,54 +3,6 @@ import { useNavigate } from "react-router-dom"; // 추가
 import api from '../../utils/api';
 import "./RecommendPage.css";
 
-const recommendedMovies = [
-  {
-    id: 1,
-    title: "Inception",
-    year: 2010,
-    hour: "148분",
-    genre: "SF, 스릴러",
-    description: "꿈 속의 꿈, 그리고 또 하나의 꿈. 놀란 감독의 SF 스릴러.",
-    image: "https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg",
-    summary: "도둑이 타인의 꿈에 침입해 정보를 훔치는 미래. 주인공 코브는 마지막 임무를 맡게 된다.",
-    score: "9.1",
-    director: "크리스토퍼 놀란",
-    actor1: "레오나르도 디카프리오",
-    actor2 : "조셉 고든 레빗",
-    origin: "미국",
-  },
-  {
-    id: 2,
-    title: "La La Land",
-    year: 2016,
-    hour: "128분",
-    genre: "로맨스, 음악",
-    description: "꿈을 쫓는 두 남녀의 사랑과 음악이 어우러진 감성 영화.",
-    image: "https://image.tmdb.org/t/p/w500/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg",
-    summary: "재즈 피아니스트와 배우 지망생이 LA에서 만나 꿈과 사랑을 키워간다.",
-    score: "8.5",
-    director: "데이미언 셔젤",
-    actor1: "라이언 고슬링",
-    actor2: "엠마 스톤",
-    origin: "미국",
-  },
-  {
-    id: 3,
-    title: "Parasite",
-    year: 2019,
-    hour: "132분",
-    genre: "드라마, 스릴러",
-    description: "봉준호 감독의 사회 풍자 스릴러. 아카데미 4관왕 수상작.",
-    image: "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
-    summary: "가난한 가족이 부잣집에 하나씩 잠입하며 벌어지는 이야기.",
-    score: "9.3",
-    director: "봉준호",
-    actor1: "송강호",
-    actor2: "최우식",
-    origin: "대한민국",
-  },
-];
-
 export default function RecommendPage() {
   const [movieList, setMovieList] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
@@ -64,7 +16,7 @@ export default function RecommendPage() {
       return;
     }
   
-    axios.get(`/api/recommend/${visitorId}`)
+    api.get(`/api/recommend/${visitorId}`)
       .then(res => setMovieList(res.data))
       .catch(err => {
         console.error("추천 영화 불러오기 실패:", err);
