@@ -1,3 +1,12 @@
+/* 전체 레이아웃 */
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* 중앙 정렬 및 배경 */
 .landing-container {
   width: 100vw;
   min-height: 100vh;
@@ -10,15 +19,15 @@
   box-sizing: border-box;
 }
 
-/* 이미지 크기 증가 + 반응형 */
+/* 상단 이미지 */
 .landing-image {
-  width: 80vw;
-  max-width: 320px;
-  margin-bottom: 1.5rem;
+  width: 85vw;
+  max-width: 360px;
+  margin-bottom: 2rem;
   animation: fadeIn 2s ease-in-out;
 }
 
-/* 폼 전체 폭 제한 */
+/* 폼 컨테이너 */
 .landing-form {
   display: flex;
   flex-direction: column;
@@ -28,11 +37,11 @@
   max-width: 400px;
 }
 
-/* 입력창: 더 크고 터치하기 편하게 */
+/* 입력창 (크게, 터치 편하게) */
 .landing-input {
   width: 100%;
-  padding: 1.2rem;
-  font-size: 1.4rem;
+  padding: 1.3rem;
+  font-size: 1.5rem;
   border-radius: 14px;
   border: 1px solid #ccc;
   background-color: #fff;
@@ -40,11 +49,12 @@
   text-align: center;
 }
 
-/* 버튼: 더 크고 눈에 띄게 */
+/* 버튼 (크고 강조) */
 .landing-button {
   width: 100%;
-  padding: 1.2rem;
-  font-size: 1.3rem;
+  padding: 1.3rem;
+  font-size: 1.4rem;
+  font-weight: bold;
   background-color: #ff6699;
   color: white;
   border: none;
@@ -55,4 +65,10 @@
 
 .landing-button:hover {
   background-color: #ff4d88;
+}
+
+/* 페이드 인 애니메이션 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
