@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './StartPage.css';
-import pxArt from "../../assets/pxArt-3.png"; // 동일 이미지 사용
+import pxArt from "../../assets/pxArt-3_5.png"; // 동일 이미지 사용
 
 const StartPage = () => {
   const navigate = useNavigate();
