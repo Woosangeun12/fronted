@@ -1,58 +1,46 @@
-/* 전체 레이아웃 */
-body, html, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-}
-
-/* 중앙 정렬 및 배경 */
-.landing-container {
-  width: 100vw;
-  min-height: 100vh;
-  background-color: #ffffff;
+.start-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 2rem 1rem;
 }
 
-/* 상단 이미지 */
-.landing-image {
-  width: 85vw;
-  max-width: 360px;
-  margin-bottom: 2rem;
-  animation: fadeIn 2s ease-in-out;
-}
-
-/* 폼 컨테이너 */
-.landing-form {
+/* 이미지 wrapper */
+.start-image-wrapper {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
-  width: 90vw;
-  max-width: 400px;
+  margin-bottom: 2rem;
 }
 
-/* 입력창 (크게, 터치 편하게) */
-.landing-input {
-  width: 100%;
-  padding: 1.3rem;
-  font-size: 1.5rem;
-  border-radius: 14px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  color: #000;
+/* 이미지 크기 강제 지정 */
+.start-image {
+  width: 600px;           /* 고정 */
+  max-width: 90vw;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 텍스트 오버레이 */
+.start-overlay-text {
+  position: absolute;
   text-align: center;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6);
+  margin-top: -4rem;
 }
 
-/* 버튼 (크고 강조) */
-.landing-button {
-  width: 100%;
-  padding: 1.3rem;
+/* 버튼 */
+.start-button {
+  width: 600px;           /* 고정 */
+  max-width: 90vw;
+  padding: 1.2rem;
   font-size: 1.4rem;
   font-weight: bold;
   background-color: #ff6699;
@@ -63,12 +51,6 @@ body, html, #root {
   transition: background-color 0.2s ease;
 }
 
-.landing-button:hover {
+.start-button:hover {
   background-color: #ff4d88;
-}
-
-/* 페이드 인 애니메이션 */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
 }
