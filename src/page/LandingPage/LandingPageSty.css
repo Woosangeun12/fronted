@@ -16,13 +16,14 @@
   margin-bottom: 2rem;
 }
 
-/* 이미지 크기 강제 지정 */
 .start-image {
-  width: 600px;           /* 고정 */
-  max-width: 90vw;
-  height: auto;
+  width: 600px !important;
+  height: 600px !important;
+  max-width: none !important;
+  max-height: none !important;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: block;
 }
 
 /* 텍스트 오버레이 */
