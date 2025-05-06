@@ -30,7 +30,7 @@
 /* 이미지 내부에 텍스트 오버레이 */
 .start-overlay-text {
   position: absolute;
-  bottom: 10%;              /* 이미지 하단 10% 위치에 배치 */
+  bottom: 50%;              /* 이미지 하단 10% 위치에 배치 */
   left: 50%;
   transform: translateX(-50%);
   padding: 0.5rem 1rem;     /* 텍스트 패딩 */
@@ -39,9 +39,6 @@
   font-weight: bold;
   text-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
   text-align: center;
-  /* 배경을 준다면 텍스트 가독성이 향상됨 */
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 8px;
 }
 
 .start-button {
