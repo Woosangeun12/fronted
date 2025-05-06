@@ -31,7 +31,7 @@
   position: absolute;
   text-align: center;
   color: white;
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: bold;
   text-shadow: 0 0 10px rgba(0,0,0,0.6);
   margin-top: 2.5rem;
@@ -41,8 +41,8 @@
 .start-button {
   width: 600px;           /* 고정 */
   max-width: 90vw;
-  padding: 1.6rem;
-  font-size: 1.6rem;
+  padding: 4rem;
+  font-size: 4rem;
   font-weight: bold;
   background-color: #ff6699;
   color: white;
