@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { postVisitor } from "../../apis/visitor"; 
 import './LandingPageSty.css';
-import pxArt from "../../assets/pxArt-3.png";
+import pxArt from "../../assets/pxArt-3_5.png";
 
 const LandingPage = () => {
   const [nickname, setNickname] = useState('');
