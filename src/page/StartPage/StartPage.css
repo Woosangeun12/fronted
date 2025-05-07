@@ -45,7 +45,8 @@
   }
   
   .start-image {
-    width: 260px;
+    width: 600px;
+    height: 600px; 
     max-width: 100%;
     border-radius: 16px;
     margin-bottom: 2rem;
@@ -53,9 +54,9 @@
   }
   
   .start-button {
-    width: 260px;               /* 이미지와 정확히 맞춤 */
+    width: 600px;               /* 이미지와 정확히 맞춤 */
     padding: 0.8rem 1rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     background-color: #ff6699;
     color: white;
     border: none;
