@@ -67,10 +67,13 @@ body, html, #root {
 }
 
 .landing-image {
-  width: 400px;
-  max-width: 300%;
+  width: 600px;          /* ✅ 고정 너비 */
+  height: 600px;         /* ✅ 고정 높이 */
+  max-width: 100%;       /* ✅ 모바일 대응 */
   margin-bottom: 1rem;
   animation: fadeIn 2s ease-in-out;
+  border-radius: 16px;   /* 선택사항: 둥글게 */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* 선택사항: 그림자 효과 */
 }
 
 @keyframes fadeIn {
