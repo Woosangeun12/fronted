@@ -29,20 +29,25 @@
     margin-bottom: 2rem;
   }
 
-  /* 텍스트 오버레이 */
-.start-overlay-text {
+  .start-overlay-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3rem;
+    width: 100%;                     /* ✅ 부모(.start-image-wrapper)의 너비를 꽉 채움 */
+    max-width: 600px;                /* ✅ 이미지 너비와 동일하게 제한 */
+    padding: 0 1rem;                 /* ✅ 글자 잘림 방지용 여백 */
+    font-size: 1.1rem;
     font-weight: bold;
     color: #fff;
+    text-align: center;             /* ✅ 가운데 정렬 */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     animation: fadeInText 2s ease forwards;
     opacity: 0;
-    white-space: nowrap;
+    box-sizing: border-box;         /* ✅ padding 포함한 너비 처리 */
+    white-space: normal;            /* ✅ 줄바꿈 허용 */
   }
+  
   
   .start-image {
     width: 600px;
