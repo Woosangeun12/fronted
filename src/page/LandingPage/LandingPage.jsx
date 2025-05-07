@@ -6,6 +6,7 @@ import pxArt from "../../assets/pxArt-3_5.png";
 
 const LandingPage = () => {
   const [nickname, setNickname] = useState('');
+  const [showNotice, setShowNotice] = useState(true); 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -32,10 +33,15 @@ const LandingPage = () => {
     }
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => setShowNotice(false), 4000); // ✅ 4초 후 사라짐
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="landing-container">
       <img src={pxArt} alt="달과 구름" className="landing-image" />
-      
+
        {/* ✅ 멘트 */}
        {showNotice && (
         <p className="landing-notice">
