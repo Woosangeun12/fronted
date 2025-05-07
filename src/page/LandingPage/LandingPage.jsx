@@ -35,6 +35,14 @@ const LandingPage = () => {
   return (
     <div className="landing-container">
       <img src={pxArt} alt="달과 구름" className="landing-image" />
+      
+       {/* ✅ 멘트 */}
+       {showNotice && (
+        <p className="landing-notice">
+          해당 닉네임은 일회성으로 사용되며, 개인정보는 저장되지 않습니다.
+        </p>
+      )}
+
       <form onSubmit={handleSubmit} className="landing-form">
         <input
           type="text"

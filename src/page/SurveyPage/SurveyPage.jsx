@@ -182,14 +182,14 @@ const SurveyPage = () => {
             <div className="feeling-buttons">
               <button onClick={() => handleOriginSelect("한국")}>🇰🇷 한국 영화</button>
               <button onClick={() => handleOriginSelect("동아시아")}>🌏 동아시아 영화<br /><small>(일본, 대만, 중국 등)</small></button>
-              <button onClick={() => handleOriginSelect("서구")}>🎬 서구권 영화<br /><small>(미국, 유럽 등)</small></button>
-              <button onClick={() => handleOriginSelect("기타")}>🏆 기타 국가<br /><small>(인도, 남미, 중동 등)</small></button>
+              <button onClick={() => handleOriginSelect("서구")}>🎬 서구권 영화<br /><small>(미국, 영국 등)</small></button>
+              <button onClick={() => handleOriginSelect("기타")}>🏆 기타 국가<br /><small>(유럽, 인도 등)</small></button>
             </div>
           </>
         )}
         {step === 6 && (
           <>
-            <h3>지금 가장 듣고 싶은 말은 어떤 거야?</h3>
+            <h3>지금 당신에게 가장 필요한 건 어떤 말인가요?</h3>
             <div className="feeling-buttons">
               <button onClick={() => handleMindSelect("위로")}>💬 위로</button>
               <button onClick={() => handleMindSelect("동기부여")}>🔥 동기부여</button>
