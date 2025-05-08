@@ -5,22 +5,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   box-sizing: border-box;
 }
 
 .review-title {
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 2rem;
   color: #333;
+  text-align: center;
 }
 
 .review-card {
   background-color: #fffaf0;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 1rem;
+  padding: 1.5rem;
   width: 100%;
   max-width: 480px;
   text-align: center;
@@ -28,21 +29,23 @@
 }
 
 .review-image {
-  width: 160px;
+  width: 180px;
   border-radius: 12px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .review-info {
-  font-size: 14px;
+  font-size: 1.1rem;  /* 기존 14px → 약 17.6px */
   color: #444;
   text-align: left;
+  line-height: 1.6;
 }
 
 .summary {
   font-style: italic;
   color: #666;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
+  font-size: 1rem;
 }
 
 .review-form {
@@ -55,9 +58,9 @@
 
 .review-textarea-label textarea {
   width: 100%;
-  padding: 0.75rem;
-  font-size: 14px;
-  border-radius: 8px;
+  padding: 1rem;
+  font-size: 16px;
+  border-radius: 10px;
   border: 1px solid #ccc;
   resize: none;
   margin-top: 0.25rem;
@@ -81,13 +84,16 @@
 
 .button-group {
   display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+  margin-top: 2rem;
 }
 
 .submit-btn,
 .skip-btn {
-  padding: 0.5rem 1rem;
+  padding: 1.1rem 1.6rem;
+  font-size: 1.2rem;
   border-radius: 8px;
   border: none;
   cursor: pointer;

@@ -44,13 +44,6 @@ export default function ReviewPage() {
         >
           리뷰 작성하기
         </button>
-        <button
-          type="button"
-          className="skip-btn"
-          onClick={() => navigate("/quote")}
-        >
-          마음 한조각으로 가기
-        </button>
       </div>
     </div>
   );
