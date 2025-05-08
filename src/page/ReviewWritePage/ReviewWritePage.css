@@ -1,104 +1,113 @@
-/* ReviewWritePage.css */
-
 .review-write-container {
-    width: 100vw;
-    min-height: 100vh;
-    background-color: #fffbe6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3rem 1rem;
-    box-sizing: border-box;
-  }
-  
-  .review-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    color: #333;
-  }
-  
-  .review-form {
-    width: 100%;
-    max-width: 500px;
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .star-rating {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    gap: 0.5rem;
-  }
-  
-  .star-rating input {
-    display: none;
-  }
-  
-  .star-rating label {
-    font-size: 1.5rem;
-    color: #ccc;
-    cursor: pointer;
-  }
-  
-  .star-rating input:checked ~ label,
-  .star-rating input:hover ~ label {
-    color: gold;
-  }
-  
-  .review-textarea-label {
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
-    color: #444;
-  }
-  
-  textarea {
-    margin-top: 0.5rem;
-    padding: 1rem;
-    font-size: 1rem;
-    resize: none;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-  
-  .char-count {
-    text-align: right;
-    font-size: 0.875rem;
-    color: #666;
-    margin-top: 0.3rem;
-  }
-  
-  .button-group {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  
-  .submit-btn,
-  .skip-btn {
-    flex: 1;
-    padding: 0.75rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .submit-btn {
-    background-color: #ffb347;
-    color: #fff;
-  }
-  
-  .skip-btn {
-    background-color: #ddd;
-    color: #333;
-  }
-  
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #fffbe6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.review-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  color: #333;
+  text-align: center;
+}
+
+/* ✅ 폼 전체 박스 키움 */
+.review-form {
+  width: 100%;
+  max-width: 700px;
+  background-color: #ffffff;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.star-rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* 왼쪽부터 채워지게 설정 */
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: gold;
+}
+
+
+.review-textarea-label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: #444;
+  font-size: 1.2rem;
+}
+
+/* ✅ textarea 확장 */
+textarea {
+  margin-top: 0.75rem;
+  padding: 1.25rem;
+  font-size: 1.2rem;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: 200px;
+}
+
+.char-count {
+  text-align: right;
+  font-size: 1rem;
+  color: #666;
+  margin-top: 0.3rem;
+}
+
+/* ✅ 버튼 그룹 재정렬 */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* ✅ 버튼 키우기 */
+.submit-btn,
+.skip-btn {
+  flex: 1 1 48%;
+  padding: 1.2rem;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit-btn {
+  background-color: #ffb347;
+  color: white;
+}
+
+.skip-btn {
+  background-color: #ddd;
+  color: #333;
+}
