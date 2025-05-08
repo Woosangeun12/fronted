@@ -84,7 +84,6 @@ textarea {
 }
 .button-group {
   display: flex;
-  justify-content: space-between;
   gap: 1rem;
   width: 100%;
   max-width: 700px;
@@ -92,13 +91,20 @@ textarea {
 
 .submit-btn,
 .skip-btn {
-  width: 48%; /* ✅ 반반 고정 */
-  padding: 1.2rem;
+  flex: 1;
+  display: flex;                    /* ✅ 내부 중앙 정렬 */
+  justify-content: center;         /* ✅ 수평 정렬 */
+  align-items: center;             /* ✅ 수직 정렬 */
+  min-height: 56px;                /* ✅ 동일 높이 강제 */
   font-size: 1.3rem;
+  font-weight: bold;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  font-weight: bold;
+  line-height: 1.2;                /* ✅ 텍스트 높이 정돈 */
+  padding: 0 1rem;                 /* ✅ 좌우 padding만 */
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .submit-btn {
