@@ -10,15 +10,16 @@
   box-sizing: border-box;
 }
 
-/* 타이틀 */
+/* 🎬 타이틀 */
 .title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  color: #333;
+  font-size: 2.2rem;       /* 💡 더 크고 강조 */
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: #222;
+  text-align: center;
 }
 
-/* 영화 리스트 – 세로 정렬 */
+/* 영화 리스트 */
 .movie-grid {
   display: flex;
   flex-direction: column;
@@ -27,12 +28,12 @@
   max-width: 500px;
 }
 
-/* 감성 카드 스타일 */
+/* 감성 카드 */
 .movie-card {
   background-color: #fffaf0;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 1rem;
+  padding: 1.2rem;
   cursor: pointer;
   transition: transform 0.2s ease;
   width: 100%;
@@ -48,22 +49,22 @@
   width: 100%;
   height: auto;
   border-radius: 12px;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .movie-title {
-  font-size: 1.2rem;
+  font-size: 1.4rem;      /* 💡 기존보다 큼 */
   font-weight: bold;
   color: #222;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .movie-info {
   color: #666;
-  font-size: 0.95rem;
+  font-size: 1.05rem;     /* 💡 더 읽기 쉽게 */
 }
 
-/* 영화 상세 모달 */
+/* 모달 배경 */
 .fullscreen-overlay {
   position: fixed;
   inset: 0;
@@ -75,11 +76,12 @@
   z-index: 999;
 }
 
+/* 모달 본문 */
 .fullscreen-content {
   background-color: #fffaf0;
   border-radius: 16px;
-  width: 95vw;              /* ✅ 기존보다 넓게 */
-  max-width: 700px;         /* ✅ 기존 500px보다 넓힘 */
+  width: 95vw;
+  max-width: 700px;
   overflow-y: auto;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -120,29 +122,29 @@
 
 .modal-overlay-text h2 {
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.6rem;    /* 💡 큼직하게 */
 }
 
 .modal-overlay-text p {
   margin: 0.4rem 0 0;
-  font-size: 0.9rem;
-  opacity: 0.85;
+  font-size: 1.05rem;
+  opacity: 0.9;
 }
 
-
-/* 텍스트 영역 */
+/* 텍스트 정보 */
 .modal-movie-info {
   padding: 2rem;
   color: #333;
+  font-size: 1.1rem;     /* 💡 전체 폰트 업 */
 }
 
 .modal-title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
 }
 
 .modal-subinfo {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: #666;
   margin-bottom: 1rem;
 }
@@ -151,46 +153,27 @@
 .modal-summary-box {
   background-color: #fff;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1.2rem;
   margin-top: 1rem;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 1.05rem;
+  line-height: 1.6;
   border: 1px solid #eee;
-  max-height: 180px;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 /* 선택 버튼 */
 .select-button {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   width: 100%;
-  padding: 0.9rem;
-  font-size: 1rem;
+  padding: 1.1rem;
+  font-size: 1.2rem;    /* 💡 확실히 더 큼 */
   background-color: #ff99aa;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-}
-
-.select-button:hover {
-  background-color: #ff6f91;
-}
-
-.fullscreen-info {
-  text-align: left;
-  width: 100%;
-  color: #333;
-}
-
-.fullscreen-info h2 {
-  margin: 0 0 1rem;
-  font-size: 1.5rem;
-}
-
-.fullscreen-info p {
-  margin: 0.4rem 0;
-  line-height: 1.5;
 }
 
 .select-button:hover {

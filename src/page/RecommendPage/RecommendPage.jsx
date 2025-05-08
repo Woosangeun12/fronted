@@ -58,7 +58,7 @@ export default function RecommendPage() {
   return (
     <>
       <div className="recommend-container">
-        <h1 className="title">🎬 당신을 위한 영화 추천</h1>
+        <h1 className="title">🎬 당신의 감정에 어울리는 영화는?</h1>
   
         <div className="movie-grid">
           {movieList.map((movie, index) => (
