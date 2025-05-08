@@ -55,19 +55,19 @@ export default function ReviewWritePage() {
       <form className="review-form" onSubmit={handleSubmit}>
         <label>⭐ 평점 선택</label>
         <div className="star-rating">
-        {[1, 2, 3, 4, 5].map((value) => (
-          <React.Fragment key={value}>
-            <label htmlFor={`star${value}`} title={`${value}점`} />
-            <input
-              type="radio"
-              id={`star${value}`}
-              name="rating"
-              value={value}
-              checked={rating === value}
-              onChange={() => setRating(value)}
-            />
-          </React.Fragment>
-        ))}
+          {[1, 2, 3, 4, 5].map((value) => (
+            <React.Fragment key={value}>
+              <input
+                type="radio"
+                id={`star${value}`}
+                name="rating"
+                value={value}
+                checked={rating === value}
+                onChange={() => setRating(value)}
+              />
+              <label htmlFor={`star${value}`} title={`${value}점`}>★</label>
+            </React.Fragment>
+          ))}
         </div>
 
         <label className="review-textarea-label">
