@@ -53,7 +53,7 @@ export default function ReviewWritePage() {
       <h1 className="review-title">리뷰 작성</h1>
 
       <form className="review-form" onSubmit={handleSubmit}>
-        <label>⭐ 평점 선택</label>
+        <label>평점 선택</label>
         <div className="star-rating">
           {[5,4,3,2,1].map((value) => (
             <React.Fragment key={value}>
@@ -77,7 +77,7 @@ export default function ReviewWritePage() {
             onChange={(e) => setReview(e.target.value)}
             rows={5}
             maxLength={200}
-            placeholder="이 영화에 대한 당신의 생각을 남겨주세요 (최대 200자)"
+            placeholder="저희 말랑 사이트, 어땠나요? 당신의 생각을 들려주세요.  (최대 200자)"
           />
           <div className="char-count">{review.length}/200자</div>
         </label>
