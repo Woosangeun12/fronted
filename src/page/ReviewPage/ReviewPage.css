@@ -5,48 +5,54 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem 1rem;
+  padding: 3rem 1.5rem; /* ✅ 위쪽 패딩 증가 */
   box-sizing: border-box;
 }
 
 .review-title {
-  font-size: 2rem;
+  font-size: 2.4rem;               /* ✅ 시원한 제목 크기 */
   font-weight: 700;
   margin-bottom: 2rem;
-  color: #333;
+  color: #222;
   text-align: center;
 }
 
 .review-card {
   background-color: #fffaf0;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 1.5rem;
+  border-radius: 24px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+  padding: 3rem 2rem;
   width: 100%;
-  max-width: 480px;
+  max-width: 700px;        /* ✅ 아주 큼 */
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  box-sizing: border-box;
 }
 
 .review-image {
-  width: 180px;
-  border-radius: 12px;
-  margin-bottom: 1.2rem;
+  width: 100%;
+  max-width: 600px;         /* ✅ LandingPage처럼! */
+  height: auto;
+  border-radius: 16px;
+  margin-bottom: 2rem;
 }
 
+
 .review-info {
-  font-size: 1.1rem;  /* 기존 14px → 약 17.6px */
-  color: #444;
+  font-size: 1.5rem;
+  color: #222;
   text-align: left;
-  line-height: 1.6;
+  line-height: 2.1;
 }
 
 .summary {
   font-style: italic;
-  color: #666;
-  margin-top: 0.8rem;
-  font-size: 1rem;
+  color: #555;
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  line-height: 2;
 }
+
 
 .review-form {
   width: 100%;
@@ -90,19 +96,17 @@
   margin-top: 2rem;
 }
 
-.submit-btn,
-.skip-btn {
-  padding: 1.1rem 1.6rem;
-  font-size: 1.2rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-}
-
 .submit-btn {
+  padding: 1.4rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   background-color: #ffcd63;
   color: #333;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 2rem;
+  cursor: pointer;
 }
 
 .skip-btn {
