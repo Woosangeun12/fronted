@@ -79,9 +79,9 @@
 /* 모달 본문 */
 .fullscreen-content {
   background-color: #fffaf0;
-  border-radius: 16px;
+  border-radius: 18px;
   width: 95vw;
-  max-width: 700px;
+  max-width: 800px;
   overflow-y: auto;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -90,9 +90,9 @@
 
 .modal-image-wrapper {
   position: relative;
-  height: 400px;
+  height: 420px;
   overflow: hidden;
-  border-radius: 16px 16px 0 0;
+  border-radius: 18px 18px 0 0;
 }
 
 .modal-movie-image {
@@ -122,20 +122,26 @@
 
 .modal-overlay-text h2 {
   margin: 0;
-  font-size: 1.6rem;    /* 💡 큼직하게 */
+  font-size: 1.9rem;    /* 💡 큼직하게 */
 }
 
 .modal-overlay-text p {
   margin: 0.7rem 0 0;
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   opacity: 0.9;
 }
 
 /* 텍스트 정보 */
 .modal-movie-info {
-  padding: 2rem;
+  padding: 2.2rem;
   color: #333;
-  font-size: 1.2rem;     /* 💡 전체 폰트 업 */
+  font-size: 1.3rem;     /* 💡 전체 폰트 업 */
+  line-height: 1.7;
+}
+
+.modal-movie-info p {
+  font-size: 1.25rem;
+  margin: 0.8rem 0;
 }
 
 .modal-title {
@@ -152,13 +158,13 @@
 /* 줄거리 박스 */
 .modal-summary-box {
   background-color: #fff;
-  border-radius: 10px;
-  padding: 1.2rem;
-  margin-top: 1rem;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
   font-size: 1.2rem;
   line-height: 1.7;
   border: 1px solid #eee;
-  max-height: 200px;
+  max-height: 240px;
   overflow-y: auto;
 }
 
@@ -166,8 +172,8 @@
 .select-button {
   margin-top: 2rem;
   width: 100%;
-  padding: 1.1rem;
-  font-size: 1.25rem;    /* 💡 확실히 더 큼 */
+  padding: 1.2rem;
+  font-size: 1.4rem;    /* 💡 확실히 더 큼 */
   background-color: #ff99aa;
   color: white;
   border: none;
