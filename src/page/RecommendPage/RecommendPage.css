@@ -53,15 +53,15 @@
 }
 
 .movie-title {
-  font-size: 1.4rem;      /* 💡 기존보다 큼 */
-  font-weight: bold;
-  color: #222;
+  font-size: 1.5rem;    
+  font-weight: 700;
+  color: #111;
   margin-bottom: 0.5rem;
 }
 
 .movie-info {
   color: #666;
-  font-size: 1.05rem;     /* 💡 더 읽기 쉽게 */
+  font-size: 1.2rem;     /* 💡 더 읽기 쉽게 */
 }
 
 /* 모달 배경 */
@@ -126,8 +126,8 @@
 }
 
 .modal-overlay-text p {
-  margin: 0.4rem 0 0;
-  font-size: 1.05rem;
+  margin: 0.7rem 0 0;
+  font-size: 1.15rem;
   opacity: 0.9;
 }
 
@@ -135,7 +135,7 @@
 .modal-movie-info {
   padding: 2rem;
   color: #333;
-  font-size: 1.1rem;     /* 💡 전체 폰트 업 */
+  font-size: 1.2rem;     /* 💡 전체 폰트 업 */
 }
 
 .modal-title {
@@ -155,8 +155,8 @@
   border-radius: 10px;
   padding: 1.2rem;
   margin-top: 1rem;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  line-height: 1.7;
   border: 1px solid #eee;
   max-height: 200px;
   overflow-y: auto;
@@ -167,7 +167,7 @@
   margin-top: 2rem;
   width: 100%;
   padding: 1.1rem;
-  font-size: 1.2rem;    /* 💡 확실히 더 큼 */
+  font-size: 1.25rem;    /* 💡 확실히 더 큼 */
   background-color: #ff99aa;
   color: white;
   border: none;
