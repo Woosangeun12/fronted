@@ -43,10 +43,14 @@
 }
 
 .star-rating label {
-  font-size: 2rem;
+  font-size: 2.4rem;
   color: #ccc;
   cursor: pointer;
   transition: color 0.2s ease;
+}
+
+.star-rating label:hover {
+  transform: scale(1.2);
 }
 
 /* 왼쪽부터 채우기 위해 label:has(~input:checked)는 지원 안되므로, checked 직접 매칭 */
