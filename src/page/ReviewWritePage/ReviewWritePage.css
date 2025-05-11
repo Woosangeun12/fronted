@@ -10,9 +10,9 @@
 }
 
 .review-title {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   font-weight: bold;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   color: #333;
   text-align: center;
 }
@@ -23,12 +23,12 @@
   max-width: 800px;
   height: 1400px;
   background-color: #ffffff;
-  padding: 3rem 2rem;
+  padding: 4rem 2.5rem;
   border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 3rem;
   box-sizing: border-box;
 }
 
@@ -36,12 +36,12 @@
 .star-rating {
   display: flex;
   justify-content: center;  /* ✅ 중앙 정렬 */
-  gap: 0.8rem;
-  margin-bottom: 1rem;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 .star-rating label {
-  font-size: 3rem;           /* ✅ 크기 키움 */
+  font-size: 6rem;           /* ✅ 크기 키움 */
   color: #ccc;
   cursor: pointer;
   transition: transform 0.2s ease, color 0.2s ease;
@@ -67,32 +67,32 @@
   flex-direction: column;
   font-weight: bold;
   color: #444;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 /* ✅ textarea 확장 */
 textarea {
-  margin-top: 0.75rem;
-  padding: 1.25rem;
-  font-size: 1.2rem;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  font-size: 1.4rem;
   resize: none;
   border: 1px solid #ccc;
-  border-radius: 10px;
-  height: 200px;
+  border-radius: 12px;
+  height: 300px;
 }
 
 .char-count {
   text-align: right;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #666;
-  margin-top: 0.3rem;
+  margin-top: 0.5rem;
 }
 .button-group {
   display: flex;
   width: 100%;
   max-width: 700px;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 1.5rem;
+  margin-top: 3rem;
 }
 
 .submit-btn,
@@ -101,14 +101,14 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  padding: 1.2rem 0;
+  padding: 1.5rem 0;
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
   cursor: pointer;
-  line-height: 1.2;
-  min-height: 56px; /* ✅ 강제 고정 */
+  line-height: 1.4;
+  min-height: 72px; /* ✅ 강제 고정 */
   box-sizing: border-box;
   text-align: center;
 }

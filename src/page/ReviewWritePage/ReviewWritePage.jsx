@@ -55,7 +55,7 @@ export default function ReviewWritePage() {
       <form className="review-form" onSubmit={handleSubmit}>
         <label>평점 선택</label>
         <div className="star-rating">
-          {[5,4,3,2,1].map((value) => (
+          {[1,2,3,4,5].map((value) => (
             <React.Fragment key={value}>
               <input
                 type="radio"
