@@ -6,47 +6,54 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem;
+  padding: 3rem 1.5rem;
   box-sizing: border-box;
 }
 
 .quote-title {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   color: #333;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .quote-card {
   background-color: #fffaf0;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  padding: 3rem 2rem;
   text-align: center;
-  max-width: 420px;
+  max-width: 720px;
   width: 100%;
+  min-height: 720px; /* ✅ 폼 전체 크기 고정 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  box-sizing: border-box;
 }
 
 .quote-image {
-  width: 200px;
-  border-radius: 12px;
-  margin-bottom: 1.2rem;
+  width: 240px;              /* ✅ 이미지 더 키움 */
+  border-radius: 16px;
+  margin-bottom: 1.6rem;
 }
 
 .quote-movie-title {
-  font-size: 1.2rem;
+  font-size: 1.6rem;         /* ✅ 제목 폰트 키움 */
   color: #444;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .quote-text {
-  font-size: 1.1rem;
+  font-size: 1.3rem;         /* ✅ 텍스트 크기 키움 */
   color: #555;
   font-style: italic;
+  line-height: 1.6;
 }
 
-/* ✨ Fade-in animation */
+/* 애니메이션 그대로 유지 */
 .fade-in {
   opacity: 0;
   animation: fadeIn 2s ease-in forwards;
@@ -58,7 +65,6 @@
   }
 }
 
-/* 🌙 다크모드 최소 대응 */
 @media (prefers-color-scheme: dark) {
   .quote-text,
   .quote-movie-title,
