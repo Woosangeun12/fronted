@@ -103,12 +103,12 @@ textarea {
   align-items: center;
   font-size: 1.6rem;
   font-weight: bold;
-  padding: 1.5rem 0;
+  height: 72px;            
+  padding: 0;                
   border: none;
   border-radius: 14px;
   cursor: pointer;
   line-height: 1.4;
-  min-height: 72px; /* ✅ 강제 고정 */
   box-sizing: border-box;
   text-align: center;
 }
