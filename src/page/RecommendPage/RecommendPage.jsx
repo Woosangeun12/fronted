@@ -58,7 +58,7 @@ export default function RecommendPage() {
   return (
     <>
       <div className="recommend-container">
-        <h1 className="title">🎬 당신의 감정에 어울리는 영화는?</h1>
+        <h1 className="title">🎬 당신의 오늘 어떤 영화와 닮아 있을까요</h1>
   
         <div className="movie-grid">
           {movieList.map((movie, index) => (
@@ -69,7 +69,7 @@ export default function RecommendPage() {
             >
               <img src={movie.image} alt={movie.title} className="movie-image" />
               <h2 className="movie-title">{movie.title}</h2>
-              <p className="movie-info">{movie.year} · {movie.hour}</p>
+              <p className="movie-info">{movie.year} · {movie.hour}분</p>
             </div>
           ))}
         </div>
@@ -88,7 +88,7 @@ export default function RecommendPage() {
               <div className="modal-image-overlay">
                 <div className="modal-overlay-text">
                   <h2>{selectedMovie.title}</h2>
-                  <p>{selectedMovie.year} · {selectedMovie.genre} · {selectedMovie.hour}</p>
+                  <p>{selectedMovie.year} · {selectedMovie.genre} · {selectedMovie.hour}분</p>
                 </div>
               </div>
             </div>

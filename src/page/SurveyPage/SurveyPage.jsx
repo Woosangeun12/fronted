@@ -151,13 +151,19 @@ const SurveyPage = () => {
         {step === 3 && (
           <>
             <h3>어떤 장르의 영화를 좋아하나요?</h3>
-            <div className="feeling-buttons">
-              <button onClick={() => handleGenreSelect("SF")}>🚀 SF</button>
-              <button onClick={() => handleGenreSelect("로맨스")}>💕 로맨스</button>
-              <button onClick={() => handleGenreSelect("코미디")}>😂 코미디</button>
-              <button onClick={() => handleGenreSelect("스릴러")}>🔪 스릴러</button>
-              <button onClick={() => handleGenreSelect("판타지")}>🧙‍♂️ 판타지</button>
-              <button onClick={() => handleGenreSelect("애니메이션")}>🎨 애니메이션</button>
+            <div className="genre-button-group">
+              <div className="genre-row">
+                <button onClick={() => handleGenreSelect("로맨스")}>💕 로맨스</button>
+                <button onClick={() => handleGenreSelect("코미디")}>😂 코미디</button>
+              </div>
+              <div className="genre-row">
+                <button onClick={() => handleGenreSelect("애니메이션")}>🎨 애니메이션</button>
+                <button onClick={() => handleGenreSelect("드라마")}>🎭 드라마</button>
+              </div>
+              <div className="genre-row">
+                <button onClick={() => handleGenreSelect("액션")}>💥 액션</button>
+                <button onClick={() => handleGenreSelect("스릴러")}>🔪 스릴러</button>
+              </div>
             </div>
           </>
         )}
@@ -165,13 +171,19 @@ const SurveyPage = () => {
         {step === 4 && (
           <>
             <h3>피하고 싶은 영화 장르가 있다면 알려주세요</h3>
-            <div className="feeling-buttons">
-              <button onClick={() => handleAvoidSelect("SF")}>🚀 SF</button>
-              <button onClick={() => handleAvoidSelect("로맨스")}>💕 로맨스</button>
-              <button onClick={() => handleAvoidSelect("코미디")}>😂 코미디</button>
-              <button onClick={() => handleAvoidSelect("스릴러")}>🔪 스릴러</button>
-              <button onClick={() => handleAvoidSelect("판타지")}>🧙‍♂️ 판타지</button>
-              <button onClick={() => handleAvoidSelect("애니메이션")}>🎨 애니메이션</button>
+            <div className="genre-button-group">
+              <div className="genre-row">
+                <button onClick={() => handleAvoidSelect("로맨스")}>💕 로맨스</button>
+                <button onClick={() => handleAvoidSelect("코미디")}>😂 코미디</button>
+              </div>
+              <div className="genre-row">
+                <button onClick={() => handleAvoidSelect("애니메이션")}>🎨 애니메이션</button>
+                <button onClick={() => handleAvoidSelect("드라마")}>🎭 드라마</button>
+              </div>
+              <div className="genre-row">
+                <button onClick={() => handleAvoidSelect("액션")}>💥 액션</button>
+                <button onClick={() => handleAvoidSelect("스릴러")}>🔪 스릴러</button>
+              </div>
             </div>
           </>
         )}
