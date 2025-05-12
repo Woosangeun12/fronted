@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Ownglyph_meetme-Rg';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .review-container {
   width: 100vw;
   min-height: 100vh;
@@ -15,6 +22,7 @@
   margin-bottom: 2rem;
   color: #222;
   text-align: center;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
 .review-card {
@@ -43,6 +51,7 @@
   color: #222;
   text-align: left;
   line-height: 2.1;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
 .summary {
@@ -51,6 +60,7 @@
   font-size: 1.3rem;
   margin-top: 1.5rem;
   line-height: 2;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
 
@@ -71,7 +81,7 @@
   resize: none;
   margin-top: 0.25rem;
   box-sizing: border-box;
-
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
   background-color: #fff;     /* 배경은 밝게 */
   color: #333;                /* 글자색은 어둡게 */
 }
@@ -102,7 +112,7 @@
   padding: 1.6rem 2rem;      /* ✅ 터치 여유 + 비주얼 확대 */
   font-size: 1.6rem;         /* ✅ 가독성 있는 큰 텍스트 */
   font-weight: bold;
-  background-color: #ffcd63;
+  background-color: #ff4d88;
   color: #333;
   border: none;
   border-radius: 16px;
@@ -110,10 +120,11 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   cursor: pointer;
   transition: background-color 0.2s ease;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
 .submit-btn:hover {
-  background-color: #ffc133;
+  background-color: #ff4d88;
 }
 
 @media (prefers-color-scheme: dark) {

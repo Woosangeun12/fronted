@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Ownglyph_meetme-Rg';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .review-write-container {
   width: 100vw;
   min-height: 100vh;
@@ -10,11 +17,12 @@
 }
 
 .review-title {
-  font-size: 3.2rem;
+  font-size: 3.3rem;
   font-weight: bold;
   margin-bottom: 3rem;
   color: #333;
   text-align: center;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
 /* ✅ 폼 전체 박스 키움 */
@@ -32,53 +40,49 @@
   box-sizing: border-box;
 }
 
-/* ⭐ 별점: 크기 키우고 중앙 정렬 */
+/* ⭐ 별점: 새 방식 (유니코드 ★ 기준) */
 .star-rating {
   display: flex;
-  justify-content: center;  /* ✅ 중앙 정렬 */
-  gap: 1.2rem;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 4.5rem;
+  cursor: pointer;
+  user-select: none;
   margin-bottom: 2rem;
 }
 
-.star-rating label {
-  font-size: 6rem;           /* ✅ 크기 키움 */
-  color: #ccc;
-  cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
+.star {
+  color: #ccc; /* 비어 있는 별 */
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.star-rating label:hover {
+.star.filled {
+  color: gold; /* 채워진 별 */
+}
+
+.star:hover {
   transform: scale(1.2);
 }
-
-.star-rating input {
-  display: none;
-}
-
-.star-rating input:checked + label,
-.star-rating label:hover,
-.star-rating label:hover ~ label {
-  color: gold;
-}
-
 
 .review-textarea-label {
   display: flex;
   flex-direction: column;
   font-weight: bold;
   color: #444;
-  font-size: 1.4rem;
+  font-size: 2.2rem;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
 /* ✅ textarea 확장 */
 textarea {
   margin-top: 1rem;
   padding: 1.5rem;
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   resize: none;
   border: 1px solid #ccc;
   border-radius: 12px;
   height: 300px;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
 .char-count {
@@ -111,6 +115,9 @@ textarea {
   line-height: 1.4;
   box-sizing: border-box;
   text-align: center;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  white-space: nowrap;      
+  line-height: 1; 
 }
 
 .submit-btn {
