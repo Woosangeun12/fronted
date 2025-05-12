@@ -41,7 +41,7 @@ body, html, #root {
 .landing-input {
   width: 100%;
   padding: 1rem;         /* 더 크게 */
-  font-size: 1.2rem;     /* 글씨도 키움 */
+  font-size: 1.5rem;     /* 글씨도 키움 */
   border-radius: 12px;
   border: 1px solid #ccc;
   background-color: #fff; /* 흰색 고정 */
@@ -53,7 +53,7 @@ body, html, #root {
 .landing-button {
   width: 100%; 
   padding: 1rem;
-  font-size: 1.1rem;
+  font-size: 2.5rem;
   background-color: #ff6699;
   color: white;
   border: none;
@@ -67,8 +67,8 @@ body, html, #root {
 }
 
 .landing-image {
-  width: 600px;          /* ✅ 고정 너비 */
-  height: 600px;         /* ✅ 고정 높이 */
+  width: 700px;          /* ✅ 고정 너비 */
+  height: 750px;         /* ✅ 고정 높이 */
   max-width: 100%;       /* ✅ 모바일 대응 */
   margin-bottom: 1rem;
   animation: fadeIn 2s ease-in-out;
@@ -76,7 +76,7 @@ body, html, #root {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* 선택사항: 그림자 효과 */
 }
 .landing-notice {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #666;
   margin-top: 1rem;
   margin-bottom: -1rem;
