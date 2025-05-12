@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Ownglyph_meetme-Rg';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .quote-container {
   width: 100vw;
   min-height: 100vh;
@@ -15,6 +22,7 @@
   margin-bottom: 3rem;
   color: #222;
   text-align: center;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
 /* 💬 카드 전체 */
@@ -49,6 +57,7 @@
   font-weight: 700;
   color: #222;
   margin-bottom: 1rem;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
 /* 💬 메시지 */
@@ -60,6 +69,8 @@
   white-space: pre-wrap;
   padding: 0 1rem;
   max-width: 620px;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  font-style: normal;
 }
 
 /* ✨ Fade-in animation */

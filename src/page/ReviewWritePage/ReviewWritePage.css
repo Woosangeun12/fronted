@@ -40,6 +40,13 @@
   box-sizing: border-box;
 }
 
+textarea::placeholder {
+  font-size: 1.7rem;           /* ✅ 글자 키움 */
+  color: #555;                 /* ✅ 더 진하게 */
+  font-family: 'Ownglyph_meetme-Rg', sans-serif; /* ✅ 감성 폰트 적용 */
+}
+
+
 /* ⭐ 별점: 새 방식 (유니코드 ★ 기준) */
 .star-rating {
   display: flex;
@@ -130,4 +137,11 @@ textarea {
 .skip-btn {
   background-color: #ddd;
   color: #333;
+}
+.submit-btn span,
+.skip-btn span {
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1;
+  white-space: nowrap;
 }
