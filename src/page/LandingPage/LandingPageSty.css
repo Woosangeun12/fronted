@@ -1,7 +1,7 @@
 /* landingPage.css */
 @font-face {
-  font-family: '양진체';
-  src: url('https://fastly.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff') format('woff');
+  font-family: 'Ownglyph_meetme-Rg';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -43,15 +43,15 @@ body, html, #root {
   margin-top: 2rem;
 }
 
-/* 닉네임 입력창 */
 .landing-input {
   width: 100%;
-  padding: 1rem;         /* 더 크게 */
-  font-size: 1.5rem;     /* 글씨도 키움 */
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;  /* ✅ 폰트 적용 */
   border-radius: 12px;
   border: 1px solid #ccc;
-  background-color: #fff; /* 흰색 고정 */
-  color: #000;            /* 글씨는 검정 */
+  background-color: #fff;
+  color: #000;
   text-align: center;
 }
 
@@ -60,6 +60,7 @@ body, html, #root {
   width: 100%; 
   padding: 1rem;
   font-size: 2.5rem;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;  /* ✅ 폰트 적용 */
   background-color: #ff6699;
   color: white;
   border: none;
