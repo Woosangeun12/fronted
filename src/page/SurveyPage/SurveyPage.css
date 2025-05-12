@@ -80,3 +80,47 @@
   font-family: 'Ownglyph_meetme-Rg', sans-serif;      /* ✅ 폰트 적용 */
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);          /* ✅ 부드러운 그림자 */
 }
+/* 장르 버튼 묶음 (2개씩 나란히 정렬) */
+.genre-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+/* 각 버튼 행 */
+.genre-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* 장르 선택 버튼 */
+.genre-row button {
+  flex: 1;
+  padding: 1.8rem;
+  font-size: 2rem;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  border-radius: 24px;
+  background-color: #ff99aa;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.genre-row button:hover {
+  background-color: #ff6f91;
+}
+
+/* 버튼 안에 설명 텍스트가 있다면 (사용 안 해도 대비용) */
+.genre-row button small {
+  display: block;
+  font-size: 1.7rem;
+  opacity: 0.8;
+  margin-top: 0.6rem;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
