@@ -54,7 +54,7 @@ const LandingPage = () => {
           type="text"
           value={nickname}
           onChange={(e) => setNickname(e.target.value)}
-          placeholder="닉네임"
+          placeholder="닉네임을 입력해주세요"
           className="landing-input"
         />
         <button type="submit" className="landing-button">시작하기</button>
