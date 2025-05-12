@@ -109,39 +109,32 @@ textarea {
 .submit-btn,
 .skip-btn {
   flex: 1;
+  height: 72px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.6rem;
-  font-weight: bold;
-  height: 72px;            
-  padding: 0;                
+  padding: 0;
   border: none;
   border-radius: 14px;
   cursor: pointer;
-  line-height: 1.4;
   box-sizing: border-box;
-  text-align: center;
-  font-family: 'Ownglyph_meetme-Rg', sans-serif;
-  white-space: nowrap;      
-  line-height: 1; 
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.submit-btn {
   background-color: #ff4d88;
   color: white;
+  text-align: center;
+  overflow: hidden;
 }
 
 .skip-btn {
   background-color: #ddd;
   color: #333;
 }
-.submit-btn span,
-.skip-btn span {
+
+.btn-text {
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
   font-size: 1.6rem;
+  font-weight: bold;
   line-height: 1;
   white-space: nowrap;
+  vertical-align: middle;     /* ✅ 텍스트 정렬 안정화 */
+  display: inline-block;
 }
