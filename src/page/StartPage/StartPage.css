@@ -22,11 +22,14 @@
   /* 타이틀 문구 */
   .start-title {
     font-size: 1.8rem;
-    font-weight: bold;
+    font-family: 'Ownglyph_meetme-Rg', sans-serif;
+    font-weight: normal;
     color: #333;
     margin-bottom: 2rem;
     text-align: center;
     line-height: 1.4;
+    letter-spacing: -0.02em;
+    text-shadow: 0.5px 0.5px 0 #999;  /* ✅ 두꺼운 느낌 보완 */
   }
 
   .start-image-wrapper {
@@ -37,23 +40,24 @@
   }
 
   .start-overlay-text {
+    font-size: 2.3rem;
+    font-family: 'Ownglyph_meetme-Rg', sans-serif;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 0 #000;     /* ✅ 어두운 배경에 대비 */
+    letter-spacing: -0.02em;
+    animation: fadeInText 2s ease forwards;
+    opacity: 0;
+    white-space: normal;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    max-width: 700px;
+    width: 100%;
+    transform: translate(-50%, -50%);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;                     /* ✅ 부모(.start-image-wrapper)의 너비를 꽉 채움 */
-    max-width: 700px;                /* ✅ 이미지 너비와 동일하게 제한 */
-    padding: 0 1rem;                 /* ✅ 글자 잘림 방지용 여백 */
-    font-size: 1.6rem;
-    font-family: 'Ownglyph_meetme-Rg', sans-serif;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;             /* ✅ 가운데 정렬 */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    animation: fadeInText 2s ease forwards;
-    opacity: 0;
-    box-sizing: border-box;         /* ✅ padding 포함한 너비 처리 */
-    white-space: normal;            /* ✅ 줄바꿈 허용 */
   }
   
   
@@ -67,16 +71,18 @@
   }
   
   .start-button {
-    width: 700px;               /* 이미지와 정확히 맞춤 */
+    width: 700px;
     padding: 0.8rem 1rem;
-    font-size: 2.5rem;
+    font-size: 2.9rem;
     font-family: 'Ownglyph_meetme-Rg', sans-serif;
+    font-weight: normal;
     background-color: #ff6699;
     color: white;
     border: none;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.2s ease;
+    text-shadow: 0.5px 0.5px 0 #e55c8a; /* ✅ 입체감 + 두꺼운 느낌 */
   }
   
   .start-button:hover {
