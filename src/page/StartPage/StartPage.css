@@ -24,7 +24,7 @@
 
   .start-image-wrapper {
     position: relative;
-    width: 600px;
+    width: 650px;
     max-width: 100%;
     margin-bottom: 2rem;
   }
@@ -35,9 +35,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;                     /* ✅ 부모(.start-image-wrapper)의 너비를 꽉 채움 */
-    max-width: 600px;                /* ✅ 이미지 너비와 동일하게 제한 */
+    max-width: 650px;                /* ✅ 이미지 너비와 동일하게 제한 */
     padding: 0 1rem;                 /* ✅ 글자 잘림 방지용 여백 */
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: #fff;
     text-align: center;             /* ✅ 가운데 정렬 */
@@ -50,8 +50,8 @@
   
   
   .start-image {
-    width: 600px;
-    height: 600px; 
+    width: 650px;
+    height: 700px; 
     max-width: 100%;
     border-radius: 16px;
     margin-bottom: 2rem;
@@ -59,9 +59,9 @@
   }
   
   .start-button {
-    width: 600px;               /* 이미지와 정확히 맞춤 */
+    width: 650px;               /* 이미지와 정확히 맞춤 */
     padding: 0.8rem 1rem;
-    font-size: 2rem;
+    font-size: 2.3rem;
     background-color: #ff6699;
     color: white;
     border: none;

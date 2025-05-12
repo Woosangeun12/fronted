@@ -71,7 +71,7 @@ export default function QuotePage() {
           </>
         )}
         <p className="quote-text fade-in">
-          {loading ? "로딩 중..." : `"${quote}"`}
+          {loading ? "AI가 당신의 마음에 꼭 맞는 처방을 찾고 있어요" : `"${quote}"`}
         </p>
       </div>
     </div>
