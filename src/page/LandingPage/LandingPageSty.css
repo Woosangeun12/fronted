@@ -44,7 +44,8 @@ body, html, #root {
 }
 
 .landing-input {
-  width: 100%;
+  width: 600px;  
+  max-width: 100%;
   padding: 1rem;
   font-size: 1.5rem;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;  /* ✅ 폰트 적용 */
@@ -57,7 +58,8 @@ body, html, #root {
 
 /* 시작 버튼 */
 .landing-button {
-  width: 100%; 
+  width: 600px;  
+  max-width: 100%; 
   padding: 1rem;
   font-size: 2.5rem;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;  /* ✅ 폰트 적용 */
