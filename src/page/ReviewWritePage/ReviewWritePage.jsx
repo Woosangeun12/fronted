@@ -7,9 +7,8 @@ export default function ReviewWritePage() {
   const navigate = useNavigate();
   const location = useLocation();
   const movieId = location.state?.movieId; // ✅ movieId 받기
-
+  const [rating, setRating] = useState(0); 
   const [review, setReview] = useState("");
-  const [rating, setRating] = useState(5);
   const visitorId = sessionStorage.getItem("visitorId");
 
   useEffect(() => {

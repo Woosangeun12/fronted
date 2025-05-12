@@ -118,10 +118,12 @@ textarea {
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
   white-space: nowrap;      
   line-height: 1; 
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .submit-btn {
-  background-color: #ffb347;
+  background-color: #ff4d88;
   color: white;
 }
 
