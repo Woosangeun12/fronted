@@ -1,4 +1,12 @@
-/* 전체 배경 + 중앙 정렬 */
+
+@font-face {
+  font-family: 'Ownglyph_meetme-Rg';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 .survey-container {
   width: 100vw;
   height: 100vh;
@@ -22,14 +30,18 @@
 
 /* 텍스트 */
 .survey-box h2 {
-  font-size: 2.4rem;   /* 1.2rem → 2.4rem */
-  margin-bottom: 2rem; /* 1rem → 2rem */
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
   color: #222;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;      /* ✅ 폰트 적용 */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);           /* ✅ 그림자 효과 */
 }
 
 .survey-box h3 {
-  font-size: 2rem;     /* 1rem → 2rem */
+  font-size: 2rem;
   color: #333;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;      /* ✅ 폰트 적용 */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);           /* ✅ 그림자 효과 */
 }
 
 /* 버튼 묶음 */
@@ -42,23 +54,29 @@
 
 /* 버튼 스타일 */
 .feeling-buttons button {
-  padding: 1.8rem;     /* 0.9rem → 1.8rem */
-  font-size: 2rem;     /* 1rem → 2rem */
-  border-radius: 24px; /* 12px → 24px */
+  padding: 1.8rem;
+  font-size: 2rem;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;      /* ✅ 폰트 적용 */
+  border-radius: 24px;
   background-color: #ff99aa;
   color: white;
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);           /* ✅ 버튼 텍스트 그림자 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);           /* ✅ 박스 그림자 추가 */
 }
 
 .feeling-buttons button:hover {
   background-color: #ff6f91;
 }
 
+/* 버튼 설명 텍스트 */
 .feeling-buttons button small {
   display: block;
-  font-size: 1.7rem;   /* 0.85rem → 1.7rem */
+  font-size: 1.7rem;
   opacity: 0.8;
-  margin-top: 0.6rem;  /* 0.3rem → 0.6rem */
+  margin-top: 0.6rem;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;      /* ✅ 폰트 적용 */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);          /* ✅ 부드러운 그림자 */
 }
