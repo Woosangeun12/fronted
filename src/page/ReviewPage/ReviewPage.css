@@ -47,7 +47,7 @@
 
 
 .review-info {
-  font-size: 1.5rem;
+  font-size: 2.0rem;
   color: #222;
   text-align: left;
   line-height: 2.1;
@@ -57,7 +57,7 @@
 .summary {
   font-style: italic;
   color: #555;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-top: 1.5rem;
   line-height: 2;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
@@ -109,8 +109,8 @@
 .submit-btn {
   width: 100%;
   max-width: 700px;          /* ✅ 카드 폭과 맞춤 */
-  padding: 1.6rem 2rem;      /* ✅ 터치 여유 + 비주얼 확대 */
-  font-size: 1.6rem;         /* ✅ 가독성 있는 큰 텍스트 */
+  padding: 2rem 2.5rem;      /* ✅ 터치 여유 + 비주얼 확대 */
+  font-size: 2rem;         /* ✅ 가독성 있는 큰 텍스트 */
   font-weight: bold;
   background-color: #ff4d88;
   color: #333;
