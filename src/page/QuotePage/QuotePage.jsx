@@ -53,7 +53,10 @@ export default function QuotePage() {
 
   return (
     <div className="quote-container">
-      <h1 className="quote-title">당신의 감정을 읽고, AI가 건네는 마음 처방전</h1>
+      <h1 className="quote-title">
+        당신의 감정을 읽고, <br />
+        AI가 건네는 마음 처방전 🌿💌
+      </h1>
 
       <div className="quote-card">
         {movie && (
