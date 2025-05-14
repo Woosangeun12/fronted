@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../../utils/api';
 import './SurveyPage.css';
@@ -80,7 +80,19 @@ const SurveyPage = () => {
     }
   };
   
-
+  useEffect(() => {
+    // ✅ 뒤로가기 막기
+    const preventBack = () => {
+      window.history.pushState(null, "", window.location.href);
+    };
+  
+    window.history.pushState(null, "", window.location.href);
+    window.addEventListener("popstate", preventBack);
+  
+    return () => {
+      window.removeEventListener("popstate", preventBack);
+    };
+  }, []);  
 
   return (
     <div className="survey-container">

@@ -10,6 +10,19 @@ export default function RecommendPage() {
   const visitorId = sessionStorage.getItem("visitorId");
 
   useEffect(() => {
+    const preventBack = () => {
+      window.history.pushState(null, "", window.location.href);
+    };
+  
+    window.history.pushState(null, "", window.location.href);
+    window.addEventListener("popstate", preventBack);
+  
+    return () => {
+      window.removeEventListener("popstate", preventBack);
+    };
+  }, []);  
+
+  useEffect(() => {
     const stored = sessionStorage.getItem("recommendedMovies");
     if (stored) {
       const parsed = JSON.parse(stored);

@@ -23,7 +23,7 @@ const LandingPage = () => {  // ✅ 함수 선언 시작
       sessionStorage.setItem('nickname', trimmedNickname);
       sessionStorage.setItem('visitorId', visitorId);
 
-      navigate(isAdminViewable ? "/admin" : "/survey");
+      navigate(isAdminViewable ? "/admin" : "/survey", { replace: true });
     } catch (error) {
       console.error('❌ 닉네임 등록 실패:', error);
       if (error.response) {
@@ -38,6 +38,21 @@ const LandingPage = () => {  // ✅ 함수 선언 시작
     const timer = setTimeout(() => setShowNotice(false), 4000);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    // ✅ 뒤로가기 차단
+    const preventBack = () => {
+      window.history.pushState(null, "", window.location.href);
+    };
+
+    window.history.pushState(null, "", window.location.href);
+    window.addEventListener("popstate", preventBack);
+
+    return () => {
+      window.removeEventListener("popstate", preventBack);
+    };
+  }, []);
+
 
   return (
     <div className="landing-container">

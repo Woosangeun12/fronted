@@ -12,6 +12,19 @@ export default function ReviewWritePage() {
   const visitorId = sessionStorage.getItem("visitorId");
 
   useEffect(() => {
+    const preventBack = () => {
+      window.history.pushState(null, "", window.location.href);
+    };
+  
+    window.history.pushState(null, "", window.location.href);
+    window.addEventListener("popstate", preventBack);
+  
+    return () => {
+      window.removeEventListener("popstate", preventBack);
+    };
+  }, []);  
+
+  useEffect(() => {
     if (!visitorId || !movieId) {
       alert("비정상 접근입니다. 처음부터 다시 시작해주세요.");
       navigate("/");

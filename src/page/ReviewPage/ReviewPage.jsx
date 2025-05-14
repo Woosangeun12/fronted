@@ -10,6 +10,19 @@ export default function ReviewPage() {
   const [movie, setMovie] = useState(null); // ✅ 상태 선언
 
   useEffect(() => {
+    const preventBack = () => {
+      window.history.pushState(null, "", window.location.href);
+    };
+  
+    window.history.pushState(null, "", window.location.href);
+    window.addEventListener("popstate", preventBack);
+  
+    return () => {
+      window.removeEventListener("popstate", preventBack);
+    };
+  }, []);  
+
+  useEffect(() => {
     if (!movieId) return;
   
     api.post(`/api/recommend/info/${movieId}`, {})

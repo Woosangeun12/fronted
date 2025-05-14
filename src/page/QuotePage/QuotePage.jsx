@@ -7,6 +7,19 @@ export default function QuotePage() {
   const [loading, setLoading] = useState(true);
   const [movie, setMovie] = useState(null);
 
+  useEffect(() => {
+    const preventBack = () => {
+      window.history.pushState(null, "", window.location.href);
+    };
+  
+    window.history.pushState(null, "", window.location.href);
+    window.addEventListener("popstate", preventBack);
+  
+    return () => {
+      window.removeEventListener("popstate", preventBack);
+    };
+  }, []);  
+
 
   useEffect(() => {
     const stored = sessionStorage.getItem("selectedMovie");
