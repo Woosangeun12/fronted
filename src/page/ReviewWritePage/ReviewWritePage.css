@@ -102,7 +102,6 @@ textarea {
   display: flex;
   width: 100%;
   max-width: 700px;
-  height:100px;
   gap: 1.5rem;
   margin-top: 3rem;
 }
