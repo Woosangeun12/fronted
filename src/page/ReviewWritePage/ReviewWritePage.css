@@ -120,15 +120,19 @@ textarea {
   box-sizing: border-box;
   text-align: center;
   overflow: hidden;
-  padding-top: 1px;
-  font-family: 'Ownglyph_meetme-Rg', sans-serif;
-  font-size: 1.6rem;
-  font-weight: bold;
-
-  line-height: normal;  /* ✅ 핵심 변경 */
+  background-color: #ff4d88;
 }
 
 .skip-btn {
   background-color: #ddd;
   color: #333;
+}
+
+.btn-text {
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1;             /* ✅ 핵심! */
+  white-space: nowrap;
 }
