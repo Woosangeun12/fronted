@@ -106,33 +106,41 @@ textarea {
   margin-top: 3rem;
 }
 
-/* 공통 버튼 스타일 */
+.button-group {
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+/* 버튼 공통 */
 .submit-btn,
 .skip-btn {
-  flex: 1;
-  height: 72px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Ownglyph_meetme-Rg', sans-serif;
-  font-size: 1.6rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  box-sizing: border-box;
-  line-height: normal;  /* ✅ 폰트 기준선 맞춤 */
-  padding: 0;           /* ✅ 내부 패딩 제거 */
-  white-space: nowrap;  /* ✅ 줄바꿈 방지 */
+  flex: 1 !important;                         /* 🔥 강제적용 */
+  height: 72px !important;                    /* 🔥 강제적용 */
+  display: flex !important;                  
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 14px !important;
+  box-sizing: border-box !important;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif !important;
+  font-size: 1.6rem !important;
+  font-weight: bold !important;
+  line-height: normal !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
 }
 
-/* 각각 배경색만 다르게 */
+/* 개별 색상 */
 .submit-btn {
-  background-color: #ff4d88;
-  color: white;
+  background-color: #ff4d88 !important;
+  color: white !important;
 }
 
 .skip-btn {
-  background-color: #ddd;
-  color: #333;
+  background-color: #ddd !important;
+  color: #333 !important;
 }
