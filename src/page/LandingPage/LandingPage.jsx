@@ -1,45 +1,49 @@
-import React, { useState,  useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { postVisitor } from "../../apis/visitor"; 
 import './LandingPageSty.css';
 import pxArt from "../../assets/pxArt-3_5.png";
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+const LandingPage = () => {  // ✅ 함수 선언 시작
+  const [nickname, setNickname] = useState('');
+  const [showNotice, setShowNotice] = useState(true); 
+  const navigate = useNavigate();
 
-  const trimmedNickname = nickname.trim();
-  if (!trimmedNickname) return;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  console.log("🧾 입력한 닉네임:", trimmedNickname);
+    const trimmedNickname = nickname.trim();
+    if (!trimmedNickname) return;
 
-  // ✅ Admin1은 방문자 저장 API 호출하지 않고 바로 이동
-  if (trimmedNickname === "Admin1") {
-    sessionStorage.setItem("nickname", trimmedNickname);
-    sessionStorage.setItem("visitorId", "admin-skip"); // ✅ 임의로 저장 (필요 시)
-    navigate("/admin");
-    return;
-  }
+    console.log("🧾 입력한 닉네임:", trimmedNickname);
 
-  try {
-    const { visitorId, isAdminViewable } = await postVisitor(trimmedNickname);
-    console.log("✅ 응답 데이터:", { visitorId, isAdminViewable });
-
-    sessionStorage.setItem('nickname', trimmedNickname);
-    sessionStorage.setItem('visitorId', visitorId);
-
-    navigate(isAdminViewable ? "/admin" : "/survey");
-  } catch (error) {
-    console.error('❌ 닉네임 등록 실패:', error);
-    if (error.response) {
-      console.error("📛 서버 응답 상태:", error.response.status);
-      console.error("📬 서버 응답 내용:", error.response.data);
+    if (trimmedNickname === "Admin1") {
+      sessionStorage.setItem("nickname", trimmedNickname);
+      sessionStorage.setItem("visitorId", "admin-skip");
+      navigate("/admin");
+      return;
     }
-    alert('서버와 연결할 수 없습니다. 잠시 후 다시 시도해주세요.');
-  }
 
+    try {
+      const { visitorId, isAdminViewable } = await postVisitor(trimmedNickname);
+      console.log("✅ 응답 데이터:", { visitorId, isAdminViewable });
+
+      sessionStorage.setItem('nickname', trimmedNickname);
+      sessionStorage.setItem('visitorId', visitorId);
+
+      navigate(isAdminViewable ? "/admin" : "/survey");
+    } catch (error) {
+      console.error('❌ 닉네임 등록 실패:', error);
+      if (error.response) {
+        console.error("📛 서버 응답 상태:", error.response.status);
+        console.error("📬 서버 응답 내용:", error.response.data);
+      }
+      alert('서버와 연결할 수 없습니다. 잠시 후 다시 시도해주세요.');
+    }
+  };
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowNotice(false), 4000); // ✅ 4초 후 사라짐
+    const timer = setTimeout(() => setShowNotice(false), 4000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -47,8 +51,7 @@ const handleSubmit = async (e) => {
     <div className="landing-container">
       <img src={pxArt} alt="달과 구름" className="landing-image" />
 
-       {/* ✅ 멘트 */}
-       {showNotice && (
+      {showNotice && (
         <p className="landing-notice">
           해당 닉네임은 일회성으로 사용되며, 개인정보는 저장되지 않습니다.
         </p>
