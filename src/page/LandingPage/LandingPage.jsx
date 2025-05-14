@@ -13,12 +13,7 @@ const LandingPage = () => {  // ✅ 함수 선언 시작
     e.preventDefault();
 
     const trimmedNickname = nickname.trim();
-    if (trimmedNickname === "Admin1") {
-      sessionStorage.setItem("nickname", trimmedNickname);
-      sessionStorage.removeItem("visitorId");
-      navigate("/admin");
-      return;
-    }    
+    if (!trimmedNickname) return;
 
     console.log("🧾 입력한 닉네임:", trimmedNickname);
     try {
