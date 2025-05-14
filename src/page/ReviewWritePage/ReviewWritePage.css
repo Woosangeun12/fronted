@@ -120,10 +120,12 @@ textarea {
   box-sizing: border-box;
   text-align: center;
   overflow: hidden;
+  padding-top: 1px;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
   font-size: 1.6rem;
   font-weight: bold;
-  line-height: 1;  /* ✅ 기본값 리셋 */
+
+  line-height: normal;  /* ✅ 핵심 변경 */
 }
 
 .skip-btn {
