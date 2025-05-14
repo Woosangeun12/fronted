@@ -109,7 +109,6 @@ textarea {
 .submit-btn,
 .skip-btn {
   flex: 1;
-  height: 72px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,6 +120,7 @@ textarea {
   text-align: center;
   overflow: hidden;
   background-color: #ff4d88;
+  padding-top: 6px;
 }
 
 .skip-btn {
@@ -133,6 +133,5 @@ textarea {
   font-size: 1.6rem;
   font-weight: bold;
   display: inline-block;
-  line-height: 1;             /* ✅ 핵심! */
   white-space: nowrap;
 }
