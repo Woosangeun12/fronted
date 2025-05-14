@@ -130,14 +130,14 @@ textarea {
   background-color: #ddd;
   color: #333;
 }
-
-/* ✅ span 하나만 관리하도록 통일 */
 .btn-text {
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
   font-size: 1.6rem;
   font-weight: bold;
   display: inline-block;
-  line-height: 1;
   white-space: nowrap;
-  padding-top: 3px; /* 🔥 핵심: 딱 이 값으로 조정 */
+  line-height: 72px;   /* 버튼 높이랑 일치 */
+  height: 72px;
+  text-align: center;
+  vertical-align: middle;
 }
