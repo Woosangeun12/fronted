@@ -79,7 +79,7 @@ export default function ReviewWritePage() {
 
         <div className="button-group">
           <button type="submit" className="submit-btn">
-            <span className="btn-text">리뷰 제출</span>
+            <span className="btn-text">리뷰 제출하기</span>
           </button>
           <button type="button" className="skip-btn" onClick={handleSkip}>
             <span className="btn-text">작성 건너뛰기</span>
