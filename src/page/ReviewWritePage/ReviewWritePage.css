@@ -118,27 +118,15 @@ textarea {
   border-radius: 14px;
   cursor: pointer;
   box-sizing: border-box;
-  background-color: #ff4d88;
-  color: white;
   text-align: center;
   overflow: hidden;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1;  /* ✅ 기본값 리셋 */
 }
 
 .skip-btn {
   background-color: #ddd;
   color: #333;
-}
-
-.btn-text {
-  font-family: 'Ownglyph_meetme-Rg', sans-serif;
-  font-size: 1.6rem;
-  font-weight: bold;
-  line-height: 72px;             /* ✅ 버튼 높이랑 동일하게 */
-  height: 72px;                  /* ✅ 버튼 높이랑 동일하게 */
-  display: inline-block;
-  vertical-align: middle;
-  white-space: nowrap;
-  box-sizing: border-box;
-  align-items: center;     /* ✅ 수직 정렬 강제 */
-  justify-content: center; /* ✅ 수평 정렬도 명시 */
 }
