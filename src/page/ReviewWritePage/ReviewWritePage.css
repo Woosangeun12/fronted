@@ -123,15 +123,15 @@ textarea {
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
   font-size: 1.6rem;
   font-weight: bold;
-  background-color: #ff4d88;
-  color: white;
+  line-height: 1;
+  padding-top: 3px;         /* ✅ 핵심: 텍스트를 아래로 내림 */
   border: none;
   border-radius: 14px;
   cursor: pointer;
-  line-height: 1;         /* ✅ 줄 간격 줄이기 */
-  text-align: center;
-  white-space: nowrap;    /* ✅ 한 줄 유지 */
-  padding: 0 1rem;        /* ✅ 살짝 여백 */
+  white-space: nowrap;
+  box-sizing: border-box;
+  background-color: #ff4d88;
+  color: white;
 }
 
 .skip-btn {
