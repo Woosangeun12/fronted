@@ -16,14 +16,6 @@ const LandingPage = () => {  // ✅ 함수 선언 시작
     if (!trimmedNickname) return;
 
     console.log("🧾 입력한 닉네임:", trimmedNickname);
-
-    if (trimmedNickname === "Admin1") {
-      sessionStorage.setItem("nickname", trimmedNickname);
-      sessionStorage.setItem("visitorId", "admin-skip");
-      navigate("/admin");
-      return;
-    }
-
     try {
       const { visitorId, isAdminViewable } = await postVisitor(trimmedNickname);
       console.log("✅ 응답 데이터:", { visitorId, isAdminViewable });

@@ -43,7 +43,6 @@ const SurveyPage = () => {
     setStep(6);
   };  
   
-
   const handleMindSelect = async (selectedTone) => { 
     const visitorId = sessionStorage.getItem('visitorId');
     const surveyResult = {
