@@ -133,8 +133,9 @@ textarea {
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
   font-size: 1.6rem;
   font-weight: bold;
-  line-height: 1;
-  white-space: nowrap;
-  vertical-align: middle;     /* ✅ 텍스트 정렬 안정화 */
+  line-height: 72px;             /* ✅ 버튼 높이랑 동일하게 */
+  height: 72px;                  /* ✅ 버튼 높이랑 동일하게 */
   display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
 }
