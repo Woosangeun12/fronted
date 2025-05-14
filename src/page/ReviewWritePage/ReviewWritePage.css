@@ -113,31 +113,18 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  background-color: #ff4d88;
+  color: white;
   border: none;
   border-radius: 14px;
   cursor: pointer;
-  box-sizing: border-box;
-  overflow: hidden;
-  background-color: #ff4d88;
-  color: white;
-  font-size: 1.6rem;
-  font-family: 'Ownglyph_meetme-Rg', sans-serif;
-  font-weight: bold;
 }
 
 .skip-btn {
   background-color: #ddd;
   color: #333;
 }
-.btn-text {
-  font-family: 'Ownglyph_meetme-Rg', sans-serif;
-  font-size: 1.6rem;
-  font-weight: bold;
-  display: inline-block;
-  white-space: nowrap;
-  line-height: 72px;   /* 버튼 높이랑 일치 */
-  height: 72px;
-  text-align: center;
-  vertical-align: middle;
-}
+
