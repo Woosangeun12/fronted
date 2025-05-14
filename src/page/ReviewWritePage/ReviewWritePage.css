@@ -138,4 +138,5 @@ textarea {
   display: inline-block;
   vertical-align: middle;
   white-space: nowrap;
+  box-sizing: border-box;
 }
