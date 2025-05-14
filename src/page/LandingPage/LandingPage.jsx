@@ -4,34 +4,39 @@ import { postVisitor } from "../../apis/visitor";
 import './LandingPageSty.css';
 import pxArt from "../../assets/pxArt-3_5.png";
 
-const LandingPage = () => {
-  const [nickname, setNickname] = useState('');
-  const [showNotice, setShowNotice] = useState(true); 
-  const navigate = useNavigate();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const trimmedNickname = nickname.trim();
+  if (!trimmedNickname) return;
 
-    if (!nickname.trim()) return;
+  console.log("🧾 입력한 닉네임:", trimmedNickname);
 
-    console.log("🧾 입력한 닉네임:", nickname.trim());
-    try {
-      const { visitorId, isAdminViewable } = await postVisitor(nickname);
-      console.log("✅ 응답 데이터:", { visitorId, isAdminViewable });
+  // ✅ Admin1은 방문자 저장 API 호출하지 않고 바로 이동
+  if (trimmedNickname === "Admin1") {
+    sessionStorage.setItem("nickname", trimmedNickname);
+    sessionStorage.setItem("visitorId", "admin-skip"); // ✅ 임의로 저장 (필요 시)
+    navigate("/admin");
+    return;
+  }
 
-      sessionStorage.setItem('nickname', nickname.trim());
-      sessionStorage.setItem('visitorId', visitorId);
+  try {
+    const { visitorId, isAdminViewable } = await postVisitor(trimmedNickname);
+    console.log("✅ 응답 데이터:", { visitorId, isAdminViewable });
 
-      navigate(isAdminViewable ? "/admin" : "/survey");
-    } catch (error) {
-      console.error('❌ 닉네임 등록 실패:', error);
-      if (error.response) {
-        console.error("📛 서버 응답 상태:", error.response.status);
-        console.error("📬 서버 응답 내용:", error.response.data);
-      }
-      alert('서버와 연결할 수 없습니다. 잠시 후 다시 시도해주세요.');
+    sessionStorage.setItem('nickname', trimmedNickname);
+    sessionStorage.setItem('visitorId', visitorId);
+
+    navigate(isAdminViewable ? "/admin" : "/survey");
+  } catch (error) {
+    console.error('❌ 닉네임 등록 실패:', error);
+    if (error.response) {
+      console.error("📛 서버 응답 상태:", error.response.status);
+      console.error("📬 서버 응답 내용:", error.response.data);
     }
-  };
+    alert('서버와 연결할 수 없습니다. 잠시 후 다시 시도해주세요.');
+  }
+
 
   useEffect(() => {
     const timer = setTimeout(() => setShowNotice(false), 4000); // ✅ 4초 후 사라짐
