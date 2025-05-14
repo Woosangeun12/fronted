@@ -1,3 +1,4 @@
+/* landingPage.css */
 @font-face {
   font-family: 'Ownglyph_meetme-Rg';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
@@ -5,7 +6,14 @@
   font-style: normal;
 }
 
-.lastpage-container {
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.landing-container {
   width: 100vw;
   min-height: 100vh;
   background-color: #ffffff;
@@ -17,32 +25,44 @@
   box-sizing: border-box;
 }
 
-.lastpage-image {
-  width: 700px;          /* ✅ 고정 너비 */
-  height: 750px;         /* ✅ 고정 높이 */
-  max-width: 100%;       /* ✅ 모바일 대응 */
-  margin-bottom: 2rem;
-  animation: fadeIn 2s ease-in-out;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-
-.lastpage-message {
-  font-size: 2.4rem;     /* ✅ 더 크게 */
+/* 타이틀 텍스트 */
+.landing-title {
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  margin-bottom: 1.5rem;
   text-align: center;
-  margin-bottom: 2.5rem;
-  font-family: 'Ownglyph_meetme-Rg', sans-serif;
-  line-height: 1.6;
 }
 
-.lastpage-button {
-  width: 600px;
+.landing-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 2rem;
+}
+
+.landing-input {
+  width: 600px;  
   max-width: 100%;
   padding: 1.2rem;
+  font-size: 1.5rem;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;  /* ✅ 폰트 적용 */
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+}
+
+/* 시작 버튼 */
+.landing-button {
+  width: 600px;  
+  max-width: 100%; 
+  padding: 1.2rem;
   font-size: 2.5rem;
-  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;  /* ✅ 폰트 적용 */
   background-color: #ff6699;
   color: white;
   border: none;
@@ -51,8 +71,33 @@
   transition: background-color 0.2s ease;
 }
 
-.lastpage-button:hover {
+.landing-button:hover {
   background-color: #ff4d88;
+}
+
+.landing-image {
+  width: 700px;          /* ✅ 고정 너비 */
+  height: 750px;         /* ✅ 고정 높이 */
+  max-width: 100%;       /* ✅ 모바일 대응 */
+  margin-bottom: 1rem;
+  animation: fadeIn 2s ease-in-out;
+  border-radius: 16px;   /* 선택사항: 둥글게 */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* 선택사항: 그림자 효과 */
+}
+
+.landing-notice {
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+  text-align: center;
+  animation: fadeOut 4s forwards; /* 사라짐 효과 */
+}
+
+@keyframes fadeOut {
+  0%   { opacity: 1; }
+  75%  { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 @keyframes fadeIn {

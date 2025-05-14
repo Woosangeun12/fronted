@@ -49,7 +49,7 @@ export default function ReviewWritePage() {
       alert("리뷰가 성공적으로 제출되었습니다!");
       setReview("");
       setRating(5);
-      navigate("/quote");
+      navigate("/last");
     } catch (error) {
       console.error("리뷰 제출 실패:", error);
       alert("리뷰 제출에 실패했습니다. 다시 시도해주세요.");
