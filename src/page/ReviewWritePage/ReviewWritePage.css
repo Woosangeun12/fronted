@@ -139,4 +139,6 @@ textarea {
   vertical-align: middle;
   white-space: nowrap;
   box-sizing: border-box;
+  align-items: center;     /* ✅ 수직 정렬 강제 */
+  justify-content: center; /* ✅ 수평 정렬도 명시 */
 }
