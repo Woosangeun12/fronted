@@ -30,7 +30,6 @@ export default function ReviewPage() {
       .catch((err) => console.error("영화 정보 로딩 실패", err));
   }, [movieId]);
   
-
   if (!movie) return <div className="review-container">로딩 중...</div>; // ✅ null 체크
 
   return (
@@ -53,9 +52,9 @@ export default function ReviewPage() {
         <button
           type="button"
           className="submit-btn"
-          onClick={() => navigate("/reviewwrite", { state: { movieId } })}
+          onClick={() => navigate("/quote")}
         >
-          리뷰 작성하기
+          당신의 감정을 읽고  AI가 건네는 마음 처방전
         </button>
       </div>
     </div>
