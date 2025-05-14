@@ -8,6 +8,7 @@ import AdminReviewPage from '../page/AdminReviewPage/AdminReviewPage';
 import QuotePage from '../page/QuotePage/QuotePage';
 import ReviewWritePage from '../page/ReviewWritePage/ReviewWritePage';
 import StartPage from '../page/StartPage/StartPage';
+import LastPage from '../page/LastPage/LastPage';
 
 const AppRouter = () => {
   return (
@@ -20,6 +21,7 @@ const AppRouter = () => {
       <Route path="/admin" element={<AdminReviewPage/>}/>
       <Route path="/quote" element={<QuotePage/>}/>
       <Route path="/reviewwrite" element={<ReviewWritePage/>}/>
+      <Route path="/last" element={<LastPage/>}/>
     </Routes>
   );
 };

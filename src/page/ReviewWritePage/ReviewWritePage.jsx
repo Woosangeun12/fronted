@@ -57,7 +57,7 @@ export default function ReviewWritePage() {
   };
 
   const handleSkip = () => {
-    navigate("/quote");
+    navigate("/last");
   };
 
   return (

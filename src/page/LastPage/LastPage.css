@@ -1,0 +1,45 @@
+.lastpage-container {
+    background-color: #fffbe6;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .lastpage-image {
+    width: 280px;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  
+  .lastpage-message {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2.5rem;
+    font-family: 'Ownglyph_meetme-Rg', sans-serif;
+    line-height: 1.6;
+  }
+  
+  .lastpage-button {
+    background-color: #ff4d88;
+    color: #fff;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Ownglyph_meetme-Rg', sans-serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .lastpage-button:hover {
+    background-color: #ff2d6f;
+  }
+  

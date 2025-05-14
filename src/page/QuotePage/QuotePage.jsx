@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import api from '../../utils/api';
+import { useNavigate } from "react-router-dom"; 
 import "./QuotePage.css";
 
 export default function QuotePage() {
   const [quote, setQuote] = useState("");
   const [loading, setLoading] = useState(true);
   const [movie, setMovie] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const preventBack = () => {
@@ -102,7 +104,7 @@ export default function QuotePage() {
           </button>
         </div>
       )}
-      
+
     </div>
   );
 }
