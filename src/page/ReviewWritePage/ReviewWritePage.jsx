@@ -77,9 +77,9 @@ export default function ReviewWritePage() {
           <div className="char-count">{review.length}/200자</div>
         </label>
 
-        <div className="button-group">
-          <button type="submit" className="submit-btn">리뷰 제출하기</button>
-          <button type="button" className="skip-btn" onClick={handleSkip}>작성 건너뛰기</button>
+        <div className="review-button-group">
+          <button type="submit" className="review-submit-btn">리뷰 제출하기</button>
+          <button type="button" className="review-skip-btn" onClick={handleSkip}>작성 건너뛰기</button>
         </div>
       </form>
     </div>
