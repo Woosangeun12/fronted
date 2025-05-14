@@ -106,6 +106,7 @@ textarea {
   margin-top: 3rem;
 }
 
+/* 공통 버튼 스타일 */
 .submit-btn,
 .skip-btn {
   flex: 1;
@@ -116,15 +117,22 @@ textarea {
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
   font-size: 1.6rem;
   font-weight: bold;
-  background-color: #ff4d88;
-  color: white;
   border: none;
   border-radius: 14px;
   cursor: pointer;
+  box-sizing: border-box;
+  line-height: normal;  /* ✅ 폰트 기준선 맞춤 */
+  padding: 0;           /* ✅ 내부 패딩 제거 */
+  white-space: nowrap;  /* ✅ 줄바꿈 방지 */
+}
+
+/* 각각 배경색만 다르게 */
+.submit-btn {
+  background-color: #ff4d88;
+  color: white;
 }
 
 .skip-btn {
   background-color: #ddd;
   color: #333;
 }
-
