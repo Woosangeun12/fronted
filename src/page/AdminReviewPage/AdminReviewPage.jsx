@@ -7,12 +7,20 @@ const AdminReviewPage = () => {
   const [totalCount, setTotalCount] = useState(0);
   const [averageScore, setAverageScore] = useState(0);
   const [visitorStats, setVisitorStats] = useState({ totalCount: 0, todayCount: 0 });
+  const [page, setPage] = useState(0); // 현재 페이지
+  const [pageSize] = useState(10);     // 페이지당 개수
+
+  const handlePageChange = (newPage) => {
+    if (newPage < 0 || newPage >= Math.ceil(totalCount / pageSize)) return;
+    setPage(newPage);
+  };
+  
 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
         const [reviewRes, visitorRes] = await Promise.all([
-          api.get('/api/review/list?page=0&size=10'),
+          api.get(`/api/review/list?page=${page}&size=${pageSize}`),
           api.get('/api/admin/visitors/count')
         ]);
         setReviews(reviewRes.data.reviews);              // ✅
@@ -31,7 +39,7 @@ const AdminReviewPage = () => {
     };
 
     fetchReviews();
-  }, []);
+  }, [page]);
 
   if (loading) return <p>로딩 중...</p>;
 
@@ -74,6 +82,16 @@ const AdminReviewPage = () => {
           </tbody>
         </table>
       )}
+
+      <div className="pagination" style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+        <button onClick={() => handlePageChange(page - 1)} disabled={page === 0}>
+          ◀ 이전
+        </button>
+        <span>페이지 {page + 1} / {Math.ceil(totalCount / pageSize)}</span>
+        <button onClick={() => handlePageChange(page + 1)} disabled={(page + 1) * pageSize >= totalCount}>
+          다음 ▶
+        </button>
+      </div>
     </div>
   );
 };
