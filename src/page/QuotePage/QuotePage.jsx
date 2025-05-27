@@ -18,7 +18,7 @@ export default function QuotePage() {
   const [quote, setQuote] = useState("");
   const [loading, setLoading] = useState(true);
   const [movie, setMovie] = useState(null);
-  const [emotion, setEmotion] = useState("");
+  const [tone, setTone] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,9 +40,9 @@ export default function QuotePage() {
       setMovie(JSON.parse(stored));
     }
 
-    const storedEmotion = sessionStorage.getItem("emotion");
-    if (storedEmotion) {
-      setEmotion(storedEmotion);
+    const storedTone = sessionStorage.getItem("tone");
+    if (storedTone) {
+      setTone(storedTone);
     }
 
     const fetchQuote = async () => {
@@ -88,14 +88,13 @@ export default function QuotePage() {
       </h1>
 
       <div className="quote-card">
-        {emotion && (
+        {tone && (
           <img
-          src={emotionImageMap[emotion?.trim()]}
-          alt={emotion}
-          className="emotion-image"
-        />        
+            src={emotionImageMap[tone.trim()]}
+            alt={tone}
+            className="emotion-image"
+          />
         )}
-
         <p className="quote-text fade-in">
           {loading ? "AI가 당신의 마음에 꼭 맞는 처방을 찾고 있어요" : `"${quote}"`}
         </p>
