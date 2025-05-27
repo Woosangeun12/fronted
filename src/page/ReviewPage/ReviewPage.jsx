@@ -54,8 +54,9 @@ export default function ReviewPage() {
           className="submit-btn"
           onClick={() => navigate("/quote")}
         >
-          당신의 감정을 읽고  AI가 건네는 마음 처방전
+          나에게 맞는 AI 감정 처방 받기
         </button>
+        <p className="button-description">AI가 당신의 마음을 분석하고 알려줍니다</p>
       </div>
     </div>
   );

@@ -51,6 +51,14 @@
   margin-bottom: 2rem;
 }
 
+.emotion-image {
+  width: 100%;
+  max-width: 500px;   /* ✅ 크게 확대 */
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+}
+
 /* 🎞 제목 */
 .quote-movie-title {
   font-size: 2.5rem;      /* ✅ 굵고 큼 */

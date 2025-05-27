@@ -127,6 +127,15 @@
   background-color: #ff4d88;
 }
 
+.button-description {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+}
+
+
 @media (prefers-color-scheme: dark) {
   .review-textarea-label textarea {
     color: #f0f0f0;

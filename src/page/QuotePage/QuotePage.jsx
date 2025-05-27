@@ -3,10 +3,22 @@ import api from '../../utils/api';
 import { useNavigate } from "react-router-dom"; 
 import "./QuotePage.css";
 
+// 감정별 이미지
+import Relax from "../../assets/Relax.png";
+//import CheerUp from "../../assets/CheerUp.png";
+
+// 감정 → 이미지 매핑
+const emotionImageMap = {
+  위로: Relax,
+  //동기부여: CheerUp,
+  // 예: 행복: Happy, 불안: Anxiety 등 추가 가능
+};
+
 export default function QuotePage() {
   const [quote, setQuote] = useState("");
   const [loading, setLoading] = useState(true);
   const [movie, setMovie] = useState(null);
+  const [emotion, setEmotion] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,23 +32,26 @@ export default function QuotePage() {
     return () => {
       window.removeEventListener("popstate", preventBack);
     };
-  }, []);  
-
+  }, []);
 
   useEffect(() => {
     const stored = sessionStorage.getItem("selectedMovie");
     if (stored) {
       setMovie(JSON.parse(stored));
     }
-  
+
+    const storedEmotion = sessionStorage.getItem("emotion");
+    if (storedEmotion) {
+      setEmotion(storedEmotion);
+    }
+
     const fetchQuote = async () => {
-      const emotion = sessionStorage.getItem("emotion");
       const style = sessionStorage.getItem("style");
       const tone = sessionStorage.getItem("tone");
 
-      console.log("보내는 요청:", { emotion, style, tone });
+      console.log("보내는 요청:", { emotion: storedEmotion, style, tone });
   
-      if (!emotion || !style || !tone) {
+      if (!storedEmotion || !style || !tone) {
         setQuote("필요한 감정 정보가 부족해요.");
         setLoading(false);
         return;
@@ -44,7 +59,7 @@ export default function QuotePage() {
   
       try {
         const res = await api.post("/api/mental/message", {
-          emotion,
+          emotion: storedEmotion,
           style,
           tone,
         });
@@ -64,7 +79,6 @@ export default function QuotePage() {
   
     fetchQuote();
   }, []);
-  
 
   return (
     <div className="quote-container">
@@ -74,20 +88,14 @@ export default function QuotePage() {
       </h1>
 
       <div className="quote-card">
-        {movie && (
-          <>
-            <img
-              src={
-                movie.image?.startsWith("http")
-                  ? movie.image
-                  : `https://mallang.info/images/${encodeURIComponent(movie.image)}`
-              }
-              alt={movie.title}
-              className="quote-image"
-            />
-            <div className="quote-movie-title">{movie.title}</div>
-          </>
+        {emotion && (
+          <img
+            src={emotionImageMap[emotion]}
+            alt={emotion}
+            className="emotion-image"
+          />
         )}
+
         <p className="quote-text fade-in">
           {loading ? "AI가 당신의 마음에 꼭 맞는 처방을 찾고 있어요" : `"${quote}"`}
         </p>
@@ -104,7 +112,6 @@ export default function QuotePage() {
           </button>
         </div>
       )}
-
     </div>
   );
 }
