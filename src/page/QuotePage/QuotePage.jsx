@@ -90,10 +90,10 @@ export default function QuotePage() {
       <div className="quote-card">
         {emotion && (
           <img
-            src={emotionImageMap[emotion]}
-            alt={emotion}
-            className="emotion-image"
-          />
+          src={emotionImageMap[emotion?.trim()]}
+          alt={emotion}
+          className="emotion-image"
+        />        
         )}
 
         <p className="quote-text fade-in">
