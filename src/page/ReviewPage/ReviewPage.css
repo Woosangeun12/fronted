@@ -14,6 +14,7 @@
   align-items: center;
   padding: 3rem 1.5rem; /* ✅ 위쪽 패딩 증가 */
   box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .review-title {
@@ -99,24 +100,30 @@
 }
 
 .button-group {
+  position: sticky;
+  bottom: 1.5rem;
   display: flex;
   justify-content: center;
   width: 100%;
   max-width: 700px;
-  margin-top: 2rem;
+  margin: 2rem auto 0 auto;
+  z-index: 10;
+  background-color: #fffbe6; /* 배경과 일체감 */
+  padding: 1rem 1rem 2rem;
+  box-sizing: border-box;
 }
 
 .submit-btn {
   width: 100%;
   max-width: 700px;          /* ✅ 카드 폭과 맞춤 */
-  padding: 2rem 2.5rem;      /* ✅ 터치 여유 + 비주얼 확대 */
+  padding: 1.2rem 2rem;      /* ✅ 터치 여유 + 비주얼 확대 */
   font-size: 2rem;         /* ✅ 가독성 있는 큰 텍스트 */
   font-weight: bold;
   background-color: #ff4d88;
   color: #333;
   border: none;
   border-radius: 16px;
-  margin-top: 2rem;
+  margin-top: 0;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   cursor: pointer;
   transition: background-color 0.2s ease;
