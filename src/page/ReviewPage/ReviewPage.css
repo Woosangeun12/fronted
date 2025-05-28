@@ -43,7 +43,7 @@
   max-width: 600px;         /* ✅ LandingPage처럼! */
   height: auto;
   border-radius: 16px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 
@@ -59,7 +59,7 @@
   font-style: italic;
   color: #555;
   font-size: 1.8rem;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   line-height: 2;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
@@ -80,7 +80,7 @@
   border-radius: 10px;
   border: 1px solid #ccc;
   resize: none;
-  margin-top: 0.25rem;
+  margin-top: 0.5;
   box-sizing: border-box;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
   background-color: #fff;     /* 배경은 밝게 */
@@ -96,7 +96,7 @@
   font-size: 12px;
   text-align: right;
   color: #999;
-  margin-top: 0;
+  margin-top: 0.5;
 }
 
 .button-group {
