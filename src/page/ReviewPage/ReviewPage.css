@@ -20,7 +20,7 @@
 .review-title {
   font-size: 2.4rem;               /* ✅ 시원한 제목 크기 */
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   color: #222;
   text-align: center;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
@@ -34,7 +34,7 @@
   width: 100%;
   max-width: 700px;        /* ✅ 아주 큼 */
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   box-sizing: border-box;
 }
 
@@ -43,9 +43,8 @@
   max-width: 600px;         /* ✅ LandingPage처럼! */
   height: auto;
   border-radius: 16px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
-
 
 .review-info {
   font-size: 2.0rem;

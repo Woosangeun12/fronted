@@ -11,7 +11,7 @@ import Relax from "../../assets/Relax.png";
 const emotionImageMap = {
   위로: Relax,
   //동기부여: CheerUp,
-  // 예: 행복: Happy, 불안: Anxiety 등 추가 가능
+  조언: Advise,
 };
 
 export default function QuotePage() {
