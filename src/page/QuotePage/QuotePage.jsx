@@ -5,13 +5,14 @@ import "./QuotePage.css";
 
 // 감정별 이미지
 import Relax from "../../assets/Relax.png";
+import Advise1 from "../../assets/Advise1.png";
 //import CheerUp from "../../assets/CheerUp.png";
 
 // 감정 → 이미지 매핑
 const emotionImageMap = {
   위로: Relax,
   //동기부여: CheerUp,
-  조언: Advise,
+  조언: Advise1,
 };
 
 export default function QuotePage() {
