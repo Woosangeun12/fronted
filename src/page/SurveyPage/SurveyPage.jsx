@@ -8,7 +8,6 @@ const SurveyPage = () => {
   const [step, setStep] = useState(1);
   const [feeling, setFeeling] = useState('');
   const [preferredGenre, setPreferredGenre] = useState('');
-  const [origin, setOrigin] = useState('');
   const [style, setStyle] = useState('');
   const [hate, setHate] = useState('');
   const navigate = useNavigate();
@@ -36,7 +35,7 @@ const SurveyPage = () => {
     setHate(genre);
     setStep(5);
   };
-  
+
   const handleMindSelect = async (selectedTone) => { 
     const visitorId = sessionStorage.getItem('visitorId');
     const surveyResult = {

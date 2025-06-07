@@ -110,7 +110,6 @@ export default function RecommendPage() {
             <div className="modal-movie-info">
               <p><strong>감독:</strong> {selectedMovie.director}</p>
               <p><strong>주연배우:</strong> {selectedMovie.actor1}, {selectedMovie.actor2}</p>
-              <p><strong>국가:</strong> {selectedMovie.origin}</p>
               <p><strong>평점:</strong> {selectedMovie.score}</p>
   
               <div className="modal-summary-box">

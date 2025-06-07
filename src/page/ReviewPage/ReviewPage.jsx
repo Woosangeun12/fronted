@@ -42,7 +42,6 @@ export default function ReviewPage() {
           <p><strong>감독:</strong> {movie.director}</p>
           <p><strong>장르:</strong> {movie.genre}</p>
           <p><strong>출연:</strong> {movie.actor1}, {movie.actor2}</p>
-          <p><strong>국가:</strong> {movie.origin}</p>
           <p><strong>상영시간:</strong> {movie.hour}</p>
           <p className="summary">{movie.summary}</p>
         </div>
