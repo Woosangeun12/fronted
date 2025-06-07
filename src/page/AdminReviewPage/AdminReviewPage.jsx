@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../utils/api';
-import './AdminReviewDashboard.css';
+import './AdminReviewPage.css';
 
 const AdminReviewPage = () => {
   const [reviews, setReviews] = useState([]);
