@@ -2,25 +2,22 @@ import React, { useEffect, useState } from "react";
 import api from '../../utils/api';
 import { useNavigate } from "react-router-dom"; 
 import "./QuotePage.css";
-
-// 감정별 이미지
-import Relax from "../../assets/Relax.png";
-import Advise1 from "../../assets/Advise1.png";
-//import CheerUp from "../../assets/CheerUp.png";
-
-// 감정 → 이미지 매핑
-const emotionImageMap = {
-  위로: Relax,
-  //동기부여: CheerUp,
-  조언: Advise1,
-};
+import bike from "../../assets/bike.png";
+import book from "../../assets/book.png";
+import cake from "../../assets/cake.png";
+import heart from "../../assets/heart.png"; 
+import hug from "../../assets/hug.png"; 
+import luck from "../../assets/luck.png"; 
+import talk from "../../assets/talk.png"; 
 
 export default function QuotePage() {
   const [quote, setQuote] = useState("");
   const [loading, setLoading] = useState(true);
-  const [movie, setMovie] = useState(null);
+  const [image, setImage] = useState(null);
   const [tone, setTone] = useState("");
   const navigate = useNavigate();
+
+  const images = [bike, book, cake, heart, hug, luck, talk];
 
   useEffect(() => {
     const preventBack = () => {
@@ -36,36 +33,28 @@ export default function QuotePage() {
   }, []);
 
   useEffect(() => {
-    const stored = sessionStorage.getItem("selectedMovie");
-    if (stored) {
-      setMovie(JSON.parse(stored));
-    }
-
     const storedTone = sessionStorage.getItem("tone");
-    if (storedTone) {
-      setTone(storedTone);
+    const storedEmotion = sessionStorage.getItem("emotion");
+    const style = sessionStorage.getItem("style");
+
+    if (storedTone) setTone(storedTone);
+    setImage(images[Math.floor(Math.random() * images.length)]); // ✅ 랜덤 이미지 선택
+
+    if (!storedEmotion || !style || !storedTone) {
+      setQuote("필요한 감정 정보가 부족해요.");
+      setLoading(false);
+      return;
     }
 
     const fetchQuote = async () => {
-      const style = sessionStorage.getItem("style");
-      const tone = sessionStorage.getItem("tone");
-
-      console.log("보내는 요청:", { emotion: storedEmotion, style, tone });
-  
-      if (!storedEmotion || !style || !tone) {
-        setQuote("필요한 감정 정보가 부족해요.");
-        setLoading(false);
-        return;
-      }
-  
       try {
         const res = await api.post("/api/mental/message", {
           emotion: storedEmotion,
           style,
-          tone,
+          tone: storedTone,
         });
-  
-        if (res.data && res.data.message) {
+
+        if (res.data?.message) {
           setQuote(res.data.message);
         } else {
           setQuote("오늘의 한마디가 없습니다.");
@@ -77,7 +66,7 @@ export default function QuotePage() {
         setLoading(false);
       }
     };
-  
+
     fetchQuote();
   }, []);
 
@@ -89,10 +78,10 @@ export default function QuotePage() {
       </h1>
 
       <div className="quote-card">
-        {tone && (
+        {image && (
           <img
-            src={emotionImageMap[tone.trim()]}
-            alt={tone}
+            src={image}
+            alt="처방 이미지"
             className="emotion-image"
           />
         )}
@@ -100,18 +89,6 @@ export default function QuotePage() {
           {loading ? "AI가 당신의 마음에 꼭 맞는 처방을 찾고 있어요" : `"${quote}"`}
         </p>
       </div>
-
-      {movie?.movieId && (
-        <div className="button-group">
-          <button
-            type="button"
-            className="submit-btn"
-            onClick={() => navigate("/reviewwrite", { state: { movieId: movie.movieId } })}
-          >
-            리뷰 작성하기
-          </button>
-        </div>
-      )}
     </div>
   );
 }
