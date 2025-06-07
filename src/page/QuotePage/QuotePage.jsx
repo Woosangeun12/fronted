@@ -38,10 +38,10 @@ export default function QuotePage() {
     const style = sessionStorage.getItem("style");
 
     if (storedTone) setTone(storedTone);
-    setImage(images[Math.floor(Math.random() * images.length)]); // ✅ 랜덤 이미지 선택
+    setImage(images[Math.floor(Math.random() * images.length)]); // 랜덤 이미지
 
     if (!storedEmotion || !style || !storedTone) {
-      setQuote("필요한 감정 정보가 부족해요.");
+      setQuote("필요한 감정 정보가 부족해요");
       setLoading(false);
       return;
     }
@@ -66,7 +66,6 @@ export default function QuotePage() {
         setLoading(false);
       }
     };
-
     fetchQuote();
   }, []);
 

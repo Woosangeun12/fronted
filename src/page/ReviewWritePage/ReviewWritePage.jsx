@@ -62,7 +62,7 @@ export default function ReviewWritePage() {
 
   return (
     <div className="review-write-container">
-      <h1 className="review-title">리뷰 작성</h1>
+      <h1 className="review-title">더 나아지는 말랑을 위해</h1>
 
       <form className="review-form" onSubmit={handleSubmit}>
         <div className="star-rating">
@@ -78,7 +78,7 @@ export default function ReviewWritePage() {
         </div>
 
         <label className="review-textarea-label">
-          📝 리뷰 작성
+          REVIEW
           <textarea
             value={review}
             onChange={(e) => setReview(e.target.value)}

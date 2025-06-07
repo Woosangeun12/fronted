@@ -43,6 +43,7 @@ const SurveyPage = () => {
       style: style,
       genre: preferredGenre,
       hate: hate,
+      tone: selectedTone,
     };
   
     if (!visitorId || !feeling || !style || !preferredGenre || !hate || !selectedTone) {
