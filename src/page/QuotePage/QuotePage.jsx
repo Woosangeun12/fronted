@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import api from '../../utils/api';
 import { useNavigate } from "react-router-dom"; 
 import "./QuotePage.css";
-import bike from "../../assets/bike.png";
-import book from "../../assets/book.png";
-import cake from "../../assets/cake.png";
-import heart from "../../assets/heart.png"; 
-import hug from "../../assets/hug.png"; 
-import luck from "../../assets/luck.png"; 
-import talk from "../../assets/talk.png"; 
+import bike from "../../assets/bike.PNG";
+import book from "../../assets/book.PNG";
+import cake from "../../assets/cake.PNG";
+import heart from "../../assets/heart.PNG"; 
+import hug from "../../assets/hug.PNG"; 
+import luck from "../../assets/luck.PNG"; 
+import talk from "../../assets/talk.PNG"; 
 
 export default function QuotePage() {
   const [quote, setQuote] = useState("");
