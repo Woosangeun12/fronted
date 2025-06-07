@@ -23,18 +23,23 @@ export default function RecommendPage() {
   }, []);  
 
   useEffect(() => {
-    const stored = sessionStorage.getItem("recommendedMovies");
-    if (stored) {
-      const parsed = JSON.parse(stored);
-      setTimeout(() => {
-        console.log("✅ 추천 영화 목록:", parsed);
-      }, 100); 
-      setMovieList(parsed);
-    } else {
-      alert("추천 데이터가 없습니다. 설문을 먼저 완료해 주세요.");
-      navigate("/survey");
+    if (!visitorId) {
+      alert("방문자 정보가 없습니다. 처음부터 다시 시작해주세요.");
+      navigate("/landing");
+      return;
     }
-  }, []);
+  
+    api.post(`/api/recommend/${visitorId}`)
+      .then((res) => {
+        setMovieList(res.data);
+        sessionStorage.setItem("recommendedMovies", JSON.stringify(res.data));
+      })
+      .catch((err) => {
+        console.error("추천 영화 불러오기 실패:", err);
+        alert("추천 정보를 불러올 수 없습니다.");
+        navigate("/survey"); // fallback 처리
+      });
+  }, []);  
   
 
   const handleSelectMovie = async (movie) => {
