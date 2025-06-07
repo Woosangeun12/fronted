@@ -27,7 +27,7 @@ body, html, #root {
 
 /* 타이틀 텍스트 */
 .landing-title {
-  font-size: 1.5rem;
+  font-size: 3.0rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -47,7 +47,7 @@ body, html, #root {
   width: 600px;  
   max-width: 100%;
   padding: 1.2rem;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;  /* ✅ 폰트 적용 */
   border-radius: 12px;
   border: 1px solid #ccc;
@@ -58,10 +58,10 @@ body, html, #root {
 
 /* 시작 버튼 */
 .landing-button {
-  width: 600px;  
+  width: 700px;  
   max-width: 100%; 
   padding: 1.2rem;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;  /* ✅ 폰트 적용 */
   background-color: #ff6699;
   color: white;
@@ -86,7 +86,7 @@ body, html, #root {
 }
 
 .landing-notice {
-  font-size: 1.2rem;
+  font-size: 2.0rem;
   color: #666;
   margin-top: 1rem;
   margin-bottom: -1rem;
@@ -104,3 +104,4 @@ body, html, #root {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+

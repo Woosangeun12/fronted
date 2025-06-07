@@ -17,7 +17,7 @@
 }
 
 .review-title {
-  font-size: 3.3rem;
+  font-size: 4rem;
   font-weight: bold;
   margin-bottom: 3rem;
   color: #333;
@@ -41,8 +41,9 @@
 }
 
 textarea::placeholder {
-  font-size: 1.7rem;           /* ✅ 글자 키움 */
+  font-size: 2.6rem;           /* ✅ 글자 키움 */
   color: #555;                 /* ✅ 더 진하게 */
+  font-weight: bold;
   font-family: 'Ownglyph_meetme-Rg', sans-serif; /* ✅ 감성 폰트 적용 */
 }
 
@@ -52,7 +53,7 @@ textarea::placeholder {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  font-size: 4.5rem;
+  font-size: 6.5rem;
   cursor: pointer;
   user-select: none;
   margin-bottom: 2rem;
@@ -75,26 +76,34 @@ textarea::placeholder {
   display: flex;
   flex-direction: column;
   font-weight: bold;
-  color: #444;
-  font-size: 2.2rem;
+  color: #030303;
+  font-size: 3.0rem;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
-/* ✅ textarea 확장 */
+.review-textarea-label textarea {
+  font-size: 2.5rem !important;
+}
+
 textarea {
-  margin-top: 1rem;
+  all: unset; /* ✅ 브라우저 기본 스타일 다 제거 */
+  margin-top: 2rem;
   padding: 1.5rem;
-  font-size: 2.2rem;
+  font-size: 3.0rem; /* ✅ placeholder와 맞춤 */
+  font-weight: bold;
+  line-height: 1.5;  /* ✅ 여백 균형 */
   resize: none;
   border: 1px solid #ccc;
   border-radius: 12px;
-  height: 300px;
-  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  height: 500px;
+  font-family: sans-serif;
+  color: #333;       /* ✅ 입력 글자도 진하게 */
+  box-sizing: border-box; /* ✅ 패딩 포함 */
 }
 
 .char-count {
   text-align: right;
-  font-size: 1.1rem;
+  font-size: 2.0rem;
   color: #666;
   margin-top: 0.5rem;
 }
@@ -103,7 +112,7 @@ textarea {
   width: 100%;
   max-width: 700px;
   gap: 1.5rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .review-button-group {
@@ -111,23 +120,23 @@ textarea {
   width: 100%;
   max-width: 700px;
   gap: 1.5rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .review-submit-btn,
 .review-skip-btn {
   flex: 1;
-  height: 72px;
+  height: 85px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
-  font-size: 1.6rem;
+  font-size: 2.0rem;
   font-weight: bold;
   line-height: 1;
-  padding-top: 3px;
+  padding-top: 2px;
   border: none;
-  border-radius: 14px;
+  border-radius: 20px;
   cursor: pointer;
   white-space: nowrap;
   box-sizing: border-box;

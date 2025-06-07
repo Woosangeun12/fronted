@@ -1,62 +1,61 @@
 @font-face {
-    font-family: 'Ownglyph_meetme-Rg';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  .lastpage-container {
-    width: 100vw;
-    min-height: 100vh;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 1rem;
-    box-sizing: border-box;
-  }
-  
-  .lastpage-image {
-    width: 700px;          /* ✅ 고정 너비 */
-    height: 750px;         /* ✅ 고정 높이 */
-    max-width: 100%;       /* ✅ 모바일 대응 */
-    margin-bottom: 2rem;
-    animation: fadeIn 2s ease-in-out;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  }
-  
-  .lastpage-message {
-    font-size: 2.4rem;     /* ✅ 더 크게 */
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    margin-bottom: 2.5rem;
-    font-family: 'Ownglyph_meetme-Rg', sans-serif;
-    line-height: 1.6;
-  }
-  
-  .lastpage-button {
-    width: 600px;
-    max-width: 100%;
-    padding: 1.2rem;
-    font-size: 2.5rem;
-    font-family: 'Ownglyph_meetme-Rg', sans-serif;
-    background-color: #ff6699;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .lastpage-button:hover {
-    background-color: #ff4d88;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
+  font-family: 'Ownglyph_meetme-Rg';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.lastpage-container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.lastpage-image {
+  width: 700px;          /* ✅ 고정 너비 */
+  height: 750px;         /* ✅ 고정 높이 */
+  max-width: 100%;       /* ✅ 모바일 대응 */
+  margin-bottom: 2rem;
+  animation: fadeIn 2s ease-in-out;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.lastpage-message {
+  font-size: 3.0rem;     /* ✅ 더 크게 */
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  line-height: 1.6;
+}
+
+.lastpage-button {
+  width: 600px;
+  max-width: 100%;
+  padding: 1.2rem;
+  font-size: 3.5rem;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  background-color: #ff6699;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.lastpage-button:hover {
+  background-color: #ff4d88;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

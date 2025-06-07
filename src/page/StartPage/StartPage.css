@@ -21,7 +21,7 @@
   
   /* 타이틀 문구 */
   .start-title {
-    font-size: 1.8rem;
+    font-size: 3.0rem;
     font-family: 'Ownglyph_meetme-Rg', sans-serif;
     font-weight: normal;
     color: #333;
@@ -40,7 +40,7 @@
   }
 
   .start-overlay-text {
-    font-size: 2.3rem;
+    font-size: 3.0rem;
     font-family: 'Ownglyph_meetme-Rg', sans-serif;
     font-weight: normal;
     color: #fff;
@@ -73,7 +73,7 @@
   .start-button {
     width: 700px;
     padding: 0.8rem 1rem;
-    font-size: 2.9rem;
+    font-size: 3.5rem;
     font-family: 'Ownglyph_meetme-Rg', sans-serif;
     font-weight: normal;
     background-color: #ff6699;

@@ -65,7 +65,6 @@ export default function ReviewWritePage() {
       <h1 className="review-title">리뷰 작성</h1>
 
       <form className="review-form" onSubmit={handleSubmit}>
-        <label>평점 선택</label>
         <div className="star-rating">
           {[1, 2, 3, 4, 5].map((value) => (
             <span

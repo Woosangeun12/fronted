@@ -43,23 +43,19 @@
   max-width: 600px;         /* ✅ LandingPage처럼! */
   height: auto;
   border-radius: 16px;
-  margin-bottom: 1rem;
 }
 
 .review-info {
-  font-size: 2.0rem;
+  font-size: 2.4rem;
   color: #222;
   text-align: left;
-  line-height: 2.1;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
 .summary {
   font-style: italic;
   color: #555;
-  font-size: 1.8rem;
-  margin-top: 0.5rem;
-  line-height: 2;
+  font-size: 2.0rem;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
@@ -105,7 +101,6 @@
   justify-content: center;
   width: 100%;
   max-width: 700px;
-  margin: 2rem auto 0 auto;
   z-index: 10;
   background-color: #fffbe6; /* 배경과 일체감 */
   padding: 1rem 1rem 2rem;
@@ -115,14 +110,13 @@
 .submit-btn {
   width: 100%;
   max-width: 700px;          /* ✅ 카드 폭과 맞춤 */
-  padding: 1.2rem 2rem;      /* ✅ 터치 여유 + 비주얼 확대 */
-  font-size: 2rem;         /* ✅ 가독성 있는 큰 텍스트 */
+  padding: 1.5rem 1.5rem;      /* ✅ 터치 여유 + 비주얼 확대 */
+  font-size: 3.0rem;         /* ✅ 가독성 있는 큰 텍스트 */
   font-weight: bold;
   background-color: #ff4d88;
   color: #333;
   border: none;
   border-radius: 16px;
-  margin-top: 0;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -135,11 +129,11 @@
 
 .button-text-main {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 3.0rem;
 }
 
 .button-text-sub {
-  font-size: 1.2rem;
+  font-size: 2.0rem;
   opacity: 0.9;
   margin-top: 0.2rem;
 }

@@ -83,7 +83,7 @@ export default function RecommendPage() {
             >
               <img src={movie.image} alt={movie.title} className="movie-image" />
               <h2 className="movie-title">{movie.title}</h2>
-              <p className="movie-info">{movie.year} · {movie.hour}분</p>
+              <p className="movie-info">{movie.year.toString().slice(0,4)} · {movie.hour}분</p>
             </div>
           ))}
         </div>
@@ -102,7 +102,7 @@ export default function RecommendPage() {
               <div className="modal-image-overlay">
                 <div className="modal-overlay-text">
                   <h2>{selectedMovie.title}</h2>
-                  <p>{selectedMovie.year} · {selectedMovie.genre} · {selectedMovie.hour}분</p>
+                  <p>{selectedMovie.year.toString().slice(0,4)} · {selectedMovie.genre} · {selectedMovie.hour}분</p>
                 </div>
               </div>
             </div>

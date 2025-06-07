@@ -36,12 +36,6 @@ const SurveyPage = () => {
     setHate(genre);
     setStep(5);
   };
-
-  const handleOriginSelect = (selectedOrigin) => {
-    console.log(`국가: ${selectedOrigin}`);
-    setOrigin(selectedOrigin);
-    setStep(6);
-  };  
   
   const handleMindSelect = async (selectedTone) => { 
     const visitorId = sessionStorage.getItem('visitorId');
@@ -49,18 +43,16 @@ const SurveyPage = () => {
       emotion: feeling,
       style: style,
       genre: preferredGenre,
-      origin: origin,
       hate: hate,
     };
   
-    if (!visitorId || !feeling || !style || !preferredGenre || !origin || !hate || !selectedTone) {
+    if (!visitorId || !feeling || !style || !preferredGenre || !hate || !selectedTone) {
       alert("모든 항목을 선택해 주세요.");
       return;
     }
   
     console.log("visitorId:", visitorId);
     console.log("보내는 데이터:", surveyResult);
-    console.log("origin:", origin); 
     console.log("보내는 tone:", selectedTone);
 
     setTone(selectedTone);
@@ -200,17 +192,6 @@ const SurveyPage = () => {
         )}
 
         {step === 5 && (
-          <>
-            <h3>어느 국적의 영화를 선호하시나요?</h3>
-            <div className="feeling-buttons">
-              <button onClick={() => handleOriginSelect("한국")}>🇰🇷 한국 영화</button>
-              <button onClick={() => handleOriginSelect("동아시아")}>🌏 동아시아 영화<br /><small>(일본, 대만, 중국 등)</small></button>
-              <button onClick={() => handleOriginSelect("서구")}>🎬 서구권 영화<br /><small>(미국, 영국 등)</small></button>
-              <button onClick={() => handleOriginSelect("기타")}>🏆 기타 국가<br /><small>(유럽, 인도 등)</small></button>
-            </div>
-          </>
-        )}
-        {step === 6 && (
           <>
             <h3>지금 당신에게 가장 필요한 건 어떤 말인가요?</h3>
             <div className="feeling-buttons">

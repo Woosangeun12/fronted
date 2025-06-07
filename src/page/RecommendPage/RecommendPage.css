@@ -20,7 +20,7 @@
 
 /* 🎬 타이틀 */
 .title {
-  font-size: 3rem;       /* 💡 더 크고 강조 */
+  font-size: 3.6rem;       /* 💡 더 크고 강조 */
   font-weight: 700;
   margin-bottom: 2.5rem;
   color: #222;
@@ -29,7 +29,7 @@
 }
 
 .movie-subtitle {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #555;
   text-align: center;
   margin-top: -10px;
@@ -71,7 +71,7 @@
 }
 
 .movie-title {
-  font-size: 1.5rem;    
+  font-size: 2.5rem;    
   font-weight: 700;
   color: #111;
   margin-bottom: 0.5rem;
@@ -80,7 +80,7 @@
 
 .movie-info {
   color: #666;
-  font-size: 1.2rem;     /* 💡 더 읽기 쉽게 */
+  font-size: 2.0rem;     /* 💡 더 읽기 쉽게 */
 }
 
 /* 모달 배경 */
@@ -141,13 +141,13 @@
 
 .modal-overlay-text h2 {
   margin: 0;
-  font-size: 1.9rem;    /* 💡 큼직하게 */
+  font-size: 2.7rem;    /* 💡 큼직하게 */
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
 .modal-overlay-text p {
   margin: 0.7rem 0 0;
-  font-size: 1.3rem;
+  font-size: 2.0rem;
   opacity: 0.9;
 }
 
@@ -155,25 +155,25 @@
 .modal-movie-info {
   padding: 2.2rem;
   color: #333;
-  font-size: 1.3rem;     /* 💡 전체 폰트 업 */
+  font-size: 2.0rem;     /* 💡 전체 폰트 업 */
   line-height: 1.7;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
 .modal-movie-info p {
-  font-size: 1.25rem;
+  font-size: 1.8rem;
   margin: 0.8rem 0;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
 .modal-title {
-  font-size: 1.6rem;
+  font-size: 2.5rem;
   margin-bottom: 0.8rem;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
 
 .modal-subinfo {
-  font-size: 1.05rem;
+  font-size: 2.0rem;
   color: #666;
   margin-bottom: 1rem;
 }
@@ -184,7 +184,7 @@
   border-radius: 12px;
   padding: 1.5rem;
   margin-top: 1.5rem;
-  font-size: 1.2rem;
+  font-size: 2.0rem;
   line-height: 1.7;
   border: 1px solid #eee;
   max-height: 240px;
@@ -197,7 +197,7 @@
   margin-top: 2rem;
   width: 100%;
   padding: 1.2rem;
-  font-size: 1.4rem;    /* 💡 확실히 더 큼 */
+  font-size: 3.0rem;    /* 💡 확실히 더 큼 */
   background-color: #ff99aa;
   color: white;
   border: none;
