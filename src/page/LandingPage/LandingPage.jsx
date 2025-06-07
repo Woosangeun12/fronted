@@ -4,7 +4,8 @@ import { postVisitor } from "../../apis/visitor";
 import './LandingPageSty.css';
 import pxArt from "../../assets/pxArt-3_5.png";
 
-const LandingPage = () => {  // ✅ 함수 선언 시작
+//이거 테스트용입ㄴ니다.
+const LandingPage = () => {  // ✅ 함수 선언 시작 테스트
   const [nickname, setNickname] = useState('');
   const [showNotice, setShowNotice] = useState(true); 
   const navigate = useNavigate();
