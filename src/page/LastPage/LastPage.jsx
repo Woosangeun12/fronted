@@ -8,6 +8,7 @@ export default function LastPage() {
   const navigate = useNavigate();
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [quote, setQuote] = useState("");
+  const html = generateHtml();
 
   // sessionStorage에서 영화,마음처방전 데이터 불러오기
   useEffect(() => {
@@ -51,6 +52,7 @@ export default function LastPage() {
   };
 
   const handleKakaoShare = async () => {
+    console.log("[카카오 공유] 보낼 HTML 내용:", html);
     try {
       const html = generateHtml();
       if (!html) return alert("영화 데이터가 없습니다.");
