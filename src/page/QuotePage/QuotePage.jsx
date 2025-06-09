@@ -117,7 +117,8 @@ export default function QuotePage() {
     try {
       const res = await api.post('/api/html/save', { html }); 
       const sharedUrl = res.data.url;
-  
+      console.log("✅ 공유 링크:", sharedUrl);
+
       window.Kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
