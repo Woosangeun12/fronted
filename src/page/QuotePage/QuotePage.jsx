@@ -88,6 +88,15 @@ export default function QuotePage() {
           {loading ? "AI가 당신의 마음에 꼭 맞는 처방을 찾고 있어요" : `"${quote}"`}
         </p>
       </div>
+      <div className="button-group">
+        <button
+          type="button"
+          className="submit-btn"
+          onClick={() => navigate("/reviewwrite")}
+        >
+          리뷰 작성하기
+        </button>
+      </div>
     </div>
   );
 }
