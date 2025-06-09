@@ -35,7 +35,7 @@ export default function RecommendPage() {
     const hate = sessionStorage.getItem("hate");
     //const tone = sessionStorage.getItem("tone"); 
 
-    console.log("감정값들:", { emotion, style, genre, hate, tone });
+    console.log("감정값들:", { emotion, style, genre, hate});
 
     if (!emotion || !style || !genre || !hate) {
       alert("감정 정보가 유실되었습니다. 다시 시도해주세요.");
