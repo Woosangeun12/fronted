@@ -49,16 +49,19 @@ export default function LastPage() {
 </html>
     `;
   };
-  const html = generateHtml();
   const handleKakaoShare = async () => {
+    const html = generateHtml(); // 여기에서만 정의
     console.log("[카카오 공유] 보낼 HTML 내용:", html);
+  
+    if (!html) {
+      alert("영화 데이터가 없습니다.");
+      return;
+    }
+  
     try {
-      const html = generateHtml();
-      if (!html) return alert("영화 데이터가 없습니다.");
-
-      const res = await api.post('/api/html/save', { html });
+      const res = await api.post('/api/html/save', { html }); // ✅ JSON 구조로 { html } 전달
       const sharedUrl = res.data.url;
-
+  
       window.Kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
@@ -85,7 +88,7 @@ export default function LastPage() {
       alert("공유에 실패했습니다.");
     }
   };
-
+  
   useEffect(() => {
     if (window.Kakao && !window.Kakao.isInitialized()) {
       window.Kakao.init(import.meta.env.VITE_KAKAO_JS_KEY);
