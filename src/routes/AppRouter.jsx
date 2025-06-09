@@ -9,7 +9,7 @@ import QuotePage from '../page/QuotePage/QuotePage';
 import ReviewWritePage from '../page/ReviewWritePage/ReviewWritePage';
 import StartPage from '../page/StartPage/StartPage';
 import LastPage from '../page/LastPage/LastPage';
-import ResultPage from '../page/ResultPage/ResultPage';
+//import ResultPage from '../page/ResultPage/ResultPage';
 
 const AppRouter = () => {
   return (
@@ -23,7 +23,6 @@ const AppRouter = () => {
       <Route path="/quote" element={<QuotePage/>}/>
       <Route path="/reviewwrite" element={<ReviewWritePage/>}/>
       <Route path="/last" element={<LastPage/>}/>
-      <Route path="/result/:id" element={<ResultPage />} />
     </Routes>
   );
 };
