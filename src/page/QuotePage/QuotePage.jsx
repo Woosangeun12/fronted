@@ -144,7 +144,7 @@ export default function QuotePage() {
       alert("공유에 실패했습니다.");
     }
   };
-
+  //확인
   useEffect(() => {
     if (window.Kakao && !window.Kakao.isInitialized()) {
       window.Kakao.init(import.meta.env.VITE_KAKAO_JS_KEY);
