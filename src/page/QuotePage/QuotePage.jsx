@@ -117,6 +117,10 @@ export default function QuotePage() {
       const res = await api.post('/api/html/save', { html });
       const rawUrl = res.data.url; 
   
+      // ✅ mallang에서 UUID만 뽑고, vercel용 SPA 링크로 구성
+      const uuid = rawUrl.split("/").pop().replace(".html", "");
+      const sharedUrl = `https://fronted-ebon.vercel.app/result/${uuid}`;
+  
       console.log("✅ 최종 공유 링크:", sharedUrl);
   
       window.Kakao.Link.sendDefault({
