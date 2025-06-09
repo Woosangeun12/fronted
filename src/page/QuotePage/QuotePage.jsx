@@ -55,8 +55,8 @@ export default function QuotePage() {
           tone: storedTone,
         });
 
-        if (res.data?.message) {
-          setQuote(res.data.message);
+        if (res.data?.content) {
+          setQuote(res.data.content);
         } else {
           setQuote("오늘의 한마디가 없습니다.");
         }
