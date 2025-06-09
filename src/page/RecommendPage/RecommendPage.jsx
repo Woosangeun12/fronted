@@ -23,48 +23,28 @@ export default function RecommendPage() {
   }, []);  
 
   useEffect(() => {
-    if (!visitorId) {
-      alert("방문자 정보가 없습니다. 처음부터 다시 시작해주세요.");
+    const recommended = sessionStorage.getItem("recommendedMovies");
+  
+    if (!visitorId || !recommended) {
+      alert("추천 정보가 없습니다. 처음부터 다시 진행해주세요.");
       navigate("/landing");
       return;
     }
   
-    const emotion = sessionStorage.getItem("emotion");
-    const style = sessionStorage.getItem("style");
-    const genre = sessionStorage.getItem("genre");
-    const hate = sessionStorage.getItem("hate");
-    //const tone = sessionStorage.getItem("tone"); 
-
-    console.log("감정값들:", { emotion, style, genre, hate});
-
-    if (!emotion || !style || !genre || !hate) {
-      alert("감정 정보가 유실되었습니다. 다시 시도해주세요.");
+    try {
+      const parsed = JSON.parse(recommended);
+      setMovieList(parsed);
+    } catch (e) {
+      console.error("추천 데이터 파싱 실패:", e);
+      alert("추천 정보를 불러올 수 없습니다.");
       navigate("/survey");
-      return;
     }
-    
-    api.post(`/api/recommend/${visitorId}`, {
-      emotion,
-      style,
-      genre,
-      hate
-    })
-      .then((res) => {
-        setMovieList(res.data);
-        sessionStorage.setItem("recommendedMovies", JSON.stringify(res.data));
-      })
-      .catch((err) => {
-        console.error("추천 영화 불러오기 실패:", err);
-        alert("추천 정보를 불러올 수 없습니다.");
-        navigate("/survey");
-      });
-  }, []);  
+  }, []);
   
 
   const handleSelectMovie = async (movie) => {
     try {
       const res = await api.post(`/api/recommend/info/${movie.movieId}`, {});
-      // movieId 수동 삽입
       setSelectedMovie({
         ...res.data,
         movieId: movie.movieId
