@@ -33,7 +33,7 @@ export default function RecommendPage() {
     const style = sessionStorage.getItem("style");
     const genre = sessionStorage.getItem("genre");
     const hate = sessionStorage.getItem("hate");
-    const tone = sessionStorage.getItem("tone"); 
+    //const tone = sessionStorage.getItem("tone"); 
 
     console.log("감정값들:", { emotion, style, genre, hate, tone });
 
