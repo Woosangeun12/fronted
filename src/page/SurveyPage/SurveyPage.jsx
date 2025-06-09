@@ -60,7 +60,7 @@ const SurveyPage = () => {
     sessionStorage.setItem("style", style);
     sessionStorage.setItem("genre", preferredGenre);
     sessionStorage.setItem("hate", hate); 
-    sessionStorage.setItem("tone", selectedTone);
+    //sessionStorage.setItem("tone", selectedTone);
 
   
     try {
