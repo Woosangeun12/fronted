@@ -28,20 +28,24 @@ export default function RecommendPage() {
       navigate("/landing");
       return;
     }
-
+  
     const emotion = sessionStorage.getItem("emotion");
     const style = sessionStorage.getItem("style");
     const genre = sessionStorage.getItem("genre");
     const hate = sessionStorage.getItem("hate");
   
-    const query = new URLSearchParams({
+    if (!emotion || !style || !genre || !hate) {
+      alert("감정 정보가 유실되었습니다. 다시 시도해주세요.");
+      navigate("/survey");
+      return;
+    }
+  
+    api.post(`/api/recommend/${visitorId}`, {
       emotion,
       style,
       genre,
-      hate,
-    }).toString();
-  
-    api.post(`/api/recommend/${visitorId}?${query}`) 
+      hate
+    })
       .then((res) => {
         setMovieList(res.data);
         sessionStorage.setItem("recommendedMovies", JSON.stringify(res.data));
@@ -49,7 +53,7 @@ export default function RecommendPage() {
       .catch((err) => {
         console.error("추천 영화 불러오기 실패:", err);
         alert("추천 정보를 불러올 수 없습니다.");
-        navigate("/survey"); // fallback 처리
+        navigate("/survey");
       });
   }, []);  
   
