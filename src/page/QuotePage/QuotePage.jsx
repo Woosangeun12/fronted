@@ -106,8 +106,7 @@ export default function QuotePage() {
     `;
   };
   const handleKakaoShare = async () => {
-    const html = generateHtml(); // 여기에서만 정의
-    console.log("[카카오 공유] 보낼 HTML 내용:", html);
+    const html = generateHtml();
   
     if (!html) {
       alert("영화 데이터가 없습니다.");
@@ -115,10 +114,15 @@ export default function QuotePage() {
     }
   
     try {
-      const res = await api.post('/api/html/save', { html }); 
-      const sharedUrl = res.data.url;
-      console.log("✅ 공유 링크:", sharedUrl);
-
+      const res = await api.post('/api/html/save', { html });
+      const rawUrl = res.data.url; 
+  
+      // ✅ mallang에서 UUID만 뽑고, vercel용 SPA 링크로 구성
+      const uuid = rawUrl.split("/").pop().replace(".html", "");
+      const sharedUrl = `https://fronted-ebon.vercel.app/result/${uuid}`;
+  
+      console.log("✅ 최종 공유 링크:", sharedUrl);
+  
       window.Kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
@@ -145,6 +149,7 @@ export default function QuotePage() {
       alert("공유에 실패했습니다.");
     }
   };
+  
   //확인
   useEffect(() => {
     if (window.Kakao) {
