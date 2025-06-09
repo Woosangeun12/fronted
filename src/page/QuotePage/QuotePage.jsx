@@ -80,6 +80,7 @@ export default function QuotePage() {
 
   const generateHtml = () => {
     if (!selectedMovie) return "";
+    const sanitizedQuote = quote.replace(/"/g, '&quot;');
 
     return `
 <!DOCTYPE html>
@@ -99,7 +100,7 @@ export default function QuotePage() {
   <div class="movie-info">
     <p>${selectedMovie.title}</p>
   </div>
-  <p class="quote">"${quote}"</p>
+  <p class="quote">${sanitizedQuote}</p>
 </body>
 </html>
     `;
