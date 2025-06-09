@@ -75,8 +75,8 @@ export default function RecommendPage() {
   return (
     <>
       <div className="recommend-container">
-        <h1 className="title">🎬 당신의 오늘 어떤 영화와 닮아 있을까요</h1>
-        <p className="movie-subtitle">영화 중 한 개를 선택해주세요!</p>
+        <h1 className="title">🎬 당신의 오늘, 어떤 영화와 닮아 있을까요</h1>
+        <p className="movie-subtitle">당신의 감정 기반으로 추천된 영화 3가지 중 하나를 선택해주세요!</p>
         
         <div className="movie-grid">
           {movieList.map((movie, index) => (
