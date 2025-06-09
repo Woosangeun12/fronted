@@ -16,6 +16,7 @@ export default function QuotePage() {
   const [image, setImage] = useState(null);
   const [tone, setTone] = useState("");
   const navigate = useNavigate();
+  const selectedMovie = JSON.parse(sessionStorage.getItem("selectedMovie"));
 
   const images = [bike, book, cake, heart, hug, luck, talk];
 
@@ -92,7 +93,7 @@ export default function QuotePage() {
         <button
           type="button"
           className="submit-btn"
-          onClick={() => navigate("/reviewwrite")}
+          onClick={() => navigate("/reviewwrite", { state: { movieId: selectedMovie.movieId } })}
         >
           리뷰 작성하기
         </button>
