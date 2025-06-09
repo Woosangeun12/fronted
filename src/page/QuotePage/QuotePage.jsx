@@ -130,8 +130,8 @@ export default function QuotePage() {
           description: `"${quote}"`,
           imageUrl: selectedMovie.image,
           link: {
-            mobileWebUrl: sharedUrl,
-            webUrl: sharedUrl,
+            mobileWebUrl: rawUrl,
+            webUrl: rawUrl,
           },
         },
         buttons: [
