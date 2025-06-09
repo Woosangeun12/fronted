@@ -28,8 +28,22 @@ export default function RecommendPage() {
       navigate("/landing");
       return;
     }
+
+    const emotion = sessionStorage.getItem("emotion");
+    const style = sessionStorage.getItem("style");
+    const genre = sessionStorage.getItem("genre");
+    const hate = sessionStorage.getItem("hate");
+    const tone = sessionStorage.getItem("tone");
   
-    api.post(`/api/recommend/${visitorId}`)
+    const query = new URLSearchParams({
+      emotion,
+      style,
+      genre,
+      hate,
+      tone
+    }).toString();
+  
+    api.post(`/api/recommend/${visitorId}?${query}`) 
       .then((res) => {
         setMovieList(res.data);
         sessionStorage.setItem("recommendedMovies", JSON.stringify(res.data));
