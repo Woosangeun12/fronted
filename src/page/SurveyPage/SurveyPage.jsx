@@ -58,6 +58,8 @@ const SurveyPage = () => {
     setTone(selectedTone);
     sessionStorage.setItem("emotion", feeling);
     sessionStorage.setItem("style", style);
+    sessionStorage.setItem("genre", preferredGenre);
+    sessionStorage.setItem("hate", hate); 
     sessionStorage.setItem("tone", selectedTone);
 
   
