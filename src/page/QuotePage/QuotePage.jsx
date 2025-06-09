@@ -105,6 +105,7 @@ export default function QuotePage() {
 </html>
     `;
   };
+  //카카오톡 sdk 재설정
   const handleKakaoShare = async () => {
     const html = generateHtml();
   
@@ -117,7 +118,7 @@ export default function QuotePage() {
       const res = await api.post('/api/html/save', { html });
       const rawUrl = res.data.url; 
   
-      console.log("✅ 최종 공유 링크:", sharedUrl);
+      console.log("✅ 최종 공유 링크:", rawUrl);
   
       window.Kakao.Link.sendDefault({
         objectType: 'feed',
