@@ -138,8 +138,8 @@ export default function QuotePage() {
           {
             title: '결과 보러가기',
             link: {
-              mobileWebUrl: sharedUrl,
-              webUrl: sharedUrl,
+              mobileWebUrl: rawdUrl,
+              webUrl: rawdUrl,
             },
           },
         ],
