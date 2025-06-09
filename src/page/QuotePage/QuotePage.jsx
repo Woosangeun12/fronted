@@ -146,11 +146,14 @@ export default function QuotePage() {
   };
   //확인
   useEffect(() => {
-    if (window.Kakao && !window.Kakao.isInitialized()) {
-      window.Kakao.init(import.meta.env.VITE_KAKAO_JS_KEY);
+    if (window.Kakao) {
+      if (window.Kakao.isInitialized()) {
+        window.Kakao.cleanup(); // 🔧 기존 초기화된 Kakao 인스턴스 제거
+      }
+      window.Kakao.init(import.meta.env.VITE_KAKAO_JS_KEY); // 재초기화
     }
   }, []);
-
+  
   if (!selectedMovie) return <div>로딩 중...</div>;
 
   return (
