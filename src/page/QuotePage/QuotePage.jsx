@@ -104,7 +104,9 @@ export default function QuotePage() {
 </head>
 <body>
   <div className="quote--container">
-    <img src="${selectedMovie.image}" alt="${selectedMovie.title}" />
+    <div style="text-align : center;">
+      <img src="${selectedMovie.image}" alt="${selectedMovie.title}" />
+    </div>
     <div class="movie-info">
       <p>${selectedMovie.title}</p>
     </div>
