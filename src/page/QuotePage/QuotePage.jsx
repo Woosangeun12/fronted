@@ -90,10 +90,10 @@ export default function QuotePage() {
   <meta charset="UTF-8">
   <title>${selectedMovie.title}</title>
   <style>
-    body { font-family: sans-serif; background: #fffbe6; padding: 2rem; }
+    body { font-family: sans-serif; background: #fffbe6; padding: 3rem; }
     img { width: 100%; max-width: 300px; border-radius: 10px; display: block; margin-bottom: 1rem; }
-    .quote { font-style: italic; font-size: 1.5rem; margin-top: 1rem; color: #444; }
-    .movie-info { margin-top: 1rem; font-size: 1rem; color: #333; }
+    .quote { font-style: italic; font-size: 3.5rem; margin-top: 1rem; color: #444; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
+    .movie-info { margin-top: 2rem; font-size: 5rem; color: #333; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
   </style>
 </head>
 <body>
