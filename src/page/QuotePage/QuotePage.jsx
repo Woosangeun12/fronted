@@ -126,7 +126,7 @@ export default function QuotePage() {
         content: {
           title: "내 감정에 맞춘 영화, 너도 한번 볼래?",
           description: "친구가 추천받은 영화와 감정 진단 결과를 확인해보세요!",
-          imageUrl: "https://your-vercel-domain.vercel.app/assets/pxArt-3_5.png",
+          imageUrl: "https://fronted-ebon.vercel.app/assets/pxArt-3_5.png",
           link: {
             mobileWebUrl: rawUrl,
             webUrl: rawUrl,
