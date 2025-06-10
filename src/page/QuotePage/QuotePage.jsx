@@ -90,16 +90,20 @@ export default function QuotePage() {
   <meta charset="UTF-8">
   <title>${selectedMovie.title}</title>
   <style>
+      @font-face {
+      font-family : '이쁜폰트';
+      src : url(nanumsquare.ttf)
+    }
     body { font-family: sans-serif; background: #fffbe6; padding: 3rem; }
     img { width: 100%; max-width: 300px; border-radius: 10px; display: block; margin-bottom: 1rem; }
-    .quote-container { width: 100vw; min-height: 100vh; background-color: #fffbe6; display: flex; flex-direction: column;
+    .quote--container { width: 100vw; background-color: #fffbe6; display: flex; flex-direction: column;
                         align-items: center; padding: 3rem 1.5rem; box-sizing: border-box;}
     .quote { font-weight: 700; font-size: 2.5rem; margin-top: 1rem; color: #444;  text-align: center; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
-    .movie-info { font-weight: 700; margin-top: 2rem; font-size: 4.5rem; color: #333; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
+    .movie-info { font-weight: bold; margin-top: 1.5rem; font-size: 3.5rem; color: #333; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
   </style>
 </head>
 <body>
-  <div className="quote-container">
+  <div className="quote--container">
     <img src="${selectedMovie.image}" alt="${selectedMovie.title}" />
     <div class="movie-info">
       <p>${selectedMovie.title}</p>
