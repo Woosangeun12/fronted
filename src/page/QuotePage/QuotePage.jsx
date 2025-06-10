@@ -90,12 +90,14 @@ export default function QuotePage() {
   <meta charset="UTF-8">
   <title>${selectedMovie.title}</title>
   <style>
-      @font-face {
-      font-family : '이쁜폰트';
-      src : url(nanumsquare.ttf)
+     @font-face {
+      font-family: 'Ownglyph_meetme-Rg';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
     }
     body { font-family: sans-serif; background: #fffbe6; padding: 3rem; }
-    img { width: 100%; max-width: 300px; border-radius: 10px; display: block; margin-bottom: 1rem; }
+    img { width: 100%; max-width: 600px; border-radius: 13px; display: block; justify-content: center;  align-items: center;  height: 850px; margin-bottom: 1rem; }
     .quote--container { width: 100vw; background-color: #fffbe6; display: flex; flex-direction: column;
                         align-items: center; padding: 3rem 1.5rem; box-sizing: border-box;}
     .quote { font-weight: 700; font-size: 2.5rem; margin-top: 1rem; color: #444;  text-align: center; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
@@ -104,9 +106,7 @@ export default function QuotePage() {
 </head>
 <body>
   <div className="quote--container">
-    <div style="text-align : center;">
-      <img src="${selectedMovie.image}" alt="${selectedMovie.title}" />
-    </div>
+    <img src="${selectedMovie.image}" alt="${selectedMovie.title}" />
     <div class="movie-info">
       <p>${selectedMovie.title}</p>
     </div>
