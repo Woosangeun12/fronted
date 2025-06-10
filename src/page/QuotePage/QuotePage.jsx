@@ -190,7 +190,7 @@ export default function QuotePage() {
       </div>
       <div>
       <button className="lastpage-button" onClick={handleKakaoShare}>
-        카카오톡으로 공유하기
+        내 마음 카카오톡으로 공유하기
       </button>
       </div>
     </div>
