@@ -117,13 +117,12 @@ export default function QuotePage() {
       }
   
       .emotion-label {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
+        font-size: 2.2rem;
       }
   
       .question {
-        margin: 2rem 0 1rem;
-        font-size: 1.1rem;
+        margin: 1rem 0 1rem;
+        font-size: 2.0rem;
       }
   
       .movie-image {
@@ -135,7 +134,12 @@ export default function QuotePage() {
       }
   
       .movie-info {
-        font-size: 1.4rem;
+        font-size: 2rem;
+        margin: 0.5rem 0;
+      }
+
+      .quote_label{
+       font-size: 2rem;
         margin: 0.5rem 0;
       }
   
@@ -166,19 +170,17 @@ export default function QuotePage() {
     <div class="container">
       <p class="emotion-label">현재 <strong>${nickname}</strong>님의 감정은 ${emotion} 입니다!</p>
   
-      <p class="question"><strong>${nickname}</strong>님에게 선택한 영화는 무엇일까요?</p>
+      <p class="question"><strong>${nickname}</strong>님이 선택한 영화는 무엇일까요?</p>
       <img src="${selectedMovie.image}" alt="${selectedMovie.title}" class="movie-image" />
       
       <div class="movie-info">${selectedMovie.title}</div>
 
+      <p class="quote_label"><strong>${nickname}</strong>님을 위한 한마디 💌</p>
+     
       <div class="quote-box">
-        <strong>${nickname}</strong>님을 위한 한마디 💌<br/>
         ${sanitizedQuote}
       </div>
   
-      <div>
-        <a href="#" class="prescription-button">마음처방전</a>
-      </div>
     </div>
   </body>
   </html>
