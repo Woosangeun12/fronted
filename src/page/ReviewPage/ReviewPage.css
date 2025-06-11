@@ -114,7 +114,7 @@
   font-size: 3.0rem;         /* ✅ 가독성 있는 큰 텍스트 */
   font-weight: bold;
   background-color: #ff4d88;
-  color: #333;
+  color: #ffffff;
   border: none;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -150,7 +150,7 @@
 
   .submit-btn,
   .skip-btn {
-    color: #222; /* 버튼 배경이 밝으니 글자는 진하게 */
+    color: #f0f0f0; /* 버튼 배경이 밝으니 글자는 진하게 */
   }
 
   .review-title,

@@ -88,6 +88,7 @@ export default function QuotePage() {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${selectedMovie.title}</title>
   <style>
      @font-face {
@@ -102,6 +103,23 @@ export default function QuotePage() {
                         align-items: center; padding: 3rem 1.5rem; box-sizing: border-box;}
     .quote { font-weight: 700; font-size: 2.5rem; margin-top: 1rem; color: #444;  text-align: center; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
     .movie-info { font-weight: bold; margin-top: 1.5rem; font-size: 4.5rem; color: #333; text-align: center; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
+     @media (max-width: 480px) {
+      body {
+        padding: 1rem;
+      }
+
+      .quote--container {
+        padding: 1.5rem 1rem;
+      }
+
+      .movie-info {
+        font-size: 2rem;
+      }
+
+      .quote {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
