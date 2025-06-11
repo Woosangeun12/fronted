@@ -120,7 +120,7 @@ export default function RecommendPage() {
                 <p>{selectedMovie.summary}</p>
               </div>
   
-              <button className="select-button" onClick={handleConfirmSelect}>선택하기 ✅</button>
+              <button className="select-button" onClick={handleConfirmSelect}>선택하기 </button>
             </div>
           </div>
         </div>
