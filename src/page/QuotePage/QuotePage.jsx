@@ -117,9 +117,16 @@ export default function QuotePage() {
       }
   
       .emotion-label {
-        font-size: 1.8rem;
+        border: 2px solid #ff4d88;  
+        border-radius: 12px;            
+        padding: 1rem 1.5rem;         
+        display: inline-block;         
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #444;
+        margin-bottom: 1rem;
       }
-  
+
       .question {
         margin: 1rem 0 1rem;
         font-size: 1.5rem;
