@@ -72,6 +72,51 @@
   font-style: normal;
 }
 
+.button-group {
+  position: sticky;
+  bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
+  z-index: 10;
+  background-color: #fffbe6; /* 배경과 일체감 */
+  padding: 1rem 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.lastpage-button {
+  width: 100%;
+  max-width: 700px;
+  padding: 1.5rem 1.5rem;
+  font-size: 3.0rem;
+  font-weight: bold;
+  background-color: #ff4d88;
+  color: #ffffff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  text-align: center;
+}
+
+.lastpage-button:hover {
+  background-color: #ff4d88; /* 동일 유지 */
+}
+
+.button-text-main {
+  font-weight: bold;
+  font-size: 3.0rem;
+}
+
+.button-text-sub {
+  font-size: 2.0rem;
+  opacity: 0.9;
+  margin-top: 0.2rem;
+}
+
 /* ✨ Fade-in animation */
 .fade-in {
   opacity: 0;
