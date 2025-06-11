@@ -122,7 +122,7 @@ export default function QuotePage() {
   
       .question {
         margin: 1rem 0 1rem;
-        font-size: 1.8rem;
+        font-size: 1.4rem;
       }
   
       .movie-image {
@@ -139,7 +139,7 @@ export default function QuotePage() {
       }
 
       .quote_label{
-       font-size: 2rem;
+       font-size: 1.5rem;
         margin: 0.5rem 0;
       }
   
@@ -170,7 +170,7 @@ export default function QuotePage() {
     <div class="container">
 
       <p class="emotion-label">
-        🍀현재 <strong>${nickname}</strong>님의 감정은<br />
+        ⭐️ 현재 <strong>${nickname}</strong>님의 감정은 ⭐️<br />
         <strong>${emotion}</strong> 입니다!
       </p>
 
