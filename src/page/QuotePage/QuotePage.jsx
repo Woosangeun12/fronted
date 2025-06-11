@@ -122,7 +122,7 @@ export default function QuotePage() {
   
       .question {
         margin: 1rem 0 1rem;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
       }
   
       .movie-image {
@@ -134,7 +134,7 @@ export default function QuotePage() {
       }
   
       .movie-info {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         margin: 0.5rem 0;
       }
 
