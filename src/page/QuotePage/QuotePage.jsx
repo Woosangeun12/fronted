@@ -98,11 +98,11 @@ export default function QuotePage() {
       font-style: normal;
     }
     body { font-family: sans-serif; background: #fffbe6; padding: 3rem; }
-    img { width: 100%; max-width: 700px; border-radius: 17px; display: block; margin: 0 auto; height: 850px; margin-bottom: 1rem; }
+    img { width: 100%; max-width: 480px; border-radius: 17px; display: block; margin: 0 auto; height: 550px; margin-bottom: 1rem; }
     .quote--container { width: 700px; background-color: #fffbe6; display: flex; flex-direction: column;
                         align-items: center; padding: 3rem 1.5rem; box-sizing: border-box;}
-    .quote { font-weight: 700; font-size: 2.5rem; margin-top: 1rem; color: #444;  text-align: center; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
-    .movie-info { font-weight: bold; margin-top: 1.5rem; font-size: 4.5rem; color: #333; text-align: center; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
+    .quote { font-weight: 700; font-size: 4.5rem; margin-top: 1rem; color: #444;  text-align: center; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
+    .movie-info { font-weight: bold; margin-top: 1.5rem; font-size: 6.5rem; color: #333; text-align: center; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
      @media (max-width: 480px) {
       body {
         padding: 1rem;
