@@ -273,14 +273,10 @@ export default function QuotePage() {
         >
           리뷰 작성하기
         </button>
-      </div>
-      <div>
-        <div className="button-group">
-          <button className="lastpage-button" onClick={handleKakaoShare}>
-            <div className="button-text-main">내 마음 카카오톡으로 공유하기</div>
-            <div className="button-text-sub">내가 고른 영화와 마음처방전, 친구에게도 전해보세요.</div>
-          </button>
-        </div>
+        <button className="lastpage-button" onClick={handleKakaoShare}>
+          <div className="button-text-main">내 마음 카카오톡으로 공유하기</div>
+          <div className="button-text-sub">내가 고른 영화와 마음처방전, 친구에게도 전해보세요.</div>
+        </button>
       </div>
     </div>
   );
