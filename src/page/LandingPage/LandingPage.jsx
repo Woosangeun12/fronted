@@ -14,7 +14,10 @@ const LandingPage = () => {  // ✅ 함수 선언 시작 테스트
     e.preventDefault();
 
     const trimmedNickname = nickname.trim();
-    if (!trimmedNickname) return;
+    if (!trimmedNickname || trimmedNickname.length > 4) {
+      alert("닉네임은 최대 4글자까지 입력 가능합니다.");
+      return;
+    }
 
     console.log("🧾 입력한 닉네임:", trimmedNickname);
     try {
@@ -72,6 +75,7 @@ const LandingPage = () => {  // ✅ 함수 선언 시작 테스트
           onChange={(e) => setNickname(e.target.value)}
           placeholder="닉네임을 입력해주세요"
           className="landing-input"
+          maxLength={4}
         />
         <button type="submit" className="landing-button">시작하기</button>
       </form>
