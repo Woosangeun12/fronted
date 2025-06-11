@@ -117,7 +117,7 @@ export default function QuotePage() {
       }
   
       .emotion-label {
-        font-size: 1.9rem;
+        font-size: 1.85rem;
       }
   
       .question {
