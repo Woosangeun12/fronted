@@ -12,6 +12,7 @@ import talk from "../../assets/talk.PNG";
 import pxArt from '../../assets/pxArt-3_5.png';
 
 export default function QuotePage() {
+  const nickname = sessionStorage.getItem('nickname');
   const [quote, setQuote] = useState("");
   const [loading, setLoading] = useState(true);
   const [image, setImage] = useState(null);
@@ -82,42 +83,108 @@ export default function QuotePage() {
   const generateHtml = () => {
     if (!selectedMovie) return "";
     const sanitizedQuote = quote.replace(/"/g, '&quot;');
-
+    const emotion = sessionStorage.getItem("emotion") || "감정 정보 없음";
+    const nickname = sessionStorage.getItem("nickname") || "당신";
+  
     return `
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${selectedMovie.title}</title>
-  <style>
-     @font-face {
-      font-family: 'Ownglyph_meetme-Rg';
-      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
-    }
-    body { font-family: sans-serif; background: #fffbe6; padding: 3rem; }
-    img { width: 100%; max-width: 500px; border-radius: 17px; display: block; margin: 0 auto; height: 550px; margin-bottom: 1rem; }
-    .quote--container { width: 700px; background-color: #fffbe6; display: flex; flex-direction: column;
-                        align-items: center; padding: 3rem 1.5rem; box-sizing: border-box;}
-    .quote { font-weight: 440; font-size: 2.5rem; margin-top: 0.5rem; color: #444;  text-align: center; font-family: 'Ownglyph_meetme-Rg', sans-serif; max-width: 480px;
-              margin: 0 auto; word-break: keep-all;}
-    .movie-info { font-weight: bold; margin-top: 1.0rem; font-size: 4.5rem; color: #333; text-align: center; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
-  </style>
-</head>
-<body>
-  <div class ="quote--container">
-    <img src="${selectedMovie.image}" alt="${selectedMovie.title}" />
-    <div class="movie-info">
-      <p>${selectedMovie.title}</p>
+  <!DOCTYPE html>
+  <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>${selectedMovie.title}</title>
+    <style>
+      @font-face {
+        font-family: 'Ownglyph_meetme-Rg';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+      }
+  
+      body {
+        font-family: 'Ownglyph_meetme-Rg', sans-serif;
+        background: #fffbe6;
+        padding: 2rem;
+        margin: 0;
+        text-align: center;
+      }
+  
+      .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        background: #fffbe6;
+      }
+  
+      .emotion-label {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+  
+      .question {
+        margin: 2rem 0 1rem;
+        font-size: 1.1rem;
+      }
+  
+      .movie-image {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+      }
+  
+      .movie-info {
+        font-size: 1.4rem;
+        margin: 0.5rem 0;
+      }
+  
+      .quote-box {
+        border: 2px dashed #d67c53;
+        border-radius: 12px;
+        padding: 1rem;
+        margin: 1.5rem 0;
+        font-size: 1rem;
+        line-height: 1.5;
+        word-break: keep-all;
+      }
+  
+      .prescription-button {
+        display: inline-block;
+        background: #d67c53;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        text-decoration: none;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="emotion-label">현재 <strong>${nickname}</strong>님의 감정은 ${emotion} 입니다!</p>
+  
+      <p class="question"><strong>${nickname}</strong>님에게 선택한 영화는 무엇일까요?</p>
+      <img src="${selectedMovie.image}" alt="${selectedMovie.title}" class="movie-image" />
+      
+      <div class="movie-info">${selectedMovie.title}</div>
+
+      <div class="quote-box">
+        <strong>${nickname}</strong>님을 위한 한마디 💌<br/>
+        ${sanitizedQuote}
+      </div>
+  
+      <div>
+        <a href="#" class="prescription-button">마음처방전</a>
+      </div>
     </div>
-    <p class="quote">${sanitizedQuote}</p>
-  </div>
-</body>
-</html>
+  </body>
+  </html>
     `;
   };
+  
   //카카오톡 sdk 재설정
   const handleKakaoShare = async () => {
     const html = generateHtml();
