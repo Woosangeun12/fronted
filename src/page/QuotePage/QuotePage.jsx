@@ -121,7 +121,7 @@ export default function QuotePage() {
         border-radius: 12px;            
         padding: 1rem 1.5rem;         
         display: inline-block;         
-        font-size: 1.1rem;
+        font-size: 1.8rem;
         font-weight: bold;
         color: #444;
         margin-bottom: 1rem;
