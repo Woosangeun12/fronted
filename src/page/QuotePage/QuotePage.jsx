@@ -101,8 +101,8 @@ export default function QuotePage() {
     img { width: 100%; max-width: 480px; border-radius: 17px; display: block; margin: 0 auto; height: 550px; margin-bottom: 1rem; }
     .quote--container { width: 700px; background-color: #fffbe6; display: flex; flex-direction: column;
                         align-items: center; padding: 3rem 1.5rem; box-sizing: border-box;}
-    .quote { font-weight: 700; font-size: 4.5rem; margin-top: 1rem; color: #444;  text-align: center; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
-    .movie-info { font-weight: bold; margin-top: 1.5rem; font-size: 6.5rem; color: #333; text-align: center; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
+    .quote { font-weight: 440; font-size: 6.5rem; margin-top: 0.5rem; color: #444;  text-align: center; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
+    .movie-info { font-weight: bold; margin-top: 1.0rem; font-size: 9.5rem; color: #333; text-align: center; font-family: 'Ownglyph_meetme-Rg', sans-serif;}
      @media (max-width: 480px) {
       body {
         padding: 1rem;
