@@ -134,7 +134,7 @@ export default function QuotePage() {
       }
   
       .movie-info {
-        font-size: 2.2rem;
+        font-size: 1.2rem;
         margin: 0.5rem 0;
       }
 
@@ -168,9 +168,13 @@ export default function QuotePage() {
   </head>
   <body>
     <div class="container">
-      <p class="emotion-label">🍀현재 <strong>${nickname}</strong>님의 감정은 ${emotion} 입니다!</p>
-  
-      <p class="question"><strong>${nickname}</strong>님이 선택한 영화는 무엇일까요?🍿</p>
+
+      <p class="emotion-label">
+        🍀현재 <strong>${nickname}</strong>님의 감정은<br />
+        <strong>${emotion}</strong> 입니다!
+      </p>
+
+      <p class="question"><strong>${nickname}</strong>님이 선택한 영화는?🍿</p>
 
       <div class="movie-info">${selectedMovie.title}</div>
 
